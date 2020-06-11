@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>PM Screen</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="resources/css/bootstrap.min.css">
+	<link rel="stylesheet" href="resources/css/style.css">
+	<link rel="stylesheet" href="resources/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+	rel="stylesheet">
+	<script src="resources/js/jquery.min.js"></script>
+	<script src="resources/js/popper.min.js"></script>
+	<script src="resources/js/bootstrap.min.js"></script>
+</head>
+<body>
+	<header>
+		<!--Navbar -->
+		<nav class="mb-1 navbar navbar-expand-lg navbar-dark secondary-color lighten-1">
+			<div class="collapse navbar-collapse" id="navbarSupportedContent-555">
+				<ul class="navbar-nav mr-auto">
+					<li class="nav-item active">
+						<a class="nav-link" href="#">Home
+							<span class="sr-only">(current)</span>
+						</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#">My Projects</a>
+					</li>
+				</ul>
+				<ul class="navbar-nav ml-auto nav-flex-icons">
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-4" data-toggle="dropdown"
+						aria-haspopup="true" aria-expanded="false">
+						<i class="fas fa-user"></i> TuND </a>
+						<div class="dropdown-menu dropdown-menu-right dropdown-info" aria-labelledby="navbarDropdownMenuLink-4">
+							<a class="dropdown-item" href="#">Log out</a>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</nav>
+		<!--/.Navbar -->
+	</header>
+	<div class="wrapper">
+		<div class="title-page">
+			<h4>
+				<b>Project List</b>
+			</h4>
+		</div>
+		<div class="modal-content">
+			<div class="form-group">
+				<table class="table table-bordered table-striped">
+					<thead>
+						<tr class="text-center">
+							<th>ID</th>
+							<th>Name</th>
+							<th>Status</th>
+							<th>Phases</th>
+							<th>More Info</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<th class="text-left">1</th>
+							<th class="text-right">Le Ba Viet</th>
+							<th class="text-right">Open</th>
+							<th class="text-right"></th>
+							<th class="text-right"><a href="#">More Infor</a></th>
+						</tr>
+						<tr>
+							<th class="text-left">2</th>
+							<th class="text-right">Vo Tan Y</th>
+							<th class="text-right">Open</th>
+							<th class="text-right"></th>
+							<th class="text-right"><a href="#">More Infor</a></th>
+						</tr>
+						<tr>
+							<th class="text-left">3</th>
+							<th class="text-right">Le Phuoc Thanh</th>
+							<th class="text-right">Open</th>
+							<th class="text-right"></th>
+							<th class="text-right"><a href="#">More Infor</a></th>
+						</tr>
+						<tr>
+							<th class="text-left">4</th>
+							<th class="text-right">Le Thi Hong Suong</th>
+							<th class="text-right">Open</th>
+							<th class="text-right"></th>
+							<th class="text-right"><a href="#">More Infor</a></th>
+						</tr>
+						<tr>
+							<th class="text-left">5</th>
+							<th class="text-right">Nguyen Thi Sa</th>
+							<th class="text-right">Close</th>
+							<th class="text-right"></th>
+							<th class="text-right"><a href="#">More Infor</a></th>
+						</tr>
+						<tr>
+							<th class="text-left">6</th>
+							<th class="text-right">Pham Quy</th>
+							<th class="text-right">Close</th>
+							<th class="text-right"></th>
+							<th class="text-right"><a href="#">More Infor</a></th>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="form-group centerBox d-flex justify-content-center">
+						<div class="col-sm-12 col-md-7">
+							<div class="dataTables_paginate paging_simple_numbers d-flex justify-content-center" id="dtBasicExample_paginate">
+								<ul class="pagination">
+									<li class="paginate_button page-item previous disabled" id="dtBasicExample_previous">
+										<a href="#" aria-controls="dtBasicExample" data-dt-idx="0" tabindex="0" class="page-link"><span class="text-dark">&laquo;</span></a>
+									</li>
+
+									<li class="paginate_button page-item ">
+										<a href="#" aria-controls="dtBasicExample" data-dt-idx="1" tabindex="0" class="page-link"><span class="text-dark">1</span></a>
+									</li>
+
+									<li class="paginate_button page-item active">
+										<a href="#" aria-controls="dtBasicExample" data-dt-idx="2" tabindex="0" class="page-link"><span class="text-dark">2</span></a>
+									</li>
+									<li class="paginate_button page-item "><a href="#" aria-controls="dtBasicExample" data-dt-idx="3" tabindex="0" class="page-link"><span class="text-dark">3</span></a></li>
+									<li class="paginate_button page-item "><a href="#" aria-controls="dtBasicExample" data-dt-idx="4" tabindex="0" class="page-link"><span class="text-dark">4</span></a></li>
+									<li class="paginate_button page-item "><a href="#" aria-controls="dtBasicExample" data-dt-idx="5" tabindex="0" class="page-link"><span class="text-dark">5</span></a></li>
+
+									<li class="paginate_button page-item next" id="dtBasicExample_next"><a href="#" aria-controls="dtBasicExample" data-dt-idx="6" tabindex="0" class="page-link"><span class="text-dark">&raquo;</span></a></li>
+
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+		</div>
+	</div>
+
+
+</body>
+</html>
