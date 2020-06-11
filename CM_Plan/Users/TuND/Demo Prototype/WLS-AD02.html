@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quan ly member</title>
+  <!-- <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+  <link rel="stylesheet" href="StyleBooking.css" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+  
+  <!-- <script src="https://kit.fontawesome.com/a076d05399.js"></script> -->
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="WLS-AD02-Css.css">
+
+  <style>
+    p {
+      margin-bottom: 0px;
+    }
+  </style>
+</head>
+
+<body style="zoom: 110%;">
+  <article class="rowHeader" id="thongTinThoiTiet">
+    <span class="rowHeader-left">06/10/2020 <span class="fa fa-map-marker"></span> Đà Nẵng &#9728; 28
+      &#8451;</span>
+    <!-- <span class="rowHeader-right fas fa-user-cog"> Admin TUND
+      <button type="button" class="btn btn-primary" style="height: 25px;">
+        <i class="fa fa-sign-out" aria-hidden="true" style="font-size: 20px;"></i>
+      </button>
+    </span> -->
+
+
+      <span class="dropdown" style="z-index: 3;float: right;margin-right: 3%;">
+        <button class="btn btn-secondary dropdown-toggle tenMember" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
+          <b>Admin TuND</b>
+        </button>
+        <span class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <a class="dropdown-item" href="#" style="font-size: 14px;">Log Out</a>
+  
+        </span>
+      </span>
+    
+  </article>
+
+
+  <header class="header" style="z-index: 1;">
+    <div style="margin-left: 8%;margin-top: -0.5%;">
+      <ul class="nav justify-content-start nav-pills">
+        <li class="nav-item">
+          <a class="nav-link" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">About</a>
+        </li>
+      </ul>
+
+    </div>
+    <hr style="margin-top : 0.5%;">
+  </header>
+
+  <article class="contentWeb">    
+
+    <div style="margin-left: 5%;margin-right: 5%;margin-top: 6%;">
+      <div class="row" style="margin:0px">
+        <div class="col-sm-12" style="border: 2px solid rgb(42, 136, 42);border-radius: 8px;">
+          <div class="form-group row" style="margin-top: 1%;text-align:center;">
+            <label for="" class="col-sm-1 col-form-label">Account</label>
+            <div class="col-sm-2">
+              <input type="text" class="form-control" id="" placeholder="Account">
+            </div>
+
+            <label for="" class="col-sm-1 col-form-label">Full Name</label>
+            <div class="col-sm-3">
+              <input type="text" class="form-control" id="" placeholder="Full Name">
+            </div>
+
+            <label for="" class="col-sm-1 col-form-label" style="text-align: center;">Role</label>
+            <div class="col-sm-1">
+              <select name="" id="" class="form-control" style="margin-left: -25px">
+                <option value="">PM</option>
+                <option value="">TL</option>
+                <option value="">PTL</option>
+                <option value="">DEV</option>
+                <option value="">TEST</option>
+              </select>
+            </div>
+
+            <label for="" class="col-sm-1 col-form-label" style="text-align: center;">Only PM</label>
+            <div class="col-sm-1">
+              <input type="checkbox" class="form-control" id="" style="margin-left: -38%;">
+            </div>
+
+            <div class="col-sm-1">
+              <button type="button" class="btn btn-outline-primary" style="width: 120px;margin-left: -80px;">Search</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <br>
+      <div style="border: 2px solid green;">
+        <table class="table table-striped" style="border-radius: 8px;">
+          <thead>
+            <tr style="color:white; background-color:#28A745;text-align: start;">
+              <th scope="col" class="tableFixWidth" style="width: 7%;">STT</th>
+              <th scope="col" class="tableFixWidth" style="width: 11%;">Account</th>
+              <th scope="col" class="tableFixWidth" style="width: 16%;">Full Name</th>
+              <th scope="col" class="tableFixWidth" style="width: 11%;">Role</th>
+              <th scope="col" class="tableFixWidth" style="width: 11%;">Gender</th>
+              <th scope="col" class="tableFixWidth" style="width: 11%;text-align: start;">Phone</th>
+              <th scope="col" class="tableFixWidth" style="width: 10%;"></th>
+            </tr>
+          </thead>
+          <tbody>
+
+            <tr>
+              <td style="text-align: center;">1</td>
+              <td>TuND</td>
+              <td>Nguyen Duy Tu</td>
+              <td>PTL</td>
+              <td>Male</td>
+              <td style="text-align: center;">0344109790</td>
+              <td><button type="button" class="btn btn-outline-danger editMember"
+                  style="width: 80px;float: right;">Edit</button>
+              </td>
+            </tr>
+            <tr>
+              <td style="text-align: center;">12</td>
+              <td>NhiHY</td>
+              <td>Hoang Yen Nhi</td>
+              <td>DEV</td>
+              <td>Female</td>
+              <td style="text-align: center;">0344109790</td>
+              <td><button type="button" class="btn btn-outline-danger editMember"
+                  style="width: 80px;float: right;">Edit</button>
+              </td>
+            </tr>
+            <tr>
+              <td style="text-align: center;">43</td>
+              <td>HieuTN</td>
+              <td>Truong Nhat Hieu</td>
+              <td>TL</td>
+              <td>Male</td>
+              <td style="text-align: center;">0344109790</td>
+              <td><button type="button" class="btn btn-outline-danger editMember"
+                  style="width: 80px;float: right;">Edit</button>
+              </td>
+            </tr>
+            <tr>
+              <td style="text-align: center;">5</td>
+              <td>QuangNN</td>
+              <td>Nguyen Ngoc Quang</td>
+              <td>DEV</td>
+              <td>Male</td>
+              <td style="text-align: center;">0344109790</td>
+              <td><button type="button" class="btn btn-outline-danger editMember"
+                  style="width: 80px;float: right;">Edit</button>
+              </td>
+            </tr>
+
+            <tr>
+              <td style="text-align: center;">312</td>
+              <td>TuND</td>
+              <td>Nguyen Duy Tu</td>
+              <td>PTL</td>
+              <td>Male</td>
+              <td style="text-align: center;">0344109790</td>
+              <td><button type="button" class="btn btn-outline-danger editMember"
+                  style="width: 80px;float: right;">Edit</button>
+              </td>
+            </tr>
+            <tr>
+              <td style="text-align: center;">5</td>
+              <td>QuangNN</td>
+              <td>Nguyen Ngoc Quang</td>
+              <td>DEV</td>
+              <td>Male</td>
+              <td style="text-align: center;">0344109790</td>
+              <td><button type="button" class="btn btn-outline-danger editMember"
+                  style="width: 80px;float: right;">Edit</button>
+              </td>
+            </tr>
+
+
+          </tbody>
+        </table>
+      </div>
+      <br>
+      <div class="row" style="margin:0px">
+        <div class="col-sm-12">
+          <div class="form-group row" style="margin-top: 1%;text-align:center;">
+
+            <div class="col-sm-2">
+              <button type="button" class="btn btn-outline-primary" style="width: 120px;">Create</button>
+            </div>
+            <div class="col-sm-8">
+              <ul class="pagination justify-content-center">
+                <li class="page-item "> <a class="page-link" href="#">First</a> </li>
+                <li class="page-item "><a class="page-link" href="#">1</a></li>
+                <li class="page-item active "><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+
+                <li class="page-item ">
+                  <a class="page-link" href="#">4</a>
+                </li>
+
+                <li class="page-item"><a class="page-link" href="#">5</a></li>
+                <li class="page-item disabled">
+                  <a class="page-link" href="#">
+                    <span aria-hidden="true">»</span>
+                  </a>
+                </li>
+              </ul>
+
+            </div>
+
+
+            <div class="col-sm-2">
+              <button type="button" class="btn btn-outline-primary" style="width: 120px;">Black</button>
+            </div>
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <div class="modal">
+    <div class="stylePopup">
+        <div class="close styleClose">&times;</div>
+        <p style="margin-left: 42.5%;"> Edit Member ABCD</p>
+        <br>
+        <div style="background-color: cornflowerblue;width: 90%; height: 80%;margin-left: 5%;">
+            asd
+        </div>
+
+        <div style="text-align: center;margin-top: 1.5%;">
+          <button type="button" class="btn btn-outline-warning" style="width: 120px;">
+            Reset</button>
+            &#160;&#160;&#160;
+          <button type="button" class="btn btn-outline-success" style="width: 120px;">
+            Update</button>
+        </div>
+
+      
+      
+      
+
+
+    </div>
+  </div>
+
+
+  <footer class="footer">
+    <p class="infoTeam"><i><b>A2Z Team</b></i> </p>
+  </footer>
+
+  <script>
+    $(document).ready(function () {
+      //$("#play").trigger("play");
+
+
+      $(".editMember").click(function () {
+        $(".modal").show();
+      });
+      $(".editMember").mouseenter(function () {
+        $(this).css("cursor", "pointer");
+      });
+      $(window).on('click', function (e) {
+        if ($(e.target).is('.modal')) {
+          $(".modal").hide();
+        }
+      });
+      $(".close").click(function () {
+        $(".modal").hide();
+      });
+
+
+
+    });
+  </script>
+
+</body>
+
+</html>
