@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8"/>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+<title></title>
+</head>
+<body>
+    <h1 align="center">My List Member</h1>
+    <br/>
+    <div style="text-align: center;margin-left : 40%;">
+    
+    <form action="handelException">
+			
+		
+    <table border="1" cellpadding="10">
+        <thead>
+            <tr>
+                <th>Acc</th>
+                <th>Name</th>
+                <th>Role</th>
+                <th>Gender</th>
+                <th>Phone</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="list : ${listMember}">
+                <td th:text="${list.account}"></td>
+                <td th:text="${list.fullName}"></td>
+                <td th:text="${list.role}"></td>
+                <td th:text="${list.gender}"></td>
+                <td th:text="${list.phone}"></td>
+            </tr>
+        </tbody>
+    </table>
+    <div>
+    	<button id="clickMe" style="font-size:24px;">Click Me</button>
+    </div>
+    
+    </form>
+    
+    </div>
+    
+    
+
+
+
+	<script>
+		$(document).ready(function (){
+			$("#clickMe").click(function (){
+				
+				
+			});
+			
+			
+			
+			
+			
+		});
+		
+	
+	</script>
+
+
+
+
+
+
+
+
+</body>
+</html>
