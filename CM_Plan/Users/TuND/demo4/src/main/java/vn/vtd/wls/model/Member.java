@@ -25,6 +25,21 @@ public class Member {
 
 	@Column (name = "phone")
 	private String phone;
+	
+	@Column (name = "passWord")
+	private String passWord;
+	
+	
+
+	public Member(String account, String fullName, String role, String gender, String phone, String passWord) {
+		super();
+		this.account = account;
+		this.fullName = fullName;
+		this.role = role;
+		this.gender = gender;
+		this.phone = phone;
+		this.passWord = passWord;
+	}
 
 	public Member(String account, String fullName, String role, String gender, String phone) {
 		super();
@@ -79,4 +94,13 @@ public class Member {
 		this.phone = phone;
 	}
 
+	public String getPassWord() {
+		return passWord;
+	}
+
+	public void setPassWord(String passWord) {
+		this.passWord = passWord;
+	}
+	
+	
 }

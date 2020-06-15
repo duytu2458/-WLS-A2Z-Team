@@ -7,8 +7,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.servlet.ModelAndView;
 
 import vn.vtd.wls.admin.service.AdminService;
 import vn.vtd.wls.model.Member;
@@ -19,31 +17,50 @@ public class AdminController {
 	@Autowired
 	private AdminService adminServices;
 	
+	@Autowired
+	private Member member;
+	
 	// @ModelAttribute("listMember")
 	// public List<Member> name1() {
 	// 	List<Member> list1 =  adminServices.getListMember();
 	// 	return list1;
-		
 	// }
 	
 	@RequestMapping("/listMember")
 	public String getListMember(Model model) {
-		// name1();
-		List<Member> list1 =  adminServices.getListMember();
-		model.addAttribute("listMember", list1);
-		return "/screenAdmin/WLS-AD02";
+		adminServices.getAdd();
+		List<Member> listAllMembers =  adminServices.getListMember();
+		System.out.println(listAllMembers.size());
+		model.addAttribute("listAllMembers", listAllMembers);
+		model.addAttribute("objMember",new Member());
+		
+		return "WLS-AD02";
+		
 	}
 	
+	@RequestMapping("/list")
+	public String list(Model model) {
+		List<Member> listAllMembers =  adminServices.getListMember();
+		System.out.println(listAllMembers.size());
+		model.addAttribute("listAllMembers", listAllMembers);
+		model.addAttribute("objMember",new Member());
+		
+		return "WLS-AD02";
+	}
 	
-	@RequestMapping("/handelException")
-	public ModelAndView handelException(Model model ) {
+	@RequestMapping("/getSaveMember")
+	public String getSaveMember(@ModelAttribute("objMember") Member member ) {
+
 		
+		System.out.println(member.getAccount());
+		System.out.println(member.getFullName());
+		System.out.println(member.getGender());
+		System.out.println(member.getRole());
+		System.out.println(member.getPhone());
+		System.out.println(member.getPassWord());
 		
-		
-		
-		
-		return null;
-		
+		adminServices.getSaveMember(member);
+		return "redirect:/list";
 	}
 	
 	

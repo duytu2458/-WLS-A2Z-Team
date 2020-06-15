@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:th="http://www.thymeleaf.org">
-
 <head>
 	<meta charset="UTF-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -29,20 +28,13 @@
 	<article class="rowHeader" id="thongTinThoiTiet">
 		<span class="rowHeader-left">06/10/2020 <span class="fa fa-map-marker"></span> Đà Nẵng &#9728; 28
 	&#8451;</span>
-    <!-- <span class="rowHeader-right fas fa-user-cog"> Admin TUND
-      <button type="button" class="btn btn-primary" style="height: 25px;">
-        <i class="fa fa-sign-out" aria-hidden="true" style="font-size: 20px;"></i>
-      </button>
-  </span> -->
+
   <span class="dropdown" style="z-index: 3;float: right;margin-right: 3%;">
   	<button class="btn btn-secondary dropdown-toggle tenMember" type="button" id="dropdownMenuButton"
   	data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
   	<b>Admin TuND</b>
   </button>
-      <!-- <span class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-        <a class="dropdown-item" href="#" style="font-size: 14px;">Log Out</a>
 
-    </span> -->
     <span class="dropdown-menu dropdown-menu-right dropdown-info" aria-labelledby="navbarDropdownMenuLink-4">
     	<a class="dropdown-item" href="#">VN</a>
     	<a class="dropdown-item" href="#">EN</a>
@@ -93,10 +85,6 @@
 						</select>
 					</div>
 
-            <!-- <label for="" class="col-sm-1 col-form-label" style="text-align: center;">Only PM</label>
-            <div class="col-sm-1">
-              <input type="checkbox" class="form-control" id="" style="margin-left: -38%;">
-          </div> -->
           <label for="" class="col-sm-1 col-form-label" style="text-align: center;">Phone</label>
           <div class="col-sm-1.5">
           	<input type="text" class="form-control" id="" style="margin-left: 0px" >
@@ -125,102 +113,17 @@
 		</thead>
 		<tbody>
 
-			<tr>
-				<td id="1" style="text-align: center;">1</td>
-				<td id="account1">TuND</td>
-				<td id="fullName1">Nguyen Duy Tu</td>
-				<td id="role1">PM</td>
-				<td id="gender1">Male</td>
-				<td id="phoneNumber1" style="text-align: center;">0344109790</td>
+			<tr th:each="list,i : ${listAllMembers}">
+				<td th:id=${i.count} id="" style="text-align: center;" th:text="${i.count}" ></td>
+				<td th:id="account+${i.count}" id="" th:text="${list.account}"></td>
+				<td th:id="fullName+${i.count}" id="" th:text="${list.fullName}"></td>
+				<td th:id="role+${i.count}" id="" th:text="${list.role}"></td>
+				<td th:id="gender+${i.count}" id="" th:text="${list.gender}"></td>
+				<td th:id="phoneNumber+${i.count}" id="" style="text-align: center;" th:text="${list.phone}"></td>
 				<td><button type="button" class="btn btn-outline-danger editMember"
 					style="width: 80px;float: right;">Edit</button>
 				</td>
 			</tr>
-
-			<tr>
-				<td id="2" style="text-align: center;">2</td>
-				<td id="account2">Tasdasd</td>
-				<td id="fullName2">Nasdad</td>
-				<td id="role2"></td>
-				<td id="gender2">Female</td>
-				<td id="phoneNumber2" style="text-align: center;">0344109790</td>
-				<td><button type="button" class="btn btn-outline-danger editMember"
-					style="width: 80px;float: right;">Edit</button>
-				</td>
-			</tr>
-			<!-- <tr>
-				<td id="1" style="text-align: center;">3</td>
-				<td id="account1">TuND1</td>
-				<td id="fullName1">Nguyen Duy Tu</td>
-				<td id="role1">PM</td>
-				<td id="gender1">Male</td>
-				<td id="phoneNumber1" style="text-align: center;">0344109790</td>
-				<td><button type="button" class="btn btn-outline-danger editMember"
-					style="width: 80px;float: right;">Edit</button>
-				</td>
-			</tr>
-
-			<tr>
-				<td id="2" style="text-align: center;">4</td>
-				<td id="account2">Tasdasd1</td>
-				<td id="fullName2">Nasdad</td>
-				<td id="role2"></td>
-				<td id="gender2">Female</td>
-				<td id="phoneNumber2" style="text-align: center;">0344109790</td>
-				<td><button type="button" class="btn btn-outline-danger editMember"
-					style="width: 80px;float: right;">Edit</button>
-				</td>
-			</tr>
-			<tr>
-				<td id="1" style="text-align: center;">5</td>
-				<td id="account1">TuND2</td>
-				<td id="fullName1">Nguyen Duy Tu</td>
-				<td id="role1">PM</td>
-				<td id="gender1">Male</td>
-				<td id="phoneNumber1" style="text-align: center;">0344109790</td>
-				<td><button type="button" class="btn btn-outline-danger editMember"
-					style="width: 80px;float: right;">Edit</button>
-				</td>
-			</tr>
-
-			<tr>
-				<td id="2" style="text-align: center;">6</td>
-				<td id="account2">Tasdasd2</td>
-				<td id="fullName2">Nasdad</td>
-				<td id="role2"></td>
-				<td id="gender2">Female</td>
-				<td id="phoneNumber2" style="text-align: center;">0344109790</td>
-				<td><button type="button" class="btn btn-outline-danger editMember"
-					style="width: 80px;float: right;">Edit</button>
-				</td>
-			</tr>
-			<tr>
-				<td id="1" style="text-align: center;">7</td>
-				<td id="account1">TuND3</td>
-				<td id="fullName1">Nguyen Duy Tu</td>
-				<td id="role1">PM</td>
-				<td id="gender1">Male</td>
-				<td id="phoneNumber1" style="text-align: center;">0344109790</td>
-				<td><button type="button" class="btn btn-outline-danger editMember"
-					style="width: 80px;float: right;">Edit</button>
-				</td>
-			</tr>
-
-			<tr>
-				<td id="2" style="text-align: center;">8</td>
-				<td id="account2">Tasdasd3</td>
-				<td id="fullName2">Nasdad</td>
-				<td id="role2"></td>
-				<td id="gender2">Female</td>
-				<td id="phoneNumber2" style="text-align: center;">0344109790</td>
-				<td><button type="button" class="btn btn-outline-danger editMember"
-					style="width: 80px;float: right;">Edit</button>
-				</td>
-			</tr> -->
-			
-			
-			
-
 
 
 
@@ -273,70 +176,76 @@
 </div>
 </article>
 
-<form action="" id="popup">
+<form id="popup" action="" th:action="@{/getSaveMember}" th:object="${objMember}" method = "post">
 
 <div class="modal" >
 	<div class="stylePopup">
 		<!-- <p class="close styleClose" style="border-radius: 5px;">&times;</p> -->
-		<p style="margin-left: 40%;margin-top: 2%;"> Edit Member <span id = "popupTitle"></span></p>
+		<div style="font-size:18px;">
+			<p style="margin-left: 40%;margin-top: 2%;"> Edit Member <span id = "popupTitle"></span></p>
+		</div>
 		<div style="background-color: white;width: 90%; height: 77%;margin-left: 5%;margin-top: 4%;">
 			<div class="form-group row">
 				<label for="" class="col-sm-3 col-form-label">Account</label>
 				<div class="col-sm-9">
-					<input type="text" class="form-control" id="popupAccount" placeholder="Account">
+					<input type="text" class="form-control" id="popupAccount" placeholder="Account"
+						th:field="*{account}" >
 				</div>
 			</div>
 			<div class="form-group row">
 				<label for="" class="col-sm-3 col-form-label">Full Name</label>
 				<div class="col-sm-9">
-					<input type="text" class="form-control" id="popupFullName" placeholder="FullName">
+					<input type="text" class="form-control" id="popupFullName" placeholder="FullName"
+						th:field="*{fullName}" >
 				</div>
 			</div>
 			<div class="form-group row">
 				<label for="" class="col-sm-3 col-form-label">Gender</label>
 				<div class="col-sm-9">
-					<select name="" id="" class="form-control">
-						<option class="optionGender" value="" >Male</option>
-						<option class="optionGender" value="" >Female</option>
+					<select name="" id="" class="form-control"
+						th:field="*{gender}" >
+						<option class="optionGender" value="" th:value = "Male">Male</option>
+						<option class="optionGender" value="" th:value = "Female">Female</option>
 					</select>
 				</div>
 			</div>
 			<div class="form-group row">
 				<label for="" class="col-sm-3 col-form-label">Role</label>
 				<div class="col-sm-9">
-					<select name="" id="" class="form-control">
-						<option class="optionRole" value=""></option>
-						<option class="optionRole" value="">PM</option>
+					<select name="" id="" class="form-control"
+						th:field="*{role}">
+						<option class="optionRole" th:value = "${objMember.role}" value=""></option>
+						<option class="optionRole" th:value = "PM" value="">PM</option>
 					</select>
 				</div>
 			</div>
 			<div class="form-group row">
 				<label for="" class="col-sm-3 col-form-label">Phone</label>
 				<div class="col-sm-9">
-					<input type="text" class="form-control" id="popupPhone" placeholder="Phone">
+					<input type="text" class="form-control" id="popupPhone" placeholder="Phone"
+						th:field="*{phone}">
 				</div>
 			</div>
 			<div class="form-group row">
 				<label for="" class="col-sm-3 col-form-label">Password</label>
-				<div class="col-sm-6">
-					<input type="password" class="form-control" id="popupPassword" placeholder="Password" readonly>
+				<div id = "stylePassWord" class="col-sm-6">
+					<input type="password" class="form-control" id="popupPassword" placeholder="Password" readonly
+						th:field="*{passWord}">
 				</div>
 				<div class="col-sm-2">
 					<button id="clickChangePassword" type="button" class="btn btn-outline-danger changePassword" style="width: 90px;">
 						Change</button>
 				</div>
 			</div>
-			<p style="text-align: center;">Đây là dòng lỗi!</p>
+			<p style="text-align: center;">Đây là dòng lỗi!</p>	
 		</div>
 		<div style="text-align: center;margin-top: 1%;">
 			&#160;
-			<button id="clickReset" type="button" class="btn btn-danger" style="width: 120px;">
+			<button id="clickCancel" type="submit" class="btn btn-danger" style="width: 120px;">
 			Cancel</button>
+			
 			&#160;&#160;&#160;
-			<button id="clickResetasd" type="button" class="btn btn-warning" style="width: 120px;">
-			Reset</button>
-			&#160;&#160;&#160;
-			<button type="button" class="btn btn-success" style="width: 120px;">
+			<button id="clickUpdate" type="submit" class="btn btn-success" style="width: 120px;">
 			Update</button>
 		</div>
 
@@ -351,50 +260,69 @@
 
 <script>
 	$(document).ready(function () {
-      //$("#play").trigger("play");
+		var A = null;
+		
+		$("#clickUpdate").click(function (){
+			$(".modal").hide();
+			alert("Updated !!!");
+			
+		});
+				
 
 		
 		$("#clickChangePassword").click(function (){
 			$("#popupPassword").prop("readOnly",false);
 		});
 
-		// $("#clickReset").click(function (){
-		// 	$("#popup").trigger("reset");
-		// });
+		
+	
 
       $(".editMember").click(function () {
+    	A = $(this).index(".editMember") + 1;
+    	
 		var indexRowClick = $(this).index(".editMember") + 1;
 		var colAccount = "#account" + indexRowClick;
 		var colFullName = "#fullName" + indexRowClick;
 		var colRole = "#role" + indexRowClick;
 		var colGender = "#gender" + indexRowClick;
 		var colPhone = "#phoneNumber" + indexRowClick;
+		
+		if ($(this).text() == "Create"){
+    		$("#popupPassword").prop("readOnly",false);
+    		$("#clickChangePassword").prop("disabled",true);
+    		$("#popupAccount").prop("disabled",false);
+    	} else {
+    		$("#popupAccount").prop("readOnly",true);
+    		$("#clickChangePassword").prop("disabled",false);
+    	}
 
 		$("#popupAccount").val($(colAccount).text())
 		$("#popupTitle").text($(colAccount).text())
-
 		$("#popupFullName").val($(colFullName).text())
-
 		$(".optionRole").each(function(){
 			if($(this).text()==$(colRole).text()){
 				$(this).prop("selected",true);
 			}
 		});
-		
 		$(".optionGender").each(function(){
 			if($(this).text()== $(colGender).text()){
 				$(this).prop("selected",true);
 			}
 		});
-
 		$("#popupPhone").val($(colPhone).text())
-		
 		$("#popupPassword").val("1236512635")
 
 
 
       	$(".modal").show();
       });
+      
+      
+      $("#clickCancel").click(function (){
+			$(".modal").hide();
+			$("#popupPassword").prop("readOnly",true);
+		});
+      
       $(".editMember").mouseenter(function () {
       	$(this).css("cursor", "pointer");
       });
