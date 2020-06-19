@@ -1,0 +1,97 @@
+.rowHeader{
+    height: 4%;   width: 100%;
+    background-color: rgb(236, 56, 86);
+    border: 1px solid rgb(236, 56, 86);
+    position: fixed;    top: 0px;
+    z-index: 2;
+}
+
+.header{
+    top: 4%;
+    padding-top: 15px;  position: fixed;
+    height: 8%;   width: 100%;
+    background-color: white;    border: 1px solid white;
+}
+
+.logoHotel{
+    top: 28px;   left: 120px;    position: fixed;
+    height: 70px;   width: 140px;
+}
+
+.rowHeader-left{
+    margin-left: 5%;    color: white;
+}
+.rowHeader-right{
+    margin-right: 5%;
+    float: right;   margin-top: 4px;
+    font-style:initial;     color: white;
+}
+
+
+
+
+/* ==================== */
+.footer{
+    background-color: rgb(236, 56, 86);
+    border: 1px solid rgb(236, 56, 86) ;
+    margin-top: 10px;   margin-bottom: 0px;
+    height: 35px;
+}
+.infoTeam{
+    float: right;
+    margin-right: 5%;
+    color: white;
+    font-size: 20px;
+    margin-bottom: 0px;
+}
+
+
+/* ==================== */
+.contentWeb{
+    margin-top: 100px;
+    width: 100%;
+}
+
+/* ================================== */
+
+
+
+/* ================================================= */
+
+.tableFixWidth{
+    /* table-layout: fixed;width: 10px; */
+    table-layout: fixed;
+
+}
+
+.tenMember{
+    /* style="font-size: 15px;padding: 0px;background-color:  rgb(236, 56, 86);border-color: rgb(236, 56, 86);" */
+    font-size: 16px;
+    padding: 0px;
+    background-color: rgb(236, 56, 86);
+    border-color: rgb(236, 56, 86);
+    
+}
+
+.stylePopup{
+    top: 18%;
+    right: 35%;
+    position: fixed;
+    border-radius: 10px;
+    border: 2px solid rgb(126, 190, 228) ;
+    width: 30%;
+    height: 55%;
+    background-color: white;
+    overflow: auto;
+}
+
+/* rgb(126, 190, 228) */
+.styleClose{
+    text-align: center;
+    width: 5%;
+    height: 6%;
+    background-color: red;
+    margin-top: 1.5%;
+    margin-right: 1.5%;
+
+}
