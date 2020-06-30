@@ -11,4 +11,8 @@ public interface IUserService {
 
 	void save(UserEntity userEntity);
 
+	default void test() {
+		// Co the trien khai duoc ham trong nay (tu java 8 tro di)
+	}
+	
 }
