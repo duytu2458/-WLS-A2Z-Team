@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Document</title>
+<title th:utext="#{label.home}"></title>
 
 
 <link rel="stylesheet"
@@ -20,7 +20,7 @@
 <link rel="stylesheet" href="css/bootstrap.min.css" th:href="@{/css/bootstrap.min.css}">
 <link rel="stylesheet" href="css/style.css" th:href="@{/css/style.css}">
 <link rel="stylesheet" href="css/font-awesome.min.css" th:href="@{/css/font-awesome.min.css}">
-<script src="js/jquery-1.11.1.min.js" th:src="@{/js/jquery-1.11.1.min.js}"></script>
+<script src="js/jquery-3.3.1.min.js" th:src="@{/js/jquery-3.3.1.min.js}"></script>
 
 <link rel="stylesheet" href="cssviews/admin/WLS-AD01.css" th:href="@{/cssviews/admin/WLS-AD01.css}">
 
@@ -34,6 +34,8 @@
 			<!--Navbar -->
 			<nav class="mb-1 navbar navbar-expand-md navbar-dark styleHeader1">
 				<div class="collapse navbar-collapse" id="">
+					<span class="rowHeader-left" style="margin-left :7%;color: white;">06/10/2020  &#9728; 28 &#8451; 
+						<span class="fa fa-map-marker"></span> Đà Nẵng</span>
 					<ul class="navbar-nav ml-auto">
 						<li class="nav-item dropdown"><a
 							class="nav-link dropdown-toggle" id="" data-toggle="dropdown"
@@ -43,7 +45,9 @@
 							<div class="dropdown-menu dropdown-menu-right dropdown-info"
 								aria-labelledby="navbarDropdownMenuLink-4"
 								style="margin-top: -8%;">
-								<a class="dropdown-item styleLogout" href="#">Log out</a>
+								<a class="dropdown-item styleLogout" href="#" th:utext="#{label.vn}"></a>
+								<a class="dropdown-item styleLogout" href="#" th:utext="#{label.en}"></a>
+								<a class="dropdown-item styleLogout" href="#" th:utext="#{label.logOut}"></a>
 							</div></li>
 					</ul>
 				</div>
@@ -54,7 +58,7 @@
 
 
 					<ul class="nav nav-pills">
-						<li class="nav-item"><a class="nav-link active" href="#">Home</a>
+						<li class="nav-item"><a class="nav-link active" href="#" th:utext="#{label.home}" ></a>
 						</li>
 
 					</ul>
@@ -69,16 +73,17 @@
 
 		<main class="container-fluid text-center styleContainer">
 			<div class="styleButtonManage1">
-				<form action="/admin/manage-members">
-					<input class="form-control styleButtonManage2" type="submit"
-						value="Management Members">
+				<form action="" th:action="@{__${#httpServletRequest.requestURI}__/manage-users}" method="GET">
+					<input class="form-control styleButtonManage2" type="submit" style="width:300px;"
+						th:value="#{label.managementUsers}">
 				</form>
 			</div>
-
+					<!-- ${pageContext.request.contextPath} -->	
 			<div class="styleButtonManage1">
-				<form action="#">
-					<input class="form-control styleButtonManage2" type="submit"
-						value="Management Members">
+				<form action="" th:action="@{__${#httpServletRequest.requestURI}__/manage-users}">
+					<input class="form-control styleButtonManage2" type="submit" style="width:300px;"
+						th:value="#{label.managementProjects}">
+						
 				</form>
 			</div>
 		</main>

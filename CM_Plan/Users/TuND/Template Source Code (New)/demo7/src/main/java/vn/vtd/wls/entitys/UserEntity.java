@@ -7,6 +7,8 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Size;
 
 import org.springframework.stereotype.Component;
 
@@ -17,7 +19,7 @@ import vn.vtd.wls.entitys.base.UserBaseEntity;
 @Table(name = "user_entity")
 @Component
 public class UserEntity extends UserBaseEntity{
-
+	
 	@Column(name = "is_pm")
 	private boolean pm;
 	
