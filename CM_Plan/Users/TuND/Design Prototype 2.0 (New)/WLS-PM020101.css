@@ -1,0 +1,176 @@
+@import "/cssviews/frameWeb.css";
+
+
+
+.styleOption{
+    flex-shrink: 0;
+    /* style="margin-left: 8%; margin-right: 8%;" */
+    margin-left: 8%; margin-right: 8%;
+}
+
+.styleSearch{
+    /* style="margin-left: 5%;margin-right: 5%;margin-top: 1%;" */
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 1.5%;
+}
+
+.styleSearch2{
+    /* style="border: 2px solid ;border-radius: 8px;" */
+    border: 2px solid rgb(42, 136, 42);
+    border-radius: 8px;
+}
+
+
+
+
+.styleSearch3{
+    /* style="margin-top: 1%;text-align:center;"
+     */
+     margin-top: 1%; text-align: center; margin-bottom: 0%;
+}
+
+.styleTable1{
+    /* style="color:white; background-color:#28A745;text-align: start;" */
+    color: white;background-color: #28A745; text-align: start;
+
+}
+
+.styleTextColGi{
+    text-align: center;
+}
+
+.styleTextColTr{
+    text-align: left;
+}
+.styleInputPage{
+	/* style="width: 30%;display: inline-block;font-size:17px; border:1px solid rgb(0, 119, 255);font-weight: 800; */
+	width: 15%;display: inline-block;
+	font-size:17px; border:1px solid rgb(0, 119, 255);
+	font-weight: 800;
+}
+
+ .styleButtonBack{
+    /* style="width: 120px; float: right; margin-right: 10%;" */
+    width: 100%; margin-right: 0%;margin-top:5px;
+}
+
+.styleButtonReset{
+    /* style="width: 120px; float: right; margin-right: 10%;" */
+    width: 100%;  margin-right: -5%;margin-top:5px;
+}
+
+.styleInfoPage{
+    /* style="font-size: 19px;color: rgb(28, 95, 196);padding-top: 3%;text-align: center;" */
+    font-size: 18px; color: rgb(28, 95, 196) ; padding-top: 2%; text-align:  center;display: inline-block;
+    margin-left : -40%;
+}
+
+.styleCreate{
+	width: 105%; margin-right: 0%;margin-top:5px;
+	
+}
+
+.styleBtnGo{
+	display: inline-block;
+	margin-top:-1px;
+}
+
+.styleCheckBox{
+    /* input[type=checkbox] {
+        transform: scale(1.5);
+    } */
+    transform: scale(2.0);
+}
+
+.styleBtnClear{
+
+    /* style="width: 100%;" */
+    width: 100%;
+}
+
+.styleBtnSearch{
+    width: 100%;
+    /* style="width: 100%;" */
+}
+
+.styleCheckBox{
+    float: right; margin-right: 10%; margin-bottom: 4%;
+    /* style="float:right;margin-right: 10%;margin-bottom: 4%;" */
+}
+
+.styleTableBtnUpdate{
+    width: 45%; float: right;
+    /* style="width: 45%;float: right;" */
+}
+
+.styleTableBtnRemove{
+    /* style="width: 45%;float: left;" */
+    width: 45%; float: left;
+}
+.styleModalRemove1{
+    padding-left: 30%;font-size: 19px;
+    /* style="padding-left: 35%; font-size: 19px;" */
+}
+.styleModalUpdateRole1{
+    /* style="margin-top: 5%; margin-left: -8%;" */
+    margin-top: 5%;margin-left: -1%;
+}
+
+.styleModalUpdateRole2{
+    /* style="border-color: rgb(0, 247, 255); width: 120%;" */
+    border-color: rgb(0, 247, 255); width: 120%;
+}
+
+.styleModalUpdateRole3{
+    padding-left: 35%; font-size: 19px;
+    /* style="padding-left: 35%; font-size: 19px;" */
+}
+.styleModalUpdateRole4{
+    width: 20%;
+    /* style="width: 20%;" */
+}
+
+
+
+.styleModalAdd1{
+    /* style="margin-top: 5%; margin-left: -6%;" */
+    margin-top: 5%; margin-left: -6%;
+}
+.styleModalAdd2{
+    /* style="border-color: rgb(0, 247, 255); width: 120%;" */
+    border-color: rgb(0, 247, 255) ; width: 120%;
+}
+.styleModalAdd3{
+    padding-left: 37%; font-size: 19px;
+    /* style="padding-left: 37%; font-size: 19px;" */
+
+}
+.styleModalAdd4{
+    /* style="background-color: white;width: 90%; height: 77%;margin-left: 5%;margin-top: 2%;" */
+    background-color: white; width: 90%; height: 77%; margin-left: 5%;margin-top: 2%;
+
+}
+.styleModalAdd5{
+    /* style="width: 67%;text-align: center;" */
+    width: 67%;text-align: center;
+
+}
+
+.styleModalCreate1{
+    /* style="margin-top: 10%; margin-left: -4%;" */
+    margin-top: 10%;margin-left: -4%;
+}
+.styleModalCreate2{
+    /* style="border-color: rgb(0, 247, 255); width: 111%;" */
+    border-color: rgb(0, 247, 255) ; width: 111%;
+   
+}
+.styleModalCreate3{
+    /* style="padding-left: 40%; font-size: 19px;" */
+    padding-left: 40%; font-size: 19px;
+}
+.styleModalCreate4{
+    /* style="background-color: white;width: 90%; height: 77%;margin-left: 5%;margin-top: 4%;text-align: left;" */
+    background-color: white; width: 90%; height: 77%; margin-left: 5%; margin-top: 4%;text-align: left;
+}

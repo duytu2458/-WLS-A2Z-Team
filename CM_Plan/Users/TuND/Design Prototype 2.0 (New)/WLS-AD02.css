@@ -1,0 +1,36 @@
+@import "/cssviews/frameWeb.css";
+
+
+
+.asd{
+    flex-shrink: 0;
+}
+
+.styleSearch{
+    /* style="margin-left: 5%;margin-right: 5%;margin-top: 1%;" */
+    margin-left: 8%;
+    margin-right: 8%;
+    margin-top: 2%;
+}
+
+.styleSearch2{
+    /* style="border: 2px solid ;border-radius: 8px;" */
+    border: 2px solid rgb(42, 136, 42);
+    border-radius: 8px;
+}
+
+.styleSearch3{
+    /* style="margin-top: 1%;text-align:center;"
+     */
+     margin-top: 1%; text-align: center;
+}
+
+.styleTable1{
+    /* style="color:white; background-color:#28A745;text-align: start;" */
+    color: white;background-color: #28A745; text-align: start;
+
+}
+
+.styleTextCol1{
+    text-align: left;
+}
