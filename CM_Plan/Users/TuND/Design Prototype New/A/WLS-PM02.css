@@ -1,0 +1,89 @@
+@import "/cssviews/frameWeb.css";
+
+
+.styleOption{
+    flex-shrink: 0;
+    /* style="margin-left: 8%; margin-right: 8%;" */
+    margin-left: 8%; margin-right: 8%;
+}
+
+.styleSearch{
+    /* style="margin-left: 5%;margin-right: 5%;margin-top: 1%;" */
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 1.5%;
+}
+
+.styleSearch2{
+    /* style="border: 2px solid ;border-radius: 8px;" */
+    border: 2px solid rgb(42, 136, 42);
+    border-radius: 8px;
+}
+
+
+
+
+.styleSearch3{
+    /* style="margin-top: 1%;text-align:center;"
+     */
+     margin-top: 1%; text-align: center; margin-bottom: 0px;
+}
+
+.styleTable1{
+    /* style="color:white; background-color:#28A745;text-align: start;" */
+    color: white;background-color: #28A745; text-align: start;
+
+}
+
+.styleTextColTr{
+    text-align: left;
+}
+
+.styleTextColGi{
+    text-align: center;
+}
+.styleInputPage{
+	/* style="width: 30%;display: inline-block;font-size:17px; border:1px solid rgb(0, 119, 255);font-weight: 800; */
+	width: 15%;display: inline-block;
+	font-size:17px; border:1px solid rgb(0, 119, 255);
+	font-weight: 800;
+}
+
+.styleButtonBack{
+    /* style="width: 120px; float: right; margin-right: 10%;" */
+    width: 100%;
+}
+
+
+
+
+.styleBtnGo{
+	display: inline-block;
+	margin-top:-1px;
+}
+
+
+
+.styleModalCreate1{
+    /* style="margin-top: 10%; margin-left: -4%;" */
+    margin-top: 10%;margin-left: -4%;
+}
+.styleModalCreate2{
+    /* style="border-color: rgb(0, 247, 255); width: 111%;" */
+    border-color: rgb(0, 247, 255) ; width: 111%;
+   
+}
+.styleModalCreate3{
+    /* style="padding-left: 40%; font-size: 19px;" */
+    padding-left: 40%; font-size: 19px;
+}
+.styleModalCreate4{
+    /* style="background-color: white;width: 90%; height: 77%;margin-left: 5%;margin-top: 4%;text-align: left;" */
+    background-color: white; width: 90%; height: 77%; margin-left: 5%; margin-top: 4%;text-align: left;
+}
+
+.styleInfoPage{
+    /* style="font-size: 19px;color: rgb(28, 95, 196);padding-top: 3%;text-align: center;" */
+    font-size: 18px; color: rgb(28, 95, 196) ; padding-top: 2%; text-align:  center;display: inline-block;
+    margin-left : -40%;
+}

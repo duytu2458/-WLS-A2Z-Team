@@ -1,0 +1,1049 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title th:utext="#{label.managementUsers}">PM Click My Projects</title>
+
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" rel="stylesheet">
+	<script src="js/jquery.min.js" th:src="@{/js/jquery.min.js}"></script>
+	<script src="js/popper.min.js" th:src="@{/js/popper.min.js}"></script>
+	<script src="js/bootstrap.min.js" th:src="@{/js/bootstrap.min.js}"></script>
+	<script src="js/jquery.twbsPagination.min.js" th:src="@{/js/jquery.twbsPagination.min.js}"></script>
+
+	<link rel="stylesheet" href="/css/bootstrap.min.css" th:href="@{/css/bootstrap.min.css}">
+	<link rel="stylesheet" href="/css/style.css" th:href="@{/css/style.css}">
+
+	<link rel="stylesheet" href="/css/font-awesome.min.css" th:href="@{/css/font-awesome.min.css}">
+
+
+
+
+	<script src="/js/jquery-3.3.1.min.js" th:src="@{/js/jquery-3.3.1.min.js}"></script>
+
+	<link rel="stylesheet" href="WLS-PM0201.css" th:href="@{/cssviews/admin/ManageMembers/WLS-AD02.css}">
+
+	<script src="/js/jquery.twbsPagination.js" type="text/javascript" th:src="@{/js/jquery.twbsPagination.js}"></script>
+
+	<!-- <link rel="stylesheet" href="cssviews/admin/WLS-AD01.css" th:href="@{/cssviews/admin/WLS-AD01.css}"> -->
+	<!-- <script src="https://code.highcharts.com"></script> -->
+	<script src="Chart.js/Chart.js"></script>
+
+</head>
+<style>
+</style>
+
+<body>
+	<article>
+		<header>
+			<!--Navbar -->
+			<nav class="mb-1 navbar navbar-expand-md navbar-dark styleHeader1">
+				<div class="collapse navbar-collapse" id="">
+					<span class="rowHeader-left" style="margin-left: 7%; color: white;">06/10/2020
+						&#9728; 28 &#8451; <span class="fa fa-map-marker"></span> Đà Nẵng
+					</span>
+
+
+					<ul class="navbar-nav ml-auto">
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" id="" data-toggle="dropdown" aria-haspopup="true"
+								aria-expanded="false" style="font-size: 19px;">Notification
+							</a>
+							<div class="dropdown-menu dropdown-menu-right dropdown-info"
+								aria-labelledby="navbarDropdownMenuLink-4" style="margin-top: -8%;">
+								<a class="dropdown-item styleLogout" href="">You miss a log work 01/08/2020</a>
+								<a class="dropdown-item styleLogout" href="">You have 5 feed back log work WLS
+									projects</a>
+							</div>
+						</li>
+
+						<li class="nav-item dropdown"><a class="nav-link dropdown-toggle" id="" data-toggle="dropdown"
+								aria-haspopup="true" aria-expanded="false"> <i class="fas fa-user"></i> TuND (PM)
+							</a>
+							<div class="dropdown-menu dropdown-menu-right dropdown-info"
+								aria-labelledby="navbarDropdownMenuLink-4" style="margin-top: -8%;">
+								<a class="dropdown-item styleLogout" href="/vi/admin/manage-users">VI</a> <a
+									class="dropdown-item styleLogout" href="/en/admin/manage-users">EN</a> <a
+									class="dropdown-item styleLogout" href="#">Log Out</a>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</nav>
+			<nav class="mb-1 navbar navbar-expand-sm navbar-dark bg-light styleHeader2">
+				<div class="collapse navbar-collapse" id="">
+					<ul class="nav nav-pills">
+						<li class="nav-item"><a class="nav-link" href="" id="clickHome" th:href="@{/}">Home</a>
+						</li>
+						<li class="nav-item"><a class="nav-link active" href="" id="clickHome" th:href="@{/}">My
+								Projects</a>
+						</li>
+					</ul>
+				</div>
+			</nav>
+		</header>
+
+		<main class="container-fluid text-center styleContainer">
+
+			<div class="styleSearch">
+				<form id="formGetData" action="" method="get">
+					<div class="row" style="margin: 0px">
+						<div class="col-sm-12 ">
+							<div class="form-group row">
+								<div class="col-sm-9">
+									<div class="styleSearch2" style="height: 100%;">
+										<div class="styleSearch9" style="height: 100%;">
+											<div class="form-group row">
+												<label for="" class="col-sm-2 col-form-label"
+													style="font-weight: 800;text-align: center;color: blueviolet;font-size: 20px;">STATISTICAL</label>
+												<div class="col-sm-2">
+													<form action="">
+														<input type="submit" class="btn btn-outline-success"
+															value="PROJECTS" style="width: 100%;" />
+													</form>
+												</div>
+												<div class="col-sm-2">
+													<form action="">
+														<input type="submit" class="btn btn-outline-success"
+															value="PRODUCTS" style="width: 100%;" />
+													</form>
+												</div>
+												<div class="col-sm-2">
+													<form action="">
+														<input type="submit" class="btn btn-outline-success"
+															value="TEAM SIZE" style="width: 100%;" />
+													</form>
+												</div>
+												<div class="col-sm-2">
+													<form action="">
+														<select name="" id="" class="form-control btn-outline-success"
+															style="text-align: center;width: 100%;">
+															<option class="form-control" value="">LOG WORKS</option>
+															<option class="form-control" value="">ROLE</option>
+															<option class="form-control" value="">MEMBER</option>
+														</select>
+													</form>
+												</div>
+												<div class="col-sm-2">
+													<form action="">
+														<input type="submit" class="btn btn-outline-success"
+															value="CLEAR" style="width: 100%;" />
+													</form>
+												</div>
+											</div>
+											<hr>
+
+											<!-- Thong ke Projects -->
+											<div style="height: 100%;"> <br>
+												<div class="form-group row">
+													<div class="col-sm-1"></div>
+													<div class="col-sm-5">
+														<canvas id="doughnutChart1"></canvas>
+														<p style="text-align: center;font-size: 20px;"><b><i>
+																	Log Works : 2410 Hours </i></b></p>
+													</div>
+													<div class="col-sm-1"></div>
+													<div class="col-sm-5" style="font-size: 18px;margin-left: -5%;">
+														<br>
+														<p
+															style="font-size: 22px;text-align: center;color: blueviolet;">
+															<b><u>Project : WLS </u>
+															</b></p>
+														<ol>
+															<b>
+																<li>Sum Working Date : 152 Days</li>
+															</b>
+														</ol>
+													</div>
+												</div>
+												<div class="form-group row">
+													<div class="col-sm-1"></div>
+													<div class="col-sm-5">
+														<canvas id="doughnutChart6"></canvas>
+														<p style="text-align: center;font-size: 20px;"><b><i>
+																	Team Size : 410 Members</i></b></p>
+													</div>
+													<div class="col-sm-5">
+														<canvas id="doughnutChart7"></canvas>
+														<p style="text-align: center;font-size: 20px;"><b><i>
+																	Products : 12 Products</i></b></p>
+													</div>
+												</div>
+											</div>
+
+											<!-- Thong ke Products -->
+											<div style="height: 80%;" hidden>
+												<div class="form-group row">
+													<div class="col-sm-5">
+														<canvas id="doughnutChart8"></canvas>
+													</div>
+													<div class="col-sm-7" style="font-size: 18px;">
+														<br>
+														<p
+															style="font-size: 22px;text-align: center;color: blueviolet;">
+															<b><u>Project : WLS </u>
+															</b></p>
+														<p style="font-size: 20px;"><b><i>Now : 12 Products</i></b></p>
+
+														<div class="form-group row">
+															<div class="col-sm-3">
+																<form action="">
+																	<button id="clickSearch" type="submit"
+																		class="btn btn-outline-success active"
+																		style="width: 100%;">All</button>
+																</form>
+															</div>
+															<div class="col-sm-3">
+																<form action="">
+																	<button id="clickSearch" type="submit"
+																		class="btn btn-outline-danger"
+																		style="width: 100%;">Open</button>
+																</form>
+															</div>
+															<div class="col-sm-3">
+																<form action="">
+																	<button id="clickSearch" type="submit"
+																		class="btn btn-outline-info"
+																		style="width: 100%;">Update</button>
+																</form>
+															</div>
+
+														</div>
+													</div>
+												</div>
+												<div>
+													<div style="width: 90%;float: left; margin-left: 5%;">
+														<canvas id="lineChart2"></canvas>
+													</div>
+
+												</div>
+											</div>
+
+											<!-- Thong ke type work - ROLE -->
+											<div style="height: 100%;" hidden>
+												<div class="form-group row">
+													<div class="col-sm-4" style="text-align: right;margin-left: 0%;">
+														<br><br>
+														<p style="font-size: 19px;"><b>+ Work Date : 125 Days</b></p>
+														<p style="font-size: 19px;"><b>+ Work Time : 2408 Hours</b></p>
+													</div>
+													<div class="col-sm-5" style="margin-left: -4%;">
+														<canvas id="doughnutChart1"></canvas>
+														<p style="text-align: center;font-size: 20px;"><b><i>
+																	Project : WLS </i></b></p>
+													</div>
+													<div class="col-sm-2" style="font-size: 18px;margin-left: -5%;">
+														<br><br>
+														<p style="font-size: 19px;"><b>+ TEAM SIZE : 4</b></p>
+														<ol>
+															<b>
+																<li>TL : 15%</li>
+															</b>
+															<b>
+																<li>PTL : 25%</li>
+															</b>
+															<b>
+																<li>DEV : 45%</li>
+															</b>
+															<b>
+																<li>TEST : 15%</li>
+															</b>
+														</ol>
+													</div>
+												</div>
+												<div class="form-group row">
+													<div class="col-sm-1"></div>
+													<div class="col-sm-5">
+														<canvas id="doughnutChart2"></canvas>
+														<p style="text-align: center;font-size: 20px;"><b><i>
+																	Team TL : 1024 Hours</i></b></p>
+													</div>
+													<div class="col-sm-5">
+														<canvas id="doughnutChart3"></canvas>
+														<p style="text-align: center;font-size: 20px;"><b><i>
+																	Team PTL : 895 Hours</i></b></p>
+													</div>
+												</div>
+												<div class="form-group row">
+													<div class="col-sm-1"></div>
+													<div class="col-sm-5">
+														<canvas id="doughnutChart4"></canvas>
+														<p style="text-align: center;font-size: 20px;"><b><i>
+																	Team DEV : 2451 Hours</i></b></p>
+													</div>
+													<div class="col-sm-5">
+														<canvas id="doughnutChart5"></canvas>
+														<p style="text-align: center;font-size: 20px;"><b><i>
+																	Team TEST : 687 Hours</i></b></p>
+													</div>
+												</div>
+											</div>
+
+											<!-- Thong ke Log work 1 Members -->
+											<div style="height: 80%;" hidden>
+												<div class="form-group row">
+													<div class="col-sm-5">
+														<canvas id="doughnutChart9"></canvas>
+													</div>
+													<div class="col-sm-3" style="font-size: 18px;">
+														<br>
+														<p
+															style="font-size: 22px;text-align: center;color: blueviolet;">
+															<b><u>Project : WLS </u>
+															</b></p>
+														<p style="font-size: 20px;"><b><i>Member : TuND14</i></b></p>
+														<p style="font-size: 20px;"><b><i>Log works : 521 Hours</i></b>
+														</p>
+														<p style="font-size: 20px;"><b><i>Works Date: 21 Days</i></b>
+														</p>
+														<p style="font-size: 20px;"><b><i>Products : 7 Products</i></b>
+														</p>
+													</div>
+													<div class="col-sm-3" style="font-size: 18px;">
+														<br>
+														<div class="form-group row">
+															<div class="col-sm-7">
+																<input type="text" class="form-control"
+																	placeholder="Enter Account">
+															</div>
+															<div class="col-sm-5">
+																<button class="btn btn-outline-primary"
+																	style="width: 100%;">Search</button>
+															</div>
+														</div>
+														<div class="form-group row">
+															<div class="col-sm-7">
+																<select name="" id="" class="form-control">
+																	<option class="form-control" value="">TuND14
+																	</option>
+																	<option class="form-control" value="">TuND15
+																	</option>
+																	<option class="form-control" value="">TuND16
+																	</option>
+
+																</select>
+															</div>
+															<div class="col-sm-5">
+																<button
+																	class="btn btn-outline-primary">Statistical</button>
+
+															</div>
+
+														</div>
+
+
+													</div>
+												</div>
+												<!-- -->
+												<div>
+													<div style="width: 90%;float: left; margin-left: 5%;">
+														<canvas id="chBar" height="100"></canvas>
+														<div class="form-group row" style="margin-left: 4%;">
+															<div class="col-sm-1"
+																style="background-color: #2eb8b8;height: 20px;">
+															</div>
+															<div class="col-sm-2">
+																<b style="font-size: 18px;">Hours Create</b>
+															</div>
+															<div class="col-sm-1"
+																style="background-color: #FF5A5E;height: 20px;">
+															</div>
+															<div class="col-sm-2">
+																<b style="font-size: 18px;">Hours Edit</b>
+															</div>
+															<div class="col-sm-1"
+																style="background-color: #ffad33;height: 20px;">
+															</div>
+															<div class="col-sm-2">
+																<b style="font-size: 18px;">Hours Test</b>
+															</div>
+															<div class="col-sm-1"
+																style="background-color:  #6c757d;height: 20px;">
+															</div>
+															<div class="col-sm-2">
+																<b style="font-size: 18px;">Days Working</b>
+															</div>
+
+
+														</div>
+													</div>
+												</div>
+											</div>
+
+
+											<!-- Thong ke so luong Members -->
+											<div style="height: 80%;" hidden>
+												<div class="form-group row">
+													<div class="col-sm-5">
+														<canvas id="doughnutChart6"></canvas>
+													</div>
+													<div class="col-sm-7" style="font-size: 18px;">
+														<br>
+														<p
+															style="font-size: 22px;text-align: center;color: blueviolet;">
+															<b><u>Project : WLS </u>
+															</b></p>
+														<p style="font-size: 20px;"><b><i>Now : 2451 Members</i></b></p>
+													</div>
+												</div>
+												<div>
+													<div style="width: 90%;float: left; margin-left: 5%;">
+														<canvas id="lineChart"></canvas>
+													</div>
+
+												</div>
+											</div>
+
+										</div>
+									</div>
+								</div>
+
+								<div class="col-sm-3" style="padding-left: 0px;">
+									<div class="styleSearch2">
+										<div class="styleSearch3">
+											<div class="form-group row">
+												<label for="" class="col-sm-4 col-form-label">ID</label>
+												<div class="col-sm-8">
+													<input type="text" class="form-control" id=""
+														placeholder="Project ID" style="width: 100%;">
+												</div>
+											</div>
+											<div class="form-group row">
+												<label for="" class="col-sm-4 col-form-label">Name</label>
+												<div class="col-sm-8">
+													<input type="text" class="form-control" id=""
+														placeholder="Project Name" style="width: 100%;">
+												</div>
+											</div>
+											<div class="form-group row">
+												<label for="" class="col-sm-4 col-form-label">Start Date</label>
+												<div class="col-sm-8">
+													<input type="date" class="form-control" id="" placeholder=""
+														style="width: 100%;">
+												</div>
+											</div>
+											<div class="form-group row">
+												<label for="" class="col-sm-4 col-form-label">Finish Date</label>
+												<div class="col-sm-8">
+													<input type="date" class="form-control" id="" placeholder=""
+														style="width: 100%;">
+												</div>
+											</div>
+											<div class="form-group row">
+												<label for="" class="col-sm-4 col-form-label">Status</label>
+												<div class="col-sm-8">
+													<select name="" id="" class="form-control">
+														<option class="form-control" value="">ALL</option>
+														<option class="form-control" value="">Open</option>
+														<option class="form-control" value="">Close</option>
+													</select>
+												</div>
+											</div>
+											<div class="form-group row">
+												<label for="" class="col-sm-4 col-form-label">Phase</label>
+												<div class="col-sm-6">
+													<select name="" id="" class="form-control">
+														<option class="form-control" value="">ALL</option>
+														<option class="form-control" value="">Open</option>
+														<option class="form-control" value="">Close</option>
+													</select>
+												</div>
+												<div class="col-sm-1" style="margin-left: -10px;">
+													<button type="button" class="btn btn-outline-danger"
+														data-toggle="modal" data-target="#exampleModalLong4">
+														&#9997;
+													</button>
+												</div>
+											</div>
+											<div class="form-group row">
+												<label for="" class="col-sm-4 col-form-label">Set working date</label>
+												<div class="col-sm-6">
+													<select name="" id="" class="form-control">
+														<option class="form-control" value="">02/08/2020</option>
+														<option class="form-control" value="">03/08/2020</option>
+														<option class="form-control" value="">04/08/2020</option>
+													</select>
+												</div>
+												<div class="col-sm-1" style="margin-left: -10px;">
+													<button type="button" class="btn btn-outline-danger"
+														data-toggle="modal" data-target="#exampleModalLong5">
+														&#9997;
+													</button>
+												</div>
+											</div>
+											<p>Description</p>
+											<div class="form-group row">
+												<div class="col-sm-12">
+													<textarea name="" id="" rows="8"
+														style="resize: none; width: 100%;"></textarea>
+												</div>
+											</div>
+											<div class="form-group row">
+												<div class="col-sm-4">
+													<button id="clickClear" type="reset" class="btn btn-outline-danger"
+														style="width: 100%;">Cancel</button>
+												</div>
+												<div class="col-sm-4">
+													<button id="clickClear" type="reset" class="btn btn-outline-danger"
+														style="width: 100%;">Edit</button>
+												</div>
+
+												<div class="col-sm-4">
+													<button id="clickSearch" type="submit"
+														class="btn btn-outline-success"
+														style="width: 100%;">Update</button>
+												</div>
+											</div>
+											<b style="color: red;font-size: 18px;">Day la dong loi !!!!!!!</b>
+
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+			</div>
+			</form>
+
+			<!-- Modal 5 chinh sua work date -->
+
+			<form id="popup" action="" th:action="@{/}" method="get">
+				<div class="modal fade" id="exampleModalLong5" role="dialog" aria-labelledby="exampleModalLongTitle"
+					aria-hidden="true" style="margin-top: 5%; margin-left: -8%;">
+					<div class="modal-dialog" role="document">
+						<div class="modal-content" style="border-color: rgb(0, 247, 255); width: 120%;">
+							<div class="modal-header">
+								<b class="modal-title" id="exampleModalLongTitle"
+									style="padding-left: 30%; font-size: 19px;">Edit Working Date Project WLS</b>
+								<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+									<span aria-hidden="true">&times;</span>
+								</button>
+							</div>
+							<div id="modalBody" class="modal-body" style="text-align: left;">
+								<div
+									style="background-color: white; width: 90%; height: 77%; margin-left: 5%; margin-top: 4%;">
+									<div class="form-group row">
+										<label for="" class="col-sm-4 col-form-label">Enter Date</label>
+										<div class="col-sm-5">
+											<input type="date" class="form-control" id="popupAccount"
+												placeholder="Account">
+										</div>
+										<div class="col-sm-3">
+											<button type="button" class="btn btn-outline-primary"
+												style="width: 100%;">Add</button>
+										</div>
+									</div>
+									<div class="form-group row">
+										<label for="" class="col-sm-4 col-form-label">List Working Date</label>
+										<div class="col-sm-5">
+											<select name="" id="" class="form-control">
+												<option class="form-control" value="">02/08/2020</option>
+												<option class="form-control" value="">03/08/2020</option>
+												<option class="form-control" value="">04/08/2020</option>
+											</select>
+										</div>
+										<div class="col-sm-3">
+											<button type="button" class="btn btn-outline-danger"
+												style="width: 100%;">Remove</button>
+										</div>
+									</div>
+									<!-- <div class="form-group row">
+										<table class="table table-striped">
+											<thead>
+												<tr class="styleTable1" style="text-align: center;">
+													<th scope="col" class="tableFixWidth styleModalAdd5">
+														Account</th>
+													<th scope="col" class="tableFixWidth" style="width: 20%;"></th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td id="" class="">TuND14</td>
+													<td id="" class="styleTextCol1">
+														<button type="button" class="btn btn-outline-primary"
+															style="width: 100%;">Remove</button>
+													</td>
+												</tr>
+												<tr>
+													<td id="" class="">TuND14</td>
+													<td id="" class="styleTextCol1">
+														<button type="button" class="btn btn-outline-primary"
+															style="width: 100%;">Remove</button>
+													</td>
+												</tr>
+
+											</tbody>
+										</table>
+									</div> -->
+								</div>
+							</div>
+							<div class="modal-footer" style="float: left;">
+								<button id="clickCancel" type="submit" class="btn btn-danger" data-dismiss="modal"
+									style="width: 22%;" th:utext="#{label.cancel}">Close</button>
+								<button id="clickCancel" type="submit" class="btn btn-success" data-dismiss="modal"
+									style="width: 22%;" th:utext="#{label.cancel}">Confirm</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</form>
+
+			<!-- Modal 4 chinh sua Phase -->
+
+			<form id="popup" action="" th:action="@{/}" method="get">
+				<div class="modal fade" id="exampleModalLong4" role="dialog" aria-labelledby="exampleModalLongTitle"
+					aria-hidden="true" style="margin-top: 5%; margin-left: -8%;">
+					<div class="modal-dialog" role="document">
+						<div class="modal-content" style="border-color: rgb(0, 247, 255); width: 120%;">
+							<div class="modal-header">
+								<b class="modal-title" id="exampleModalLongTitle"
+									style="padding-left: 33%; font-size: 19px;">Edit Phase Project WLS</b>
+								<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+									<span aria-hidden="true">&times;</span>
+								</button>
+							</div>
+							<div id="modalBody" class="modal-body" style="text-align: left;">
+								<div
+									style="background-color: white; width: 90%; height: 77%; margin-left: 5%; margin-top: 4%;">
+									<div class="form-group row">
+
+										<table class="table table-striped">
+											<thead>
+												<tr class="styleTable1" style="text-align: center;">
+													<th class="tableFixWidth" style="width: 35%;">Phase</th>
+													<th>Content</th>
+												</tr>
+											</thead>
+											<tr>
+												<td><input type="text" name="" id="" class="form-control"
+														placeholder="ID Phase ne"></td>
+												<td><input type="text" name="" id="" class="form-control"
+														placeholder="Content Phase ne"></td>
+											</tr>
+											<tr>
+												<td><input type="text" name="" id="" class="form-control"
+														placeholder="ID Phase ne"></td>
+												<td><input type="text" name="" id="" class="form-control"
+														placeholder="Content Phase ne"></td>
+											</tr>
+										</table>
+									</div>
+									<div style="text-align: right;">
+										<button class="btn btn-outline-primary" id="clickCancel"
+											type="button">&#10010;</button>
+									</div>
+								</div>
+							</div>
+							<div class="modal-footer" style="float: left;">
+								<button id="clickCancel" type="submit" class="btn btn-danger" data-dismiss="modal"
+									style="width: 22%;" th:utext="#{label.cancel}">Close</button>
+								<button id="clickCancel" type="submit" class="btn btn-success" data-dismiss="modal"
+									style="width: 22%;" th:utext="#{label.cancel}">Confirm</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</form>
+		</main>
+
+		<br>
+
+		<div class="styleOption">
+			<div class="row">
+				<div class="col-sm-12">
+					<div class="form-group row" style="margin-top: 0%; text-align: center;">
+						<div class="col-sm-3">
+							<form action="">
+								<input type="submit" class="btn btn-outline-primary" value="MEMBERS"
+									style="width: 100%;font-size: 145%;" />
+							</form>
+						</div>
+						<div class="col-sm-3">
+							<form action="">
+								<input type="submit" class="btn btn-outline-primary" value="PRODUCTS"
+									style="width: 100%;font-size: 145%;" />
+							</form>
+						</div>
+						<div class="col-sm-3">
+							<form action="">
+								<input type="submit" class="btn btn-outline-primary" value="LOG WORKS"
+									style="width: 100%;font-size: 145%;" />
+							</form>
+						</div>
+						<div class="col-sm-1">
+						</div>
+
+						<div class="col-sm-1">
+							<a id="" href="" class="btn btn-outline-primary styleButtonBack"
+								style="width: 105%;">Reload</a>
+						</div>
+						<div class="col-sm-1">
+							<a id="" href="" class="btn btn-outline-primary styleButtonBack" style="width: 105%;">
+								Back</a>
+						</div>
+
+
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<footer>
+			<div class="footer2">
+				<i><b>A2Z Team</b></i>
+			</div>
+		</footer>
+
+	</article>
+
+
+	<script type="text/javascript">
+		$(function () {
+			window.pagObj = $('#pagination').twbsPagination({
+				totalPages: 35,
+				visiblePages: 5,
+				onPageClick: function (event, page) {
+					console.info(page + ' (from options)');
+				}
+			}).on('page', function (event, page) {
+				console.info(page + ' (from event listening)');
+			});
+		});
+	</script>
+
+	<script>
+		//doughnut
+		var ctxD = document.getElementById("doughnutChart1").getContext('2d');
+		var myLineChart = new Chart(ctxD, {
+			type: 'doughnut',
+			data: {
+				labels: ["CREATE", "EDIT", "TEST"],
+				datasets: [{
+					data: [1917, 1925, 2049],
+					backgroundColor: ["#2eb8b8", "#FF5A5E", "#ffad33"],
+					// hoverBackgroundColor: ["", "#5AD3D1", "#FFC870", "#A8B3C5", "#616774"]
+				}]
+			},
+			options: {
+				responsive: true
+			}
+		});
+	</script>
+	<script>
+		//doughnut
+		var ctxD = document.getElementById("doughnutChart2").getContext('2d');
+		var myLineChart = new Chart(ctxD, {
+			type: 'doughnut',
+			data: {
+				labels: ["CREATE", "EDIT", "TEST"],
+				datasets: [{
+					data: [1917, 1925, 2049],
+					backgroundColor: ["#2eb8b8", "#FF5A5E", "#ffad33"],
+					// hoverBackgroundColor: ["", "#5AD3D1", "#FFC870", "#A8B3C5", "#616774"]
+				}]
+			},
+			options: {
+				responsive: true
+			}
+		});
+	</script>
+	<script>
+		//doughnut
+		var ctxD = document.getElementById("doughnutChart3").getContext('2d');
+		var myLineChart = new Chart(ctxD, {
+			type: 'doughnut',
+			data: {
+				labels: ["CREATE", "EDIT", "TEST"],
+				datasets: [{
+					data: [1917, 1925, 2049],
+					backgroundColor: ["#2eb8b8", "#FF5A5E", "#ffad33"],
+					// hoverBackgroundColor: ["", "#5AD3D1", "#FFC870", "#A8B3C5", "#616774"]
+				}]
+			},
+			options: {
+				responsive: true
+			}
+		});
+	</script>
+	<script>
+		//doughnut
+		var ctxD = document.getElementById("doughnutChart4").getContext('2d');
+		var myLineChart = new Chart(ctxD, {
+			type: 'doughnut',
+			data: {
+				labels: ["CREATE", "EDIT", "TEST"],
+				datasets: [{
+					data: [1917, 1925, 2049],
+					backgroundColor: ["#2eb8b8", "#FF5A5E", "#ffad33"],
+					// hoverBackgroundColor: ["", "#5AD3D1", "#FFC870", "#A8B3C5", "#616774"]
+				}]
+			},
+			options: {
+				responsive: true
+			}
+		});
+	</script>
+	<script>
+		//doughnut
+		var ctxD = document.getElementById("doughnutChart5").getContext('2d');
+		var myLineChart = new Chart(ctxD, {
+			type: 'doughnut',
+			data: {
+				labels: ["CREATE", "EDIT", "TEST"],
+				datasets: [{
+					data: [1917, 1925, 2049],
+					backgroundColor: ["#2eb8b8", "#FF5A5E", "#ffad33"],
+					// hoverBackgroundColor: ["", "#5AD3D1", "#FFC870", "#A8B3C5", "#616774"]
+				}]
+			},
+			options: {
+				responsive: true
+			}
+		});
+	</script>
+	<script>
+		var ctxD = document.getElementById("doughnutChart6").getContext('2d');
+		var myLineChart = new Chart(ctxD, {
+			type: 'doughnut',
+			data: {
+				labels: ["PM", "TL", "PTL", "DEV", "TEST"],
+				datasets: [{
+					data: [3, 5, 8, 70, 20],
+					backgroundColor: ["#F7464A", "#46BFBD", "#FDB45C", "#4775d1", "#884dff"],
+					// hoverBackgroundColor: ["", "#5AD3D1", "#FFC870", "#A8B3C5", "#616774"]
+				}]
+			},
+			options: {
+				responsive: true
+			}
+		});
+	</script>
+	<script>
+		var ctxD = document.getElementById("doughnutChart7").getContext('2d');
+		var myLineChart = new Chart(ctxD, {
+			type: 'doughnut',
+			data: {
+				labels: ["Open", "Close"],
+				datasets: [{
+					data: [7, 5],
+					backgroundColor: ["#F7464A", "#46BFBD"],
+					// hoverBackgroundColor: ["", "#5AD3D1", "#FFC870", "#A8B3C5", "#616774"]
+				}]
+			},
+			options: {
+				responsive: true
+			}
+		});
+	</script>
+	<script>
+		var ctxD = document.getElementById("doughnutChart8").getContext('2d');
+		var myLineChart = new Chart(ctxD, {
+			type: 'doughnut',
+			data: {
+				labels: ["Open", "Close"],
+				datasets: [{
+					data: [7, 5],
+					backgroundColor: ["#F7464A", "#46BFBD"],
+					// hoverBackgroundColor: ["", "#5AD3D1", "#FFC870", "#A8B3C5", "#616774"]
+				}]
+			},
+			options: {
+				responsive: true
+			}
+		});
+	</script>
+	<script>
+		//doughnut
+		var ctxD = document.getElementById("doughnutChart9").getContext('2d');
+		var myLineChart = new Chart(ctxD, {
+			type: 'doughnut',
+			data: {
+				labels: ["CREATE", "EDIT", "TEST"],
+				datasets: [{
+					data: [1917, 1925, 2049],
+					backgroundColor: ["#2eb8b8", "#FF5A5E", "#ffad33"],
+					// hoverBackgroundColor: ["", "#5AD3D1", "#FFC870", "#A8B3C5", "#616774"]
+				}]
+			},
+			options: {
+				responsive: true
+			}
+		});
+	</script>
+
+	<script>
+		var ctxL = document.getElementById("lineChart2").getContext('2d');
+		var myLineChart = new Chart(ctxL, {
+			type: 'line',
+			data: {
+				labels: ["Product 1", "Product 2", "Product 3", "Product 4", "Product 5", "Product 6", "Product 7", "Product 8", "Product 9", "Product 10", "Product11", "Product 12"],
+				datasets: [{
+					label: "Member Size",
+					data: [65, 59, 80, 81, 56, 55, 40, 14, 44, 59, 25, 38],
+					backgroundColor: [
+						'rgba(105, 0, 132, .2)',
+					],
+					borderColor: [
+						'rgba(200, 99, 132, .7)',
+					],
+					borderWidth: 2
+				},
+				{
+					label: "Days",
+					data: [28, 48, 40, 19, 86, 27, 90, 41, 28, 31, 21, 11],
+					backgroundColor: [
+						'rgba(0, 137, 132, .2)',
+					],
+					borderColor: [
+						'rgba(0, 10, 130, .7)',
+					],
+					borderWidth: 2
+				}
+				]
+			},
+			options: {
+				responsive: true
+			}
+		});
+	</script>
+	<script>
+		var ctxL = document.getElementById("lineChart").getContext('2d');
+		var myLineChart = new Chart(ctxL, {
+			type: 'line',
+			data: {
+				labels: ["January", "February", "March", "April", "May", "June", "July"],
+				datasets: [
+					{
+						label: "ALL",
+						data: [14, 35, 37, 49, 80, 123, 145],
+						// backgroundColor: [
+						// 	'rgb(255,255,255)',
+						// ],
+						borderColor: [
+							'#00cc00',
+						],
+						borderWidth: 2
+					},
+					{
+						label: "PM",
+						data: [2, 3, 3, 4, 4, 3, 2],
+						// backgroundColor: [
+						// 	'rgb(255,255,255)',
+						// ],
+						borderColor: [
+							'#F7464A',
+						],
+						borderWidth: 2
+					},
+					{
+						label: "TL",
+						data: [1, 5, 3, 5, 7, 8, 4],
+						// backgroundColor: [
+						// 	'#46BFBD',
+						// ],
+						borderColor: [
+							'#46BFBD',
+						],
+						borderWidth: 2
+					},
+					{
+						label: "PTL",
+						data: [2, 4, 10, 10, 10, 8, 2],
+						// backgroundColor: [
+						// 	'#FDB45C',
+						// ],
+						borderColor: [
+							'#FDB45C',
+						],
+						borderWidth: 2
+					},
+					{
+						label: "DEV",
+						data: [10, 20, 40, 70, 80, 60, 80],
+						// backgroundColor: [
+						// 	'#4775d1',
+						// ],
+						borderColor: [
+							'#4775d1',
+						],
+						borderWidth: 2
+					},
+					{
+						label: "TEST",
+						data: [2, 6, 15, 20, 20, 30, 30],
+						// backgroundColor: [
+						// 	'#884dff',
+						// ],
+						borderColor: [
+							'#884dff',
+						],
+						borderWidth: 2
+					}
+
+				]
+			},
+			options: {
+				responsive: true
+			}
+		});
+	</script>
+
+	<script>
+		var colors = ['#2eb8b8', '#FF5A5E', '#ffad33', '#c3e6cb', '#dc3545', '#6c757d'];
+		var chBar = document.getElementById("chBar");
+		var chartData = {
+			labels: ["Product 1", "Product 2", "Product 3", "Product 4", "Product 5", "Product 6", "Product 7"],
+			datasets: [{
+				data: [8, 8, 4, 8, 6, 9, 7],
+				backgroundColor: colors[0]
+			},
+			{
+				data: [2, 3, 1, 3, 7, 9, 10],
+				backgroundColor: colors[1]
+			},
+			{
+				data: [4, 4, 2, 3, 1, 5, 3],
+				backgroundColor: colors[2]
+			},
+			{
+				data: [5, 4, 2, 4, 4, 6, 7],
+				backgroundColor: colors[5]
+			}
+			]
+		};
+
+		if (chBar) {
+			new Chart(chBar, {
+				type: 'bar',
+				data: chartData,
+				options: {
+					scales: {
+						xAxes: [{
+							barPercentage: 1,
+							categoryPercentage: 0.6
+						}],
+						yAxes: [{
+							ticks: {
+								beginAtZero: false
+							}
+						}]
+					},
+					legend: {
+						display: false
+					}
+				}
+			});
+		}
+	</script>
+
+
+
+
+
+</body>
+
+</html>
