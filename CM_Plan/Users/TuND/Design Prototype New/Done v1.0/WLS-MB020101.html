@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Member Click ALL Log Works</title>
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" rel="stylesheet">
+	<script src="js/jquery.min.js"></script>
+	<script src="js/popper.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/font-awesome.min.css">
+	<script src="js/jquery-1.11.1.min.js"></script>
+
+	<link rel="stylesheet" href="WLS-MB020101.css">
+
+	<script src="/js/jquery-3.3.1.min.js" th:src="@{/js/jquery-3.3.1.min.js}"></script>
+
+
+	<script src="/js/jquery.twbsPagination.js" type="text/javascript" th:src="@{/js/jquery.twbsPagination.js}"></script>
+
+	<!-- <script src="https://code.highcharts.com"></script> -->
+
+</head>
+<style>
+
+</style>
+
+<body>
+	<article>
+		<header>
+			<!--Navbar -->
+			<nav class="mb-1 navbar navbar-expand-md navbar-dark styleHeader1">
+				<div class="collapse navbar-collapse" id="">
+					<span class="rowHeader-left" style="margin-left: 7%; color: white;">06/10/2020
+						&#9728; 28 &#8451; <span class="fa fa-map-marker"></span> Đà Nẵng
+					</span>
+					<ul class="navbar-nav ml-auto">
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" id="" data-toggle="dropdown" aria-haspopup="true"
+								aria-expanded="false" style="font-size: 19px;">Notification
+							</a>
+							<div class="dropdown-menu dropdown-menu-right dropdown-info"
+								aria-labelledby="navbarDropdownMenuLink-4" style="margin-top: -8%;">
+								<a class="dropdown-item styleLogout" href="">You miss a log work 01/08/2020</a>
+								<a class="dropdown-item styleLogout" href="">You have 5 feed back log work WLS
+									projects</a>
+							</div>
+						</li>
+						<li class="nav-item dropdown"><a class="nav-link dropdown-toggle" id="" data-toggle="dropdown"
+								aria-haspopup="true" aria-expanded="false" style="font-size: 17px;"> <i
+									class="fas fa-user"></i> TuND (Member)
+							</a>
+							<div class="dropdown-menu dropdown-menu-right dropdown-info"
+								aria-labelledby="navbarDropdownMenuLink-4" style="margin-top: -8%;">
+								<a class="dropdown-item styleLogout" href="/vi/admin/manage-users">VI</a> <a
+									class="dropdown-item styleLogout" href="/en/admin/manage-users">EN</a> <a
+									class="dropdown-item styleLogout" href="#">Log Out</a>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</nav>
+			<nav class="mb-1 navbar navbar-expand-sm navbar-dark bg-light styleHeader2">
+				<div class="collapse navbar-collapse" id="">
+					<ul class="nav nav-pills">
+						<li class="nav-item"><a class="nav-link active" href="" id="clickHome" th:href="@{/}">Home</a>
+						</li>
+						<li class="nav-item"><a class="nav-link " href="" id="clickHome" th:href="@{/}">My
+								Projects</a>
+						</li>
+					</ul>
+				</div>
+			</nav>
+		</header>
+
+		<main class="container-fluid text-center styleContainer">
+
+
+
+			<div class="styleSearch">
+				<form id="formGetData" action="" method="get">
+					<div class="row" style="margin: 0px">
+						<div class="col-sm-12 styleSearch2">
+							<div class="form-group row styleSearch3">
+								<div class="col-sm-2">
+									<div class="form-group row">
+										<label for="" class="col-sm-4 col-form-label">ID</label>
+										<div class="col-sm-8">
+											<input type="text" class="form-control" id="" placeholder="ID"
+												style="width: 100%;">
+										</div>
+									</div>
+								</div>
+								<div class="col-sm-2">
+									<div class="form-group row">
+										<label for="" class="col-sm-4 col-form-label">Product</label>
+										<div class="col-sm-8">
+											<select name="" id="" class="form-control">
+												<option class="form-control" value="">ALL</option>
+												<option class="form-control" value="">Pro01</option>
+												<option class="form-control" value="">Pro02</option>
+											</select>
+										</div>
+									</div>
+								</div>
+								<div class="col-sm-2">
+									<div class="form-group row">
+										<label for="" class="col-sm-3 col-form-label">From</label>
+										<div class="col-sm-9">
+											<input type="date" name="" id="" class="form-control">
+										</div>
+									</div>
+								</div>
+								<div class="col-sm-2">
+									<div class="form-group row">
+										<label for="" class="col-sm-3 col-form-label">To</label>
+										<div class="col-sm-9">
+											<input type="date" name="" id="" class="form-control">
+										</div>
+									</div>
+								</div>
+
+								
+								<div class="col-sm-2">
+									<div class="form-group row">
+										<label for="" class="col-sm-5 col-form-label">Type Work</label>
+										<div class="col-sm-7">
+											<select name="" id="" class="form-control">
+												<option class="form-control" value="">ALL</option>
+												<option class="form-control" value="">Create</option>
+												<option class="form-control" value="">Edit</option>
+												<option class="form-control" value="">Test</option>
+											</select>
+										</div>
+									</div>
+								</div>
+								<div class="col-sm-2">
+									<div class="form-group row">
+										<label for="" class="col-sm-4 col-form-label">Status</label>
+										<div class="col-sm-8">
+											<select name="" id="" class="form-control">
+												<option class="form-control" value="">ALL</option>
+												<option class="form-control" value="">Agree</option>
+												<option class="form-control" value="">Not Agree</option>
+											</select>
+										</div>
+									</div>
+								</div>
+
+
+							</div>
+							<div>
+								<div class="form-group row">
+									<div class="col-sm-10">
+									</div>
+									<div class="col-sm-1">
+										<button id="clickClear" type="reset" class="btn btn-outline-primary"
+											style="width: 100%;">Clear</button>
+									</div>
+									<div class="col-sm-1">
+										<button id="clickSearch" type="submit" class="btn btn-outline-primary"
+											style="width: 100%;">Search</button>
+									</div>
+
+								</div>
+
+							</div>
+						</div>
+					</div>
+				</form>
+				<br>
+				<b style="font-size: 20px;color: rgb(19, 120, 235);">ALL Log Works List (Projects)</b>
+				<div style="border: 2px solid green;">
+					<table class="table table-striped" style="border-radius: 8px;">
+						<thead>
+							<tr class="styleTable1">
+								<th scope="col" class="tableFixWidth th-sm" style="width: 7%;text-align: center;">#</th>
+								<th scope="col" class="tableFixWidth" style="width: 6%;">ID</th>
+								<th scope="col" class="tableFixWidth" style="width: 8%;">Create Date</th>
+								<th scope="col" class="tableFixWidth" style="width: 9%;">Modified Date</th>
+								<th scope="col" class="tableFixWidth" style="width: 8%;">Product</th>
+								<th scope="col" class="tableFixWidth" style="width: 9%;">Start Date</th>
+								<th scope="col" class="tableFixWidth" style="width: 9%;">Finish Date</th>
+								<th scope="col" class="tableFixWidth" style="width: 7%;">Sum Days</th>
+								<th scope="col" class="tableFixWidth" style="width: 6%;">Phase</th>
+								<th scope="col" class="tableFixWidth" style="width: 8%;">Type Work</th>
+								<th scope="col" class="tableFixWidth" style="width: 7%;">Hours</th>
+								<th scope="col" class="tableFixWidth" style="width: 8%;">Content</th>
+								<th scope="col" class="tableFixWidth" style="width: 7%;">Status</th>
+								<th scope="col" class="tableFixWidth" style="width: 6%;">PM</th>
+							</tr>
+						</thead>
+
+						<tbody>
+							<tr>
+								<td id="" class="styleTextColGi">131421</td>
+								<td id="" class="styleTextColTr">LW01</td>
+								<td id="" class="styleTextColGi">02/08/2020</td>
+								<td id="" class="styleTextColGi">02/08/2020</td>
+								<td id="" class="styleTextColTr">Pro02</td>
+								<td id="" class="styleTextColGi">02/08/2020</td>
+								<td id="" class="styleTextColGi">02/08/2020</td>
+								<td id="" class="styleTextColGi">1</td>
+								<td id="" class="styleTextColGi">2</td>
+								<td id="" class="styleTextColTr">Create</td>
+								<td id="" class="styleTextColGi">5</td>
+								<td id="" class="styleTextColTr">
+									<button type="button" class="btn btn-outline-primary styleBtnEdit"
+										data-toggle="modal" data-target="#exampleModalLong4"
+										style="width: 70%;float: left;">READ</button>
+								</td>
+								<td id="" class="styleTextColGi">2,3,4,7</td>
+								<td id="" class="styleTextColTr">TuND14</td>
+								
+							</tr>
+							<tr>
+								<td id="" class="styleTextColGi">1</td>
+								<td id="" class="styleTextColTr">LW01</td>
+								<td id="" class="styleTextColGi">02/08/2020</td>
+								<td id="" class="styleTextColGi">02/08/2020</td>
+								<td id="" class="styleTextColTr">Pro02</td>
+								<td id="" class="styleTextColGi">02/08/2020</td>
+								<td id="" class="styleTextColGi">02/08/2020</td>
+								<td id="" class="styleTextColGi">1</td>
+								<td id="" class="styleTextColGi">2</td>
+								<td id="" class="styleTextColTr">Create</td>
+								<td id="" class="styleTextColGi">5</td>
+								<td id="" class="styleTextColTr">
+									<button type="button" class="btn btn-outline-primary styleBtnEdit"
+										data-toggle="modal" data-target="#exampleModalLong4"
+										style="width: 70%;float: left;">READ</button>
+								</td>
+								<td id="" class="styleTextColGi">2,3,4,7</td>
+								<td id="" class="styleTextColTr">TuND14</td>
+								
+							</tr>
+
+
+
+						</tbody>
+					</table>
+
+				</div>
+
+				<!-- Modal Content Log -->
+				<!--  -->
+				<form id="popup" action="" th:action="@{/}" method="get">
+					<div class="modal fade" id="exampleModalLong4" role="dialog" aria-labelledby="exampleModalLongTitle"
+						aria-hidden="true" style="margin-top: 5%; margin-left: -6%;">
+						<div class="modal-dialog" role="document">
+							<div class="modal-content" style="border-color: rgb(0, 247, 255); width: 120%;">
+								<div class="modal-header">
+									<b class="modal-title" id="exampleModalLongTitle"
+										style="padding-left: 30%; font-size: 19px;">"ID Log Work" Log Work Content</b>
+									<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+										<span aria-hidden="true">&times;</span>
+									</button>
+								</div>
+								<div id="modalBody" class="modal-body">
+									<div
+										style="background-color: white;width: 90%; height: 77%;margin-left: 5%;margin-top: 4%;text-align: start;">
+										<p class="normal-wr" style="font-size: 18px;"> Đây là nội dung mà Account đó đã
+											Log : Ví dụ Log sản phẩm Product 1
+											chức năng abc.
+										</p>
+									</div>
+
+								</div>
+								<div class="modal-footer" style="float: left;">
+									<button id="" type="button" class="btn btn-danger" data-dismiss="modal"
+										style="width: 120px;">Close</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</form>
+
+				<!-- Modal Detail Status -->
+				<!--  -->
+				<form id="popup" action="" th:action="@{/}" method="get">
+					<div class="modal fade" id="exampleModalLong2" role="dialog" aria-labelledby="exampleModalLongTitle"
+						aria-hidden="true" style="margin-top: 5%; margin-left: -6%;">
+						<div class="modal-dialog" role="document">
+							<div class="modal-content" style="border-color: rgb(0, 247, 255); width: 120%;">
+								<div class="modal-header">
+									<b class="modal-title" id="exampleModalLongTitle"
+										style="padding-left: 37%; font-size: 19px;">Detail Status</b>
+									<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+										<span aria-hidden="true">&times;</span>
+									</button>
+								</div>
+								<div id="modalBody" class="modal-body">
+									<div
+										style="background-color: white;width: 90%; height: 77%;margin-left: 5%;margin-top: 4%;text-align: start;">
+
+										<table class="table table-striped">
+											<thead>
+												<tr class="styleTable1" style="text-align: center;">
+													<th class="tableFixWidth" style="width: 35%;">Phase</th>
+													<th>Content</th>
+												</tr>
+											</thead>
+											<tr>
+												<td style="text-align: center;">
+													<p>1</p>
+												</td>
+												<td>
+													<p>Noi dung Status 1</p>
+												</td>
+											</tr>
+											<tr>
+												<td style="text-align: center;">
+													<p>1</p>
+												</td>
+												<td>
+													<p>Noi dung Status 1</p>
+												</td>
+											</tr>
+										</table>
+									</div>
+								</div>
+								<div class="modal-footer" style="float: left;">
+									<button id="" type="button" class="btn btn-danger" data-dismiss="modal"
+										style="width: 120px;">Close</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</form>
+			</div>
+		</main>
+
+		<br>
+
+		<div class="asd" style="margin-left: 8%; margin-right: 8%;">
+			<div class="row" style="margin: 0px">
+				<div class="col-sm-12">
+					<div class="form-group row" style="margin-top: 1%; text-align: center;">
+						<div class="col-sm-4">
+							<div>
+								<p class="styleInfoPage">
+									<span>Totals :</span> 20 <span> Items / </span> 4 <span>Page</span>
+									<span>&nbsp;</span>
+								</p>
+								&nbsp; &nbsp; &nbsp;
+								<input id="inputPage" class="form-control styleInputPage" type="text"> &nbsp;
+								<button id="" class="btn btn-outline-primary styleBtnGo">Go</button>
+							</div>
+						</div>
+						<div class="col-sm-5">
+							<ul class="pagination" id="pagination" style="margin-left: 15%;margin-top:5px;"></ul>
+						</div>
+						<div class="col-sm-1">
+							<button id="" type="button" class="btn btn-outline-primary styleCreate" data-toggle="modal"
+								data-target="#exampleModalLong2"
+								style="width: 110%;padding-left: 12px;padding-right: 25px;">Detail Status</button>
+						</div>
+
+						<div class="col-sm-1">
+							<a id="" href="" class="btn btn-outline-primary styleButtonReset">Reload</a>
+						</div>
+
+						<div class="col-sm-1">
+							<a id="" href="" class="btn btn-outline-primary styleButtonBack">
+								Back</a>
+						</div>
+
+
+					</div>
+				</div>
+			</div>
+		</div>
+		<footer>
+			<div class="footer2">
+				<i><b>A2Z Team</b></i>
+			</div>
+		</footer>
+
+	</article>
+
+	<script type="text/javascript">
+		$(function () {
+			window.pagObj = $('#pagination').twbsPagination({
+				totalPages: 35,
+				visiblePages: 5,
+				onPageClick: function (event, page) {
+					console.info(page + ' (from options)');
+				}
+			}).on('page', function (event, page) {
+				console.info(page + ' (from event listening)');
+			});
+		});
+	</script>
+
+	<script src="text/javascript">
+		$(document).ready(function () {
+
+		});
+	</script>
+</body>
+
+</html>

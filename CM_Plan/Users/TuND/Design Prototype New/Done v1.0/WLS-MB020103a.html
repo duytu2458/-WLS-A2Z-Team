@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>PM Click Meeting</title>
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" rel="stylesheet">
+	<script src="js/jquery.min.js"></script>
+	<script src="js/popper.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/font-awesome.min.css">
+	<script src="js/jquery-1.11.1.min.js"></script>
+
+	<link rel="stylesheet" href="WLS-MB020103a.css">
+
+	<script src="/js/jquery-3.3.1.min.js" th:src="@{/js/jquery-3.3.1.min.js}"></script>
+
+
+	<script src="/js/jquery.twbsPagination.js" type="text/javascript" th:src="@{/js/jquery.twbsPagination.js}"></script>
+
+	<!-- <script src="https://code.highcharts.com"></script> -->
+
+</head>
+<style>
+
+</style>
+
+<body>
+	<article>
+		<header>
+			<!--Navbar -->
+			<nav class="mb-1 navbar navbar-expand-md navbar-dark styleHeader1">
+				<div class="collapse navbar-collapse" id="">
+					<span class="rowHeader-left" style="margin-left: 7%; color: white;">06/10/2020
+						&#9728; 28 &#8451; <span class="fa fa-map-marker"></span> Đà Nẵng
+					</span>
+					<ul class="navbar-nav ml-auto">
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" id="" data-toggle="dropdown" aria-haspopup="true"
+								aria-expanded="false" style="font-size: 19px;">Notification
+							</a>
+							<div class="dropdown-menu dropdown-menu-right dropdown-info"
+								aria-labelledby="navbarDropdownMenuLink-4" style="margin-top: -8%;">
+								<a class="dropdown-item styleLogout" href="">You miss a log work 01/08/2020</a>
+								<a class="dropdown-item styleLogout" href="">You have 5 feed back log work WLS
+									projects</a>
+							</div>
+						</li>
+						<li class="nav-item dropdown"><a class="nav-link dropdown-toggle" id="" data-toggle="dropdown"
+								aria-haspopup="true" aria-expanded="false"> <i class="fas fa-user"></i> TuND (Member)
+							</a>
+							<div class="dropdown-menu dropdown-menu-right dropdown-info"
+								aria-labelledby="navbarDropdownMenuLink-4" style="margin-top: -8%;">
+								<a class="dropdown-item styleLogout" href="/vi/admin/manage-users">VI</a> <a
+									class="dropdown-item styleLogout" href="/en/admin/manage-users">EN</a> <a
+									class="dropdown-item styleLogout" href="#">Log Out</a>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</nav>
+			<nav class="mb-1 navbar navbar-expand-sm navbar-dark bg-light styleHeader2">
+				<div class="collapse navbar-collapse" id="">
+					<ul class="nav nav-pills">
+						<li class="nav-item"><a class="nav-link" href="" id="clickHome" th:href="@{/}">Home</a>
+						</li>
+						<li class="nav-item"><a class="nav-link active" href="" id="clickHome" th:href="@{/}">My Projects</a>
+						</li>
+					</ul>
+				</div>
+			</nav>
+		</header>
+
+		<main class="container-fluid text-center styleContainer">
+
+
+
+			<div class="styleSearch">
+				<form id="formGetData" action="" method="get">
+					<div class="row" style="margin: 0px">
+						<div class="col-sm-12 styleSearch2">
+							<div class="form-group row styleSearch3">
+								<div class="col-sm-2">
+									<div class="form-group row">
+										<label for="" class="col-sm-4 col-form-label">ID</label>
+										<div class="col-sm-8">
+											<input type="text" class="form-control" id="" placeholder="ID"
+												style="width: 100%;">
+										</div>
+									</div>
+								</div>
+								<div class="col-sm-2">
+									<div class="form-group row">
+										<label for="" class="col-sm-3 col-form-label">Name</label>
+										<div class="col-sm-9">
+											<input type="text" class="form-control" id="" placeholder="Name">
+										</div>
+
+									</div>
+								</div>
+								<div class="col-sm-2">
+									<div class="form-group row">
+										<label for="" class="col-sm-3 col-form-label">From</label>
+										<div class="col-sm-9">
+											<input type="date" name="" id="" class="form-control">
+										</div>
+									</div>
+								</div>
+								<div class="col-sm-2">
+									<div class="form-group row">
+										<label for="" class="col-sm-3 col-form-label">To</label>
+										<div class="col-sm-9">
+											<input type="date" name="" id="" class="form-control">
+										</div>
+									</div>
+								</div>
+								<div class="col-sm-2">
+									<div class="form-group row">
+										<label for="" class="col-sm-4 col-form-label">Status</label>
+										<div class="col-sm-8">
+											<select name="" id="" class="form-control">
+												<option class="form-control" value="">ALL</option>
+												<option class="form-control" value="">Open</option>
+												<option class="form-control" value="">Close</option>
+											</select>
+										</div>
+									</div>
+								</div>
+								<div class="col-sm-2">
+									<div class="form-group row">
+										<label for="" class="col-sm-4 col-form-label">Phase</label>
+										<div class="col-sm-8">
+											<select name="" id="" class="form-control">
+												<option class="form-control" value="">ALL</option>
+												<option class="form-control" value="">Design</option>
+												<option class="form-control" value="">Code</option>
+												<option class="form-control" value="">Test</option>
+											</select>
+										</div>
+									</div>
+								</div>
+
+							</div>
+							<div>
+								<div class="form-group row">
+									<div class="col-sm-10">
+
+									</div>
+									<div class="col-sm-1">
+										<button id="clickClear" type="reset" class="btn btn-outline-primary"
+											style="width: 100%;">Clear</button>
+									</div>
+									<div class="col-sm-1">
+										<button id="clickSearch" type="submit" class="btn btn-outline-primary"
+											style="width: 100%;">Search</button>
+									</div>
+
+								</div>
+
+							</div>
+						</div>
+					</div>
+				</form>
+				<br>
+				<b style="font-size: 20px;color: rgb(19, 120, 235);">Meetings List</b>
+				<div style="border: 2px solid green;">
+					<table class="table table-striped" style="border-radius: 8px;">
+						<thead>
+							<tr class="styleTable1">
+								<th scope="col" class="tableFixWidth th-sm" style="width: 6%;text-align: center;">#</th>
+								<th scope="col" class="tableFixWidth" style="width: 8%;">ID</th>
+								<th scope="col" class="tableFixWidth" style="width: 13%;">Meeting Name</th>
+								<th scope="col" class="tableFixWidth" style="width: 11%;">Create Date</th>
+								<th scope="col" class="tableFixWidth" style="width: 11%;">Modified Date</th>
+								<th scope="col" class="tableFixWidth" style="width: 11%;">Start Date</th>
+								<th scope="col" class="tableFixWidth" style="width: 11%;">Finish Date</th>
+								<th scope="col" class="tableFixWidth" style="width: 11%;">Conductor</th>
+								<th scope="col" class="tableFixWidth" style="width: 11%;">Secretary</th>
+								<th scope="col" class="tableFixWidth" style="width: 11%;">Status</th>
+								<th scope="col" class="tableFixWidth" style="width: 11%;"></th>
+								<th scope="col" class="tableFixWidth" style="width: 11%;"></th>
+							</tr>
+						</thead>
+
+						<tbody>
+							<tr>
+								<td id="" class="styleTextColGi">1</td>
+								<td id="" class="styleTextColTr">MO1</td>
+								<td id="" class="styleTextColTr">Meeting 1</td>
+								<td id="" class="styleTextColTr">02/08/2020</td>
+								<td id="" class="styleTextColTr">02/08/2020</td>
+								<td id="" class="styleTextColTr">02/08/2020</td>
+								<td id="" class="styleTextColTr">02/08/2020</td>
+								<td id="" class="styleTextColTr">TuND14</td>
+								<td id="" class="styleTextColTr">TuND28</td>
+								<td id="" class="styleTextColTr">Open</td>
+								<td>
+									<button class="btn btn-outline-primary"><i class="fa fa-download"></i>
+										Download</button>
+								</td>
+								<td>
+									<button type="button" class="btn btn-outline-danger styleBtnEdit"
+										data-toggle="modal" data-target="#exampleModalLong">Edit</button>
+								</td>
+							</tr>
+							<tr>
+								<td id="" class="styleTextColGi">1</td>
+								<td id="" class="styleTextColTr">MO1</td>
+								<td id="" class="styleTextColTr">Meeting 1</td>
+								<td id="" class="styleTextColTr">02/08/2020</td>
+								<td id="" class="styleTextColTr">02/08/2020</td>
+								<td id="" class="styleTextColTr">02/08/2020</td>
+								<td id="" class="styleTextColTr">02/08/2020</td>
+								<td id="" class="styleTextColTr">TuND14</td>
+								<td id="" class="styleTextColTr">TuND28</td>
+								<td id="" class="styleTextColTr">Close</td>
+								<td>
+									<button class="btn btn-outline-primary"><i class="fa fa-download"></i>
+										Download</button>
+								</td>
+								<td>
+									<button type="button" class="btn btn-outline-danger styleBtnEdit"
+										data-toggle="modal" data-target="#exampleModalLong">Edit</button>
+								</td>
+							</tr>
+
+
+						</tbody>
+					</table>
+
+				</div>
+
+
+				<!-- Modal Edit Meeting -->
+				<!--  -->
+				<form id="popup" action="" th:action="@{/}" method="get">
+					<div class="modal fade" id="exampleModalLong" role="dialog" aria-labelledby="exampleModalLongTitle"
+						aria-hidden="true" style="margin-top: 5%; margin-left: -6%;">
+						<div class="modal-dialog" role="document">
+							<div class="modal-content" style="border-color: rgb(0, 247, 255); width: 120%;">
+								<div class="modal-header">
+									<b class="modal-title" id="exampleModalLongTitle"
+										style="padding-left: 37%; font-size: 19px;">Edit Meeting 'ID ....' </b>
+									<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+										<span aria-hidden="true">&times;</span>
+									</button>
+								</div>
+								<div id="modalBody" class="modal-body">
+									<div
+										style="background-color: white;width: 90%; height: 77%;margin-left: 5%;margin-top: 4%;text-align: start;">
+										<div class="form-group row">
+											<label for="" class="col-sm-4 col-form-label">Meeting Name</label>
+											<div class="col-sm-8">
+												<input type="text" class="form-control" id=""
+													placeholder="Product Name">
+											</div>
+										</div>
+										<div class="form-group row">
+											<label for="" class="col-sm-4 col-form-label">Start Date</label>
+											<div class="col-sm-8">
+												<input type="date" class="form-control" id=""
+													placeholder="Product Name">
+											</div>
+										</div>
+										<div class="form-group row">
+											<label for="" class="col-sm-4 col-form-label">Finish Date</label>
+											<div class="col-sm-8">
+												<input type="date" class="form-control" id=""
+													placeholder="Product Name">
+											</div>
+										</div>
+										<div class="form-group row">
+											<label for="" class="col-sm-4 col-form-label">Status</label>
+											<div class="col-sm-8">
+												<select name="" id="" class="form-control">
+													<option class="form-control" value="">Open</option>
+													<option class="form-control" value="">Close</option>
+												</select>
+
+											</div>
+										</div>
+										<div class="form-group row">
+											<label for="" class="col-sm-4 col-form-label">
+												Meeting minutes</label>
+											<div class="col-sm-8">
+												<input type="file" class="form-control-file" id="">
+											</div>
+										</div>
+										<p style="text-align: center;">Đây là dòng lỗi!</p>
+									</div>
+
+								</div>
+								<div class="modal-footer" style="float: left;">
+									<button id="" type="button" class="btn btn-danger" data-dismiss="modal"
+										style="width: 120px;">Cancel</button>
+									&#160;&#160;&#160;
+									<button id="" type="button" class="btn btn-success"
+										style="width: 120px;">Update</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</form>
+
+				<!-- Modal Create Meeting -->
+				<!--  -->
+				<form id="popup" action="" th:action="@{/}" method="get">
+					<div class="modal fade" id="exampleModalLong2" role="dialog" aria-labelledby="exampleModalLongTitle"
+						aria-hidden="true" style="margin-top: 5%; margin-left: -6%;">
+						<div class="modal-dialog" role="document">
+							<div class="modal-content" style="border-color: rgb(0, 247, 255); width: 120%;">
+								<div class="modal-header">
+									<b class="modal-title" id="exampleModalLongTitle"
+										style="padding-left: 37%; font-size: 19px;">Create Meeting</b>
+									<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+										<span aria-hidden="true">&times;</span>
+									</button>
+								</div>
+								<div id="modalBody" class="modal-body">
+									<div
+										style="background-color: white;width: 90%; height: 77%;margin-left: 5%;margin-top: 4%;text-align: start;">
+										<div class="form-group row">
+											<label for="" class="col-sm-4 col-form-label">Meeting ID</label>
+											<div class="col-sm-8">
+												<input type="text" class="form-control" id="" placeholder="Product ID">
+											</div>
+										</div>
+										<div class="form-group row">
+											<label for="" class="col-sm-4 col-form-label">Meeting Name</label>
+											<div class="col-sm-8">
+												<input type="text" class="form-control" id=""
+													placeholder="Product Name">
+											</div>
+										</div>
+										<div class="form-group row">
+											<label for="" class="col-sm-4 col-form-label">Start Date</label>
+											<div class="col-sm-8">
+												<input type="date" class="form-control" id=""
+													placeholder="Product Name">
+											</div>
+										</div>
+										<div class="form-group row">
+											<label for="" class="col-sm-4 col-form-label">Finish Date</label>
+											<div class="col-sm-8">
+												<input type="date" class="form-control" id=""
+													placeholder="Product Name">
+											</div>
+										</div>
+										<p style="text-align: center;">Đây là dòng lỗi!</p>
+									</div>
+								</div>
+								<div class="modal-footer" style="float: left;">
+									<button id="" type="button" class="btn btn-danger" data-dismiss="modal"
+										style="width: 120px;">Cancel</button>
+									&#160;&#160;&#160;
+									<button id="" type="button" class="btn btn-success"
+										style="width: 120px;">Update</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</form>
+			</div>
+		</main>
+
+		<br>
+
+		<div class="asd" style="margin-left: 8%; margin-right: 8%;">
+			<div class="row" style="margin: 0px">
+				<div class="col-sm-12">
+					<div class="form-group row" style="margin-top: 1%; text-align: center;">
+						<div class="col-sm-4">
+							<div>
+								<p class="styleInfoPage">
+									<span>Totals :</span> 20 <span> Items / </span> 4 <span>Page</span>
+									<span>&nbsp;</span>
+								</p>
+								&nbsp; &nbsp; &nbsp;
+								<input id="inputPage" class="form-control styleInputPage" type="text"> &nbsp;
+								<button id="" class="btn btn-outline-primary styleBtnGo">Go</button>
+							</div>
+						</div>
+						<div class="col-sm-5">
+							<ul class="pagination" id="pagination" style="margin-left: 15%;margin-top:5px;"></ul>
+						</div>
+
+						<div class="col-sm-1">
+							<a id="" href="" class="btn btn-outline-primary styleButtonReset" data-toggle="modal"
+								data-target="#exampleModalLong2">Create</a>
+						</div>
+
+						<div class="col-sm-1">
+							<a id="" href="" class="btn btn-outline-primary styleButtonReset">Reload</a>
+						</div>
+
+						<div class="col-sm-1">
+							<a id="" href="" class="btn btn-outline-primary styleButtonBack">
+								Back</a>
+						</div>
+
+
+					</div>
+				</div>
+			</div>
+		</div>
+		<footer>
+			<div class="footer2">
+				<i><b>A2Z Team</b></i>
+			</div>
+		</footer>
+
+	</article>
+
+	<script type="text/javascript">
+		$(function () {
+			window.pagObj = $('#pagination').twbsPagination({
+				totalPages: 35,
+				visiblePages: 5,
+				onPageClick: function (event, page) {
+					console.info(page + ' (from options)');
+				}
+			}).on('page', function (event, page) {
+				console.info(page + ' (from event listening)');
+			});
+		});
+	</script>
+
+	<script src="text/javascript">
+		$(document).ready(function () {
+
+		});
+	</script>
+</body>
+
+</html>
