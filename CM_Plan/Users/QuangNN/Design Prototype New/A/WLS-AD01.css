@@ -1,6 +1,0 @@
-@import "/cssviews/frameWeb.css";
-
-.styleBtn{
-    /* style="width: 50%;height: 300%;background-color: white;border-radius: 10px;border: 2px solid rgb(41, 113, 207);" */
-    width: 50%;height: 300%;background-color: white;border-radius: 10px;border: 2px solid rgb(41, 113, 207);
-}
