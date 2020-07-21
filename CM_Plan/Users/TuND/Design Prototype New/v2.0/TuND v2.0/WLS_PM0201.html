@@ -1,0 +1,880 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PM Home Project</title>
+    <link rel="stylesheet" href="fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <script src="Chart.js/Chart.js"></script>
+</head>
+<style>
+    html,
+    body {
+        /* width: 100%; */
+        height: 100%;
+    }
+
+    article {
+        min-height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    main {
+        flex-grow: 1;
+    }
+
+    header,
+    main,
+    footer {
+        flex-shrink: 0;
+    }
+
+    .styleOptionPage {
+        flex-shrink: 0;
+
+    }
+
+    .styleBorderWidth2px {
+        border-width: 2px !important;
+    }
+</style>
+
+<body>
+    <article>
+        <!-- ========================== Start Header ================================ -->
+        <header>
+            <nav class="mb-1 navbar navbar-expand navbar-dark bg-primary">
+
+                <div class="collapse navbar-collapse" id="">
+                    <span class="text-white pl-5"> &#9728; 28 &#8451; &nbsp;
+                        <span class="fa fa-map-marker"></span>&nbsp;Đà Nẵng</span>
+
+                    <ul class="navbar-nav ml-auto">
+
+                        <li class="nav-item dropdown"><a class="nav-link dropdown-toggle py-0" id=""
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i
+                                    class="fa fa-user"></i> TuND (PM)
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right dropdown-info">
+                                <a class="dropdown-item styleLogout" href="">VN</a>
+                                <a class="dropdown-item styleLogout" href="">EN</a>
+                                <a class="dropdown-item styleLogout" href="#">LogOut</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+            <nav class="navbar navbar-expand navbar-dark">
+                <div class="collapse navbar-collapse" id="">
+                    <ul class="nav nav-pills">
+                        <li class="nav-item ml-5"><a class="nav-link mx-2" href="#">Home</a></li>
+                        <li class="nav-item"><a class="nav-link active mx-2" href="#">My Projects</a></li>
+
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <!-- ========================== Finish Header ================================ -->
+
+        <!-- ========================== Start Main ================================ -->
+        <main class="container-fluid">
+
+            <div class="mx-md-4 mx-sm-2 mx-1">
+                <div class="row m-0">
+                    <div class="col-xl-9 col-md-12 col-12 border border-success mt-3 styleBorderWidth2px">
+                        <div class="form-group row mt-3">
+                            <label for="" class="col-xl-2 col-md-3 col-6 col-form-label"
+                                style="font-weight: 800;text-align: center;color: blueviolet;font-size: 20px;">STATISTICAL</label>
+                            <div class="col-xl-2  col-md-3 col-6 ">
+                                <input type="button" class="btn btn-outline-success" value="PROJECT"
+                                    data-toggle="collapse" data-target="#statisticalProject" style="width: 100%;" />
+                            </div>
+                            <div class="col-xl-2  col-md-3 col-6">
+                                <input type="submit" class="btn btn-outline-success" value="PRODUCTS"
+                                    data-toggle="collapse" data-target="#statisticalProducts" style="width: 100%;" />
+                            </div>
+                            <div class="col-xl-2 col-md-3 col-6">
+                                <input type="submit" class="btn btn-outline-success" value="TEAM SIZE"
+                                    data-toggle="collapse" data-target="#statisticalTeamSize" style="width: 100%;" />
+                            </div>
+                            <div class="col-xl-2  col-md-3 col-6">
+                                
+
+                            </div>
+                            <div class="col-xl-2  col-md-3 col-6">
+                                <form action="">
+                                    <input type="submit" class="btn btn-outline-success" value="CLEAR"
+                                        style="width: 100%;" />
+                                </form>
+                            </div>
+                        </div>
+                        <hr>
+                        <div>
+
+                            <!-- ========================== PROJECT ============================ -->
+                            <div id="statisticalProject" class="collapse">
+                                <div class="form-group row">
+                                    <div class="col-xl-1"></div>
+                                    <div class="col-xl-5 col-md-6 col-sm-9" style="font-size: 18px;">
+                                        <br>
+                                        <div class="text-center" style="font-size: 22px;color: blueviolet;">
+                                            <b><u>Project : WLS </u> </b>
+                                        </div>
+                                        <p class="mx-5" style="font-size: 20px;margin-left: 10%;">Sum Working Date : 152
+                                            Days</p>
+
+                                    </div>
+                                    <div class="col-xl-6 col-md-6 col-sm-9">
+                                        <canvas id="doughnutChart1"></canvas>
+                                        <p style="text-align: center;font-size: 20px;"><b><i>
+                                                    Log Works : 2410 Hours </i></b></p>
+                                    </div>
+
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col-xl-6 col-md-6 col-sm-9">
+                                        <canvas id="doughnutChart6"></canvas>
+                                        <p style="text-align: center;font-size: 20px;"><b><i>
+                                                    Team Size : 410 Members</i></b></p>
+                                    </div>
+                                    <div class="col-xl-6 col-md-6 col-sm-9">
+                                        <canvas id="doughnutChart7"></canvas>
+                                        <p style="text-align: center;font-size: 20px;"><b><i>
+                                                    Products : 12 Products</i></b></p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- ========================== PRODUCTS============================ -->
+
+                            <div id="statisticalProducts" class="collapse">
+                                <div class="form-group row">
+                                    <div class="col-xl-1"></div>
+                                    <div class="col-xl-5 col-md-6 col-sm-9" style="font-size: 18px;">
+                                        <br>
+                                        <div class="text-center" style="font-size: 22px;color: blueviolet;">
+                                            <b><u>Project : WLS </u> </b>
+                                        </div>
+                                        <p class="mx-5" style="font-size: 20px;">Now : 12 Products</p>
+                                        <div class="form-group row mx-5">
+                                            <div class="col-4">
+                                                <button type="button"
+                                                    class="btn btn-outline-primary btn-block">All</button>
+                                            </div>
+                                            <div class="col-4">
+                                                <button type="button"
+                                                    class="btn btn-outline-danger btn-block">Open</button>
+                                            </div>
+                                            <div class="col-4">
+                                                <button type="button"
+                                                    class="btn btn-outline-info btn-block">Close</button>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="col-xl-5 col-md-6 col-sm-9">
+                                        <canvas id="doughnutChart8"></canvas>
+                                    </div>
+                                </div>
+                                <div>
+                                    <canvas id="lineChart2"></canvas>
+                                </div>
+                            </div>
+
+                            <!-- ========================== TEAM SIZE ============================ -->
+
+                            <div id="statisticalTeamSize" class="collapse">
+                                <div class="form-group row">
+                                    <div class="col-xl-1"></div>
+                                    <div class="col-xl-5 col-md-6 col-sm-9" style="font-size: 18px;">
+                                        <br>
+                                        <div class="text-center" style="font-size: 22px;color: blueviolet;">
+                                            <b><u>Project : WLS </u> </b>
+                                        </div>
+                                        <p class="mx-5" style="font-size: 20px;">Now : 2451 Members</p>
+                                    </div>
+                                    <div class="col-xl-5 col-md-6 col-sm-9">
+                                        <canvas id="doughnutChart62"></canvas>
+                                    </div>
+                                </div>
+                                <div>
+                                    <canvas id="lineChart"></canvas>
+                                </div>
+                            </div>
+
+                            <!-- ========================== LOG ROLE ============================ -->
+                            <div id="statisticalRole" class="collapse">
+                                <div class="form-group row">
+                                    <div class="col-xl-1"></div>
+                                    <div class="col-xl-5 col-md-6 col-sm-9" style="font-size: 18px;">
+                                        <br>
+                                        <div class="text-center" style="font-size: 22px;color: blueviolet;">
+                                            <b><u>Project : WLS </u> </b>
+                                        </div>
+                                        <p class="mx-5" style="font-size: 20px;">Now : 2451 Members</p>
+                                    </div>
+                                    <div class="col-xl-5 col-md-6 col-sm-9">
+                                        <canvas id="doughnutChart2"></canvas>
+                                        <p style="text-align: center;font-size: 20px;"><b><i>
+                                                    Team TL : 1024 Hours</i></b></p>
+                                    </div>
+                                </div>
+                                <div>
+                                    asdasdas
+                                </div>
+                            </div>
+
+
+                        </div>
+
+                    </div>
+                    <div class="col-xl-3 col-md-6 col-12 border border-success mt-3 styleBorderWidth2px">
+                        <div class="group-form row mt-3">
+                            <label for="" class="col-3 form-control-label py-2 ">ID</label>
+                            <div class="col-9">
+                                <input type="text" class="form-control" id="" placeholder="ID">
+                            </div>
+                        </div>
+                        <div class="group-form row mt-3">
+                            <label for="" class="col-3 form-control-label py-2">Name</label>
+                            <div class="col-9">
+                                <input type="text" class="form-control" id="" placeholder="Name">
+                            </div>
+                        </div>
+                        <div class="group-form row mt-3">
+                            <label for="" class="col-3 form-control-label py-2">Start Date</label>
+                            <div class="col-9">
+                                <input type="date" class="form-control" id="" placeholder="Name">
+                            </div>
+                        </div>
+                        <div class="group-form row mt-3">
+                            <label for="" class="col-3 form-control-label py-2">Finish Date</label>
+                            <div class="col-9">
+                                <input type="date" class="form-control" id="" placeholder="Name">
+                            </div>
+                        </div>
+                        <div class="group-form row mt-3">
+                            <label for="" class="col-3 form-control-label py-2">Status</label>
+                            <div class="col-9">
+                                <select name="" id="" class="form-control">
+                                    <option value="" class="form-control">OPEN</option>
+                                    <option value="" class="form-control">CLOSE</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="group-form row mt-3">
+                            <label for="" class="col-3 form-control-label py-2">Phase</label>
+                            <div class="col-6">
+                                <select name="" id="" class="form-control">
+                                    <option value="" class="form-control">OPEN</option>
+                                    <option value="" class="form-control">CLOSE</option>
+                                </select>
+                            </div>
+                            <div class="col-3">
+                                <button class="btn btn-outline-danger btn-block px-1" data-toggle="modal"
+                                    data-target="#modalEditPhase"> Edit
+                                </button>
+                            </div>
+                        </div>
+                        <div class="group-form row mt-3">
+                            <label for="" class="col-3 form-control-label py-1">Working date</label>
+                            <div class="col-6">
+                                <select name="" id="" class="form-control">
+                                    <option value="" class="form-control">02/08/2020</option>
+                                    <option value="" class="form-control">02/08/2020</option>
+                                </select>
+                            </div>
+                            <div class="col-3">
+                                <button class="btn btn-outline-danger btn-block px-1" data-toggle="modal"
+                                    data-target="#modalEditWorkingDate"> Edit
+                                </button>
+                            </div>
+                        </div>
+                        <div class="mt-3">Description</div>
+                        <div class="group-form row mt-3">
+                            <textarea name="" id="" rows="8" class="w-100 mx-3" style="resize: none;">
+                            </textarea>
+                        </div>
+                        <div class="group-form row my-3">
+                            <div class="col-4 mt-3">
+                                <button class="btn btn-outline-danger btn-block">Cancel</button>
+                            </div>
+                            <div class="col-4 mt-3">
+                                <button class="btn btn-outline-danger btn-block">Edit</button>
+                            </div>
+                            <div class="col-4 mt-3">
+                                <button class="btn btn-outline-success btn-block">Update</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+        <!-- ========================== Finish Main ================================ -->
+        <!-- ========== Start Output main (Option Page) =========== -->
+        <div class="styleOptionPage mx-md-5 mx-sm-2 mx-1 mt-4">
+            <div class="row mx-0">
+                <div class="col-xl-3 col-lg-4 col-md-4 col-sm-4 mt-1">
+                    <button class="btn btn-outline-primary btn-block" style="font-size: 24px;">
+                        Members
+                    </button>
+                </div>
+                <div class="col-xl-3 col-lg-4 col-md-4 col-sm-4 mt-1">
+                    <button class="btn btn-outline-primary btn-block" style="font-size: 24px;">
+                        Products
+                    </button>
+                </div>
+                <div class="col-xl-3 col-lg-4 col-md-4 col-sm-4 mt-1">
+                    <button class="btn btn-outline-primary btn-block" style="font-size: 24px;">
+                        Review Log works
+                    </button>
+                </div>
+
+                <div class="col-xl-1 col-lg-4 col-md-4 col-sm-4 mt-1">
+
+                </div>
+                <div class="col-xl-1 col-lg-4 col-md-4 col-sm-4 mt-1 py-2">
+                    <button class="btn btn-outline-primary btn-block px-1">
+                        Reload
+                    </button>
+                </div>
+                <div class="col-xl-1 col-lg-4 col-md-4 col-sm-4 mt-1 py-2">
+                    <button class="btn btn-outline-primary btn-block px-1">
+                        Back
+                    </button>
+
+                </div>
+
+            </div>
+        </div>
+        <!-- ========== Finish Output main (Option Page) =========== -->
+        <!-- ========================== Start Footer ================================ -->
+        <footer class="mt-1">
+            <div class="text-center bg-primary text-white">
+                <i><b style="font-size: 19px;">A2Z Team</b></i>
+            </div>
+
+        </footer>
+        <!-- ========================== Finish Header ================================ -->
+    </article>
+
+
+    <!-- ========================== Start Modal Edit Phase ================================ -->
+    <div id="modalEditPhase" class="modal fade mt-5" role="dialog">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <b class="modal-title text-center mx-auto">Detail</b>
+                    <button type="button" class="close m-0 px-2 py-0" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <table class="table table-striped table-hover mt-0">
+                        <thead class="bg-success">
+                            <tr>
+                                <th scope="col" class="text-center" style="width: 25%;">Phase</th>
+                                <th scope="col" class="text-center" style="width: 65%;">Content</th>
+                                <th scope="col" style="width: 20%;"></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td id="" class="text-center">
+                                    <input type="text" class="form-control" placeholder="ID phase ne">
+                                </td>
+                                <td id="" class="">
+                                    <input type="text" class="form-control" placeholder="Content Phase ne">
+                                </td>
+                                <td id="" class="">
+                                    <button class="btn btn-outline-danger">
+                                        Remove
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td id="" class="text-center">
+                                    <input type="text" class="form-control" placeholder="ID phase ne">
+                                </td>
+                                <td id="" class="">
+                                    <input type="text" class="form-control" placeholder="Content Phase ne">
+                                </td>
+                                <td id="" class="">
+                                    <button class="btn btn-outline-danger">
+                                        Remove
+                                    </button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="modal-footer">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-sm-4 col-4">
+                                <button id="clickCancel" type="button" class="btn btn-danger btn-block"
+                                    data-dismiss="modal">Close</button>
+                            </div>
+                            <div class="col-sm-4 col-4">
+                                <button id="clickCancel" type="button" class="btn btn-primary btn-block">New</button>
+                            </div>
+                            <div class="col-sm-4 col-4">
+                                <button id="clickCancel" type="button" class="btn btn-success btn-block">Done</button>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ========================== Finish Modal ================================ -->
+
+    <!-- ========================== Start Modal Edit Working Date================================ -->
+    <div id="modalEditWorkingDate" class="modal fade mt-5" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <b class="modal-title text-center mx-auto">Set Working Date</b>
+                    <button type="button" class="close m-0 px-2 py-0" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group row mt-3 mx-3">
+                        <label for="" class="col-3 col-form-label">Enter Date</label>
+                        <div class="col-6">
+                            <input type="date" class="form-control">
+                        </div>
+                        <div class="col-3">
+                            <button class="btn btn-outline-primary btn-block">
+                                Add
+                            </button>
+                        </div>
+                    </div>
+                    <div class="form-group row mt-3 mx-3">
+                        <label for="" class="col-3 col-form-label">Date List</label>
+                        <div class="col-6">
+                            <select name="" id="" class="form-control">
+                                <option value="" class="form-control">02/02/2020</option>
+                                <option value="" class="form-control">02/02/2020</option>
+                                <option value="" class="form-control">02/02/2020</option>
+
+                            </select>
+                        </div>
+                        <div class="col-3">
+                            <button class="btn btn-outline-danger btn-block px-1">
+                                Remove
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-sm-4 col-4">
+                            </div>
+                            <div class="col-sm-4 col-4">
+                                <button id="clickCancel" type="button" class="btn btn-danger btn-block"
+                                    data-dismiss="modal">Close</button>
+                            </div>
+                            <div class="col-sm-4 col-4">
+                                <button id="clickCancel" type="button" class="btn btn-success btn-block">Done</button>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ========================== Finish Modal ================================ -->
+
+
+
+</body>
+<script src="bootstrap/js/jquery-3.5.1.min.js"></script>
+<script src="bootstrap/js/bootstrap.min.js"></script>
+<script src="bootstrap/js/jquery.twbsPagination.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+    $(function () {
+        window.pagObj = $('#pagination').twbsPagination({
+            totalPages: 35,
+            visiblePages: 5,
+            onPageClick: function (event, page) {
+                console.info(page + ' (from options)');
+            }
+        }).on('page', function (event, page) {
+            console.info(page + ' (from event listening)');
+        });
+    });
+</script>
+
+<script>
+    //doughnut
+    var ctxD = document.getElementById("doughnutChart1").getContext('2d');
+    var myLineChart = new Chart(ctxD, {
+        type: 'doughnut',
+        data: {
+            labels: ["CREATE", "EDIT", "TEST"],
+            datasets: [{
+                data: [1917, 1925, 2049],
+                backgroundColor: ["#2eb8b8", "#FF5A5E", "#ffad33"],
+                // hoverBackgroundColor: ["", "#5AD3D1", "#FFC870", "#A8B3C5", "#616774"]
+            }]
+        },
+        options: {
+            responsive: true
+        }
+    });
+</script>
+<script>
+    //doughnut
+    var ctxD = document.getElementById("doughnutChart11").getContext('2d');
+    var myLineChart = new Chart(ctxD, {
+        type: 'doughnut',
+        data: {
+            labels: ["CREATE", "EDIT", "TEST"],
+            datasets: [{
+                data: [1917, 1925, 2049],
+                backgroundColor: ["#2eb8b8", "#FF5A5E", "#ffad33"],
+                // hoverBackgroundColor: ["", "#5AD3D1", "#FFC870", "#A8B3C5", "#616774"]
+            }]
+        },
+        options: {
+            responsive: true
+        }
+    });
+</script>
+<script>
+    //doughnut
+    var ctxD = document.getElementById("doughnutChart2").getContext('2d');
+    var myLineChart = new Chart(ctxD, {
+        type: 'doughnut',
+        data: {
+            labels: ["CREATE", "EDIT", "TEST"],
+            datasets: [{
+                data: [1917, 1925, 2049],
+                backgroundColor: ["#2eb8b8", "#FF5A5E", "#ffad33"],
+                // hoverBackgroundColor: ["", "#5AD3D1", "#FFC870", "#A8B3C5", "#616774"]
+            }]
+        },
+        options: {
+            responsive: true
+        }
+    });
+</script>
+<script>
+    //doughnut
+    var ctxD = document.getElementById("doughnutChart3").getContext('2d');
+    var myLineChart = new Chart(ctxD, {
+        type: 'doughnut',
+        data: {
+            labels: ["CREATE", "EDIT", "TEST"],
+            datasets: [{
+                data: [1917, 1925, 2049],
+                backgroundColor: ["#2eb8b8", "#FF5A5E", "#ffad33"],
+                // hoverBackgroundColor: ["", "#5AD3D1", "#FFC870", "#A8B3C5", "#616774"]
+            }]
+        },
+        options: {
+            responsive: true
+        }
+    });
+</script>
+<script>
+    //doughnut
+    var ctxD = document.getElementById("doughnutChart4").getContext('2d');
+    var myLineChart = new Chart(ctxD, {
+        type: 'doughnut',
+        data: {
+            labels: ["CREATE", "EDIT", "TEST"],
+            datasets: [{
+                data: [1917, 1925, 2049],
+                backgroundColor: ["#2eb8b8", "#FF5A5E", "#ffad33"],
+                // hoverBackgroundColor: ["", "#5AD3D1", "#FFC870", "#A8B3C5", "#616774"]
+            }]
+        },
+        options: {
+            responsive: true
+        }
+    });
+</script>
+<script>
+    //doughnut
+    var ctxD = document.getElementById("doughnutChart5").getContext('2d');
+    var myLineChart = new Chart(ctxD, {
+        type: 'doughnut',
+        data: {
+            labels: ["CREATE", "EDIT", "TEST"],
+            datasets: [{
+                data: [1917, 1925, 2049],
+                backgroundColor: ["#2eb8b8", "#FF5A5E", "#ffad33"],
+                // hoverBackgroundColor: ["", "#5AD3D1", "#FFC870", "#A8B3C5", "#616774"]
+            }]
+        },
+        options: {
+            responsive: true
+        }
+    });
+</script>
+<script>
+    var ctxD = document.getElementById("doughnutChart6").getContext('2d');
+    var myLineChart = new Chart(ctxD, {
+        type: 'doughnut',
+        data: {
+            labels: ["PM", "TL", "PTL", "DEV", "TEST"],
+            datasets: [{
+                data: [3, 5, 8, 70, 20],
+                backgroundColor: ["#F7464A", "#46BFBD", "#FDB45C", "#4775d1", "#884dff"],
+                // hoverBackgroundColor: ["", "#5AD3D1", "#FFC870", "#A8B3C5", "#616774"]
+            }]
+        },
+        options: {
+            responsive: true
+        }
+    });
+</script>
+<script>
+    var ctxD = document.getElementById("doughnutChart62").getContext('2d');
+    var myLineChart = new Chart(ctxD, {
+        type: 'doughnut',
+        data: {
+            labels: ["PM", "TL", "PTL", "DEV", "TEST"],
+            datasets: [{
+                data: [3, 5, 8, 70, 20],
+                backgroundColor: ["#F7464A", "#46BFBD", "#FDB45C", "#4775d1", "#884dff"],
+                // hoverBackgroundColor: ["", "#5AD3D1", "#FFC870", "#A8B3C5", "#616774"]
+            }]
+        },
+        options: {
+            responsive: true
+        }
+    });
+</script>
+<script>
+    var ctxD = document.getElementById("doughnutChart7").getContext('2d');
+    var myLineChart = new Chart(ctxD, {
+        type: 'doughnut',
+        data: {
+            labels: ["Open", "Close"],
+            datasets: [{
+                data: [7, 5],
+                backgroundColor: ["#F7464A", "#46BFBD"],
+                // hoverBackgroundColor: ["", "#5AD3D1", "#FFC870", "#A8B3C5", "#616774"]
+            }]
+        },
+        options: {
+            responsive: true
+        }
+    });
+</script>
+<script>
+    var ctxD = document.getElementById("doughnutChart8").getContext('2d');
+    var myLineChart = new Chart(ctxD, {
+        type: 'doughnut',
+        data: {
+            labels: ["Open", "Close"],
+            datasets: [{
+                data: [7, 5],
+                backgroundColor: ["#F7464A", "#46BFBD"],
+                // hoverBackgroundColor: ["", "#5AD3D1", "#FFC870", "#A8B3C5", "#616774"]
+            }]
+        },
+        options: {
+            responsive: true
+        }
+    });
+</script>
+<script>
+    //doughnut
+    var ctxD = document.getElementById("doughnutChart9").getContext('2d');
+    var myLineChart = new Chart(ctxD, {
+        type: 'doughnut',
+        data: {
+            labels: ["CREATE", "EDIT", "TEST"],
+            datasets: [{
+                data: [1917, 1925, 2049],
+                backgroundColor: ["#2eb8b8", "#FF5A5E", "#ffad33"],
+                // hoverBackgroundColor: ["", "#5AD3D1", "#FFC870", "#A8B3C5", "#616774"]
+            }]
+        },
+        options: {
+            responsive: true
+        }
+    });
+</script>
+
+<script>
+    var ctxL = document.getElementById("lineChart2").getContext('2d');
+    var myLineChart = new Chart(ctxL, {
+        type: 'line',
+        data: {
+            labels: ["Product 1", "Product 2", "Product 3", "Product 4", "Product 5", "Product 6", "Product 7", "Product 8", "Product 9", "Product 10", "Product11", "Product 12"],
+            datasets: [{
+                label: "Member Size",
+                data: [65, 59, 80, 81, 56, 55, 40, 14, 44, 59, 25, 38],
+                backgroundColor: [
+                    'rgba(105, 0, 132, .2)',
+                ],
+                borderColor: [
+                    'rgba(200, 99, 132, .7)',
+                ],
+                borderWidth: 2
+            },
+            {
+                label: "Days",
+                data: [28, 48, 40, 19, 86, 27, 90, 41, 28, 31, 21, 11],
+                backgroundColor: [
+                    'rgba(0, 137, 132, .2)',
+                ],
+                borderColor: [
+                    'rgba(0, 10, 130, .7)',
+                ],
+                borderWidth: 2
+            }
+            ]
+        },
+        options: {
+            responsive: true
+        }
+    });
+</script>
+<script>
+    var ctxL = document.getElementById("lineChart").getContext('2d');
+    var myLineChart = new Chart(ctxL, {
+        type: 'line',
+        data: {
+            labels: ["January", "February", "March", "April", "May", "June", "July"],
+            datasets: [
+                {
+                    label: "ALL",
+                    data: [14, 35, 37, 49, 80, 123, 145],
+                    // backgroundColor: [
+                    // 	'rgb(255,255,255)',
+                    // ],
+                    borderColor: [
+                        '#00cc00',
+                    ],
+                    borderWidth: 2
+                },
+                {
+                    label: "PM",
+                    data: [2, 3, 3, 4, 4, 3, 2],
+                    // backgroundColor: [
+                    // 	'rgb(255,255,255)',
+                    // ],
+                    borderColor: [
+                        '#F7464A',
+                    ],
+                    borderWidth: 2
+                },
+                {
+                    label: "TL",
+                    data: [1, 5, 3, 5, 7, 8, 4],
+                    // backgroundColor: [
+                    // 	'#46BFBD',
+                    // ],
+                    borderColor: [
+                        '#46BFBD',
+                    ],
+                    borderWidth: 2
+                },
+                {
+                    label: "PTL",
+                    data: [2, 4, 10, 10, 10, 8, 2],
+                    // backgroundColor: [
+                    // 	'#FDB45C',
+                    // ],
+                    borderColor: [
+                        '#FDB45C',
+                    ],
+                    borderWidth: 2
+                },
+                {
+                    label: "DEV",
+                    data: [10, 20, 40, 70, 80, 60, 80],
+                    // backgroundColor: [
+                    // 	'#4775d1',
+                    // ],
+                    borderColor: [
+                        '#4775d1',
+                    ],
+                    borderWidth: 2
+                },
+                {
+                    label: "TEST",
+                    data: [2, 6, 15, 20, 20, 30, 30],
+                    // backgroundColor: [
+                    // 	'#884dff',
+                    // ],
+                    borderColor: [
+                        '#884dff',
+                    ],
+                    borderWidth: 2
+                }
+
+            ]
+        },
+        options: {
+            responsive: true
+        }
+    });
+</script>
+
+<script>
+    var colors = ['#2eb8b8', '#FF5A5E', '#ffad33', '#c3e6cb', '#dc3545', '#6c757d'];
+    var chBar = document.getElementById("chBar");
+    var chartData = {
+        labels: ["Product 1", "Product 2", "Product 3", "Product 4", "Product 5", "Product 6", "Product 7"],
+        datasets: [{
+            data: [8, 8, 4, 8, 6, 9, 7],
+            backgroundColor: colors[0]
+        },
+        {
+            data: [2, 3, 1, 3, 7, 9, 10],
+            backgroundColor: colors[1]
+        },
+        {
+            data: [4, 4, 2, 3, 1, 5, 3],
+            backgroundColor: colors[2]
+        },
+        {
+            data: [5, 4, 2, 4, 4, 6, 7],
+            backgroundColor: colors[5]
+        }
+        ]
+    };
+
+    if (chBar) {
+        new Chart(chBar, {
+            type: 'bar',
+            data: chartData,
+            options: {
+                scales: {
+                    xAxes: [{
+                        barPercentage: 1,
+                        categoryPercentage: 0.6
+                    }],
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: false
+                        }
+                    }]
+                },
+                legend: {
+                    display: false
+                }
+            }
+        });
+    }
+</script>
+
+</html>

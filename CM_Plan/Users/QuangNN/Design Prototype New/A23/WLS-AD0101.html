@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title th:utext="#{label.managementUsers}">Admin Click Members</title>
+
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" rel="stylesheet">
+	<script src="js/jquery.min.js" th:src="@{/js/jquery.min.js}"></script>
+	<script src="js/popper.min.js" th:src="@{/js/popper.min.js}"></script>
+	<script src="js/bootstrap.min.js" th:src="@{/js/bootstrap.min.js}"></script>
+	<script src="js/jquery.twbsPagination.min.js" th:src="@{/js/jquery.twbsPagination.min.js}"></script>
+
+	<link rel="stylesheet" href="css/bootstrap.min.css" th:href="@{/css/bootstrap.min.css}">
+	<link rel="stylesheet" href="css/style.css" th:href="@{/css/style.css}">
+
+	<link rel="stylesheet" href="css/font-awesome.min.css" th:href="@{/css/font-awesome.min.css}">
+
+
+
+
+	<script src="js/jquery-3.3.1.min.js" th:src="@{/js/jquery-3.3.1.min.js}"></script>
+
+	<link rel="stylesheet" href="WLS-AD0101.css" th:href="@{/cssviews/admin/ManageMembers/WLS-AD02.css}">
+
+	<script src="js/jquery.twbsPagination.js" type="text/javascript" th:src="@{/js/jquery.twbsPagination.js}"></script>
+
+	<!-- <link rel="stylesheet" href="cssviews/admin/WLS-AD01.css" th:href="@{/cssviews/admin/WLS-AD01.css}"> -->
+	<!-- <script src="https://code.highcharts.com"></script> -->
+
+</head>
+<style>
+</style>
+
+<body>
+	<article>
+		<header>
+			<!--Navbar -->
+			<nav class="mb-1 navbar navbar-expand-md navbar-dark styleHeader1">
+				<div class="collapse navbar-collapse" id="">
+					<span class="rowHeader-left" style="margin-left: 7%; color: white;">06/10/2020
+						&#9728; 28 &#8451; <span class="fa fa-map-marker"></span> Đà Nẵng
+					</span>
+
+					<ul class="navbar-nav ml-auto">
+						<li class="nav-item dropdown"><a class="nav-link dropdown-toggle" id="" data-toggle="dropdown"
+								aria-haspopup="true" aria-expanded="false"> <i class="fas fa-user"></i> TuND (Admin)
+							</a> 
+							<div class="dropdown-menu dropdown-menu-right dropdown-info"
+								aria-labelledby="navbarDropdownMenuLink-4" style="margin-top: -8%;">
+								<a class="dropdown-item styleLogout" href="/vi/admin/manage-users">VI</a> <a
+									class="dropdown-item styleLogout" href="/en/admin/manage-users">EN</a> <a
+									class="dropdown-item styleLogout" href="#">Log Out</a>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</nav>
+			<nav class="mb-1 navbar navbar-expand-sm navbar-dark bg-light styleHeader2">
+				<div class="collapse navbar-collapse" id="">
+					<ul class="nav nav-pills">
+						<li class="nav-item"><a class="nav-link active" href="" id="clickHome" th:href="@{/}">Home</a>
+						</li>
+					</ul>
+				</div>
+			</nav>
+		</header>
+
+		<main class="container-fluid text-center styleContainer">
+
+			<div class="styleSearch">
+				<form id="formGetData" action="" method="get">
+					<div class="row" style="margin: 0px">
+						<div class="col-sm-12 styleSearch2">
+							<div class="form-group row styleSearch3">
+								<div class="col-sm-2">
+									<div class="form-group row">
+										<label for="" class="col-sm-4 col-form-label">Account</label>
+										<div class="col-sm-8">
+											<input type="text" class="form-control" id="" placeholder="Account"
+												style="width: 100%;">
+										</div>
+									</div>
+								</div>
+
+								<div class="col-sm-2">
+									<div class="form-group row">
+										<label for="" class="col-sm-4 col-form-label">Role</label>
+										<div class="col-sm-8">
+											<select name="" id="" class="form-control">
+												<option class="form-control" value="">ALL</option>
+												<option class="form-control" value="">ADMIN</option>
+												<option class="form-control" value="">USER</option>
+											</select>
+										</div>
+									</div>
+								</div>
+								<div class="col-sm-2">
+									<div class="form-group row">
+										<label for="" class="col-sm-4 col-form-label">Is PM</label>
+										<div class="col-sm-8">
+											<select name="" id="" class="form-control">
+												<option class="form-control" value="">ALL</option>
+												<option class="form-control" value="">TRUE</option>
+												<option class="form-control" value="">FALSE</option>
+											</select>
+										</div>
+									</div>
+								</div>
+								<div class="col-sm-2">
+									<div class="form-group row">
+										<label for="" class="col-sm-4 col-form-label">Gender</label>
+										<div class="col-sm-8">
+											<select name="" id="" class="form-control">
+												<option class="form-control" value="">ALL</option>
+												<option class="form-control" value="">MALE</option>
+												<option class="form-control" value="">FEMALE</option>
+											</select>
+										</div>
+									</div>
+								</div>
+								<div class="col-sm-2">
+									<div class="form-group row">
+										<label for="" class="col-sm-4 col-form-label">Enable</label>
+										<div class="col-sm-8">
+											<select name="" id="" class="form-control">
+												<option class="form-control" value="">ALL</option>
+												<option class="form-control" value="">TRUE</option>
+												<option class="form-control" value="">FALSE</option>
+											</select>
+										</div>
+									</div>
+								</div>
+
+								<div class="col-sm-2">
+									<div class="form-group row">
+										<label for="" class="col-sm-4 col-form-label">Phone</label>
+										<div class="col-sm-8">
+											<input type="text" class="form-control" id="" placeholder="Phone">
+										</div>
+									</div>
+								</div>
+
+							</div>
+							<div style="text-align: left;">
+								<div class="form-group row" style="margin-bottom: 0px;">
+
+
+									<div class="col-sm-3">
+										<div class="form-group row">
+											<label for="" class="col-sm-3 col-form-label">Full Name</label>
+											<div class="col-sm-9">
+												<input type="text" class="form-control" id="" placeholder="Full Name">
+											</div>
+
+										</div>
+									</div>
+									<div class="col-sm-7">
+
+									</div>
+									<div class="col-sm-1">
+										<button id="clickClear" type="reset" class="btn btn-outline-primary"
+											style="width: 100%;">Clear</button>
+									</div>
+
+									<div class="col-sm-1">
+										<button id="clickSearch" type="submit" class="btn btn-outline-primary"
+											style="width: 100%;">Search</button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<br>
+					<b style="font-size: 20px;color: rgb(19, 120, 235);">Members List (Admin)</b>
+					<div style="border: 2px solid green;">
+
+						<table class="table table-striped">
+							<thead>
+								<tr class="styleTable1">
+									<th scope="col" class="tableFixWidth th-sm" style="width: 7%;text-align: center;">#
+									</th>
+									<th scope="col" class="tableFixWidth" style="width: 11%;">Account</th>
+									<th scope="col" class="tableFixWidth" style="width: 13%;">Full Name</th>
+									<th scope="col" class="tableFixWidth" style="width: 10%;">Role</th>
+									<th scope="col" class="tableFixWidth" style="width: 11%; text-align: start;">IS PM
+									</th>
+									<th scope="col" class="tableFixWidth" style="width: 10%;">Gender</th>
+									<th scope="col" class="tableFixWidth" style="width: 12%; text-align: start;">Phone
+									</th>
+									<th scope="col" class="tableFixWidth" style="width: 10%;">Enable</th>
+									<th scope="col" class="tableFixWidth" style="width: 7%;">
+										<!-- <input type="checkbox" class="styleCheckBox styleCheckBox"> -->
+									</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td id="" class="styleTextColGi">1</td>
+									<td id="" class="styleTextColTr">TuND14</td>
+									<td id="" class="styleTextColTr">Nguyen Duy Tu</td>
+									<td id="" class="styleTextColTr">Admin</td>
+									<td id="" class="styleTextColTr">True</td>
+									<td id="" class="styleTextColTr">Male</td>
+									<td id="" class="styleTextColGi">0344109790</td>
+									<td id="" class="styleTextColTr">True</td>
+									<td>
+										<!-- <input type="checkbox" class="styleCheckBox"> -->
+										<button type="button" class="btn btn-outline-danger" data-toggle="modal"
+											data-target="#exampleModalLong" style="width: 100%;">Edit</button>
+									</td>
+								</tr>
+								<tr>
+									<td id="" class="styleTextColGi">1</td>
+									<td id="" class="styleTextColTr">TuND14</td>
+									<td id="" class="styleTextColTr">Nguyen Duy Tu</td>
+									<td id="" class="styleTextColTr">Admin</td>
+									<td id="" class="styleTextColTr">True</td>
+									<td id="" class="styleTextColTr">Male</td>
+									<td id="" class="styleTextColGi">0344109790</td>
+									<td id="" class="styleTextColTr">True</td>
+									<td>
+										<!-- <input type="checkbox" class="styleCheckBox"> -->
+										<button type="button" class="btn btn-outline-danger" data-toggle="modal"
+											data-target="#exampleModalLong" style="width: 100%;">Edit</button>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+			</div>
+
+
+			<!-- Modal Create New Members -->
+
+			<form id="popup" action="" th:action="@{/}" method="get">
+				<div class="modal fade" id="exampleModalLong" role="dialog" aria-labelledby="exampleModalLongTitle"
+					aria-hidden="true" style="margin-top: 5%; margin-left: -8%;">
+					<div class="modal-dialog" role="document">
+						<div class="modal-content" style="border-color: rgb(0, 247, 255); width: 120%;">
+							<div class="modal-header">
+								<b class="modal-title" id="exampleModalLongTitle"
+									style="padding-left: 39%; font-size: 19px;">Create Members</b>
+								<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+									<span aria-hidden="true">&times;</span>
+								</button>
+							</div>
+							<div id="modalBody" class="modal-body" style="text-align: left;">
+								<div
+									style="background-color: white; width: 90%; height: 77%; margin-left: 5%; margin-top: 4%;">
+									<div class="form-group row">
+										<label for="" class="col-sm-3 col-form-label" style="text-align: left;"
+											th:utext="#{label.account}">Account</label>
+										<div class="col-sm-6">
+											<input type="text" class="form-control" id="popupAccount"
+												th:placeholder="#{label.account}">
+										</div>
+										<div class="col-sm-3">
+											<button id="clickCheckAccount" class="btn btn-outline-primary"
+												style="width: 100%;" th:utext="#{label.check}">Check</button>
+										</div>
+									</div>
+									<!-- <p th:if="${#fields.hasErrors('account')}" th:errors="*{account}"></p> -->
+									<div class="form-group row">
+										<label for="" class="col-sm-3 col-form-label" th:utext="#{label.fullName}">Full
+											Name</label>
+										<div class="col-sm-9">
+											<input type="text" class="form-control" id="popupFullName"
+												th:placeholder="#{label.fullName}">
+										</div>
+									</div>
+									<div class="form-group row">
+										<label for="" class="col-sm-3 col-form-label"
+											th:utext="#{label.gender}">Role</label>
+										<div class="col-sm-9">
+											<select name="" id="popupGender" class="form-control">
+												<option class="optionGender" value="" th:value="Male"
+													th:utext="#{label.male}">User</option>
+												<option class="optionGender" value="" th:value="Female"
+													th:utext="#{label.female}">Admin</option>
+											</select>
+										</div>
+									</div>
+									<div class="form-group row">
+										<label for="" class="col-sm-3 col-form-label"
+											th:utext="#{label.gender}">Gender</label>
+										<div class="col-sm-9">
+											<select name="" id="popupGender" class="form-control">
+												<option class="optionGender" value="" th:value="Male"
+													th:utext="#{label.male}">Male</option>
+												<option class="optionGender" value="" th:value="Female"
+													th:utext="#{label.female}">Female</option>
+											</select>
+										</div>
+									</div>
+									<div class="form-group row">
+										<label for="" class="col-sm-3 col-form-label" th:utext="#{label.pm}">Is
+											PM</label>
+										<div class="col-sm-9">
+											<select name="" id="popupPm" class="form-control">
+												<option class="optionRole" th:value="false" value=""
+													th:utext="#{label.no}"></option>
+												<option class="optionRole" th:value="true" value=""
+													th:utext="#{label.yes}"></option>
+											</select>
+										</div>
+									</div>
+									<div class="form-group row">
+										<label for="" class="col-sm-3 col-form-label"
+											th:utext="#{label.phone}">Phone</label>
+										<div class="col-sm-9">
+											<input type="text" class="form-control" id="popupPhone"
+												th:placeholder="#{label.phone}">
+										</div>
+									</div>
+									<div class="form-group row">
+										<label for="" class="col-sm-3 col-form-label"
+											th:utext="#{label.password}">Password</label>
+										<div id="stylePassWord" class="col-sm-6">
+											<input type="password" class="form-control" id="popupPassword"
+												placeholder="Password">
+										</div>
+										<div class="col-sm-3">
+											<button id="clickChangePassword" type="button"
+												class="btn btn-outline-danger changePassword" style="width: 100%;"
+												th:utext="#{label.change}">Change</button>
+										</div>
+									</div>
+									<b id="popupMessage" style="text-align: center; color: red;">Day la dong loi</b>
+								</div>
+							</div>
+							<div class="modal-footer" style="float: left;">
+
+								<button id="clickCancel" type="submit" class="btn btn-danger" data-dismiss="modal"
+									style="width: 22%;" th:utext="#{label.cancel}">Cancel</button>
+								&#160;&#160;&#160;
+								<button id="clickUpdate" type="submit" class="btn btn-success"
+									style="width: 22%;">Update</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</form>
+		</main>
+
+		<br>
+
+		<div class="styleOption">
+			<div class="row">
+				<div class="col-sm-12">
+					<div class="form-group row" style="margin-top: 1%; text-align: center;">
+						<div class="col-sm-4">
+							<div>
+								<p class="styleInfoPage">
+									<span>Totals :</span> 20 <span> Items / </span> 4 <span>Page</span>
+									<span>&nbsp;</span>
+								</p>
+								&nbsp; &nbsp; &nbsp;
+								<input id="inputPage" class="form-control styleInputPage" type="text"> &nbsp;
+								<button id="clickGetPageByInput" class="btn btn-outline-primary styleBtnGo">Go</button>
+							</div>
+						</div>
+						<div class="col-sm-5">
+							<ul class="pagination" id="pagination" style="margin-left: 15%;margin-top:5px;"></ul>
+						</div>
+						<div class="col-sm-1" style="padding-left: 0px;">
+							<button id="" type="button" class="btn btn-outline-primary editMember styleButtonBack"
+								data-toggle="modal" data-target="#exampleModalLong">Create</button>
+						</div>
+						<div class="col-sm-1">	
+							<a id="" href="" class="btn btn-outline-primary styleButtonBack" style="width: 105%;">Reload</a>
+						</div>
+						<div class="col-sm-1">
+							<a id="" href="" class="btn btn-outline-primary styleButtonBack" style="width: 105%;"> 
+								Back</a>
+						</div>
+
+
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<footer>
+			<div class="footer2">
+				<i><b>A2Z Team</b></i>
+			</div>
+		</footer>
+
+	</article>
+
+	<script type="text/javascript">
+		$(function () {
+			window.pagObj = $('#pagination').twbsPagination({
+				totalPages: 35,
+				visiblePages: 5,
+				onPageClick: function (event, page) {
+					console.info(page + ' (from options)');
+				}
+			}).on('page', function (event, page) {
+				console.info(page + ' (from event listening)');
+			});
+		});
+	</script>
+
+</body>
+
+</html>
