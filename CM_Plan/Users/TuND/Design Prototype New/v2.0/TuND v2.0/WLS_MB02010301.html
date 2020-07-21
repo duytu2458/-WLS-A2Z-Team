@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PM Click Meetings</title>
+    <title>TL Click Meetings</title>
 
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="fonts/font-awesome.min.css">
     <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
 </head>
@@ -16,28 +16,28 @@
         /* width: 100%; */
         height: 100%;
     }
-    
+
     article {
         min-height: 100%;
         display: flex;
         flex-direction: column;
         align-items: stretch;
     }
-    
+
     main {
         flex-grow: 1;
     }
-    
+
     header,
     main,
     footer {
         flex-shrink: 0;
     }
-    
+
     .styleOptionPage {
         flex-shrink: 0;
     }
-    
+
     .styleBorderWidth2px {
         border-width: 2px !important;
     }
@@ -56,7 +56,8 @@
                     <ul class="navbar-nav ml-auto">
 
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle py-0" id="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="fa fa-user"></i> TuND (PM)
+                            <a class="nav-link dropdown-toggle py-0" id="" data-toggle="dropdown" aria-haspopup="true"
+                                aria-expanded="false"> <i class="fa fa-user"></i> TuND (Member)
                             </a>
                             <div class="dropdown-menu dropdown-menu-right dropdown-info">
                                 <a class="dropdown-item styleLogout" href="">VN</a>
@@ -194,10 +195,11 @@
                                 <td id="" class="">Open</td>
                                 <td>
                                     <button class="btn btn-outline-primary btn-block"><i class="fa fa-download"></i>
-										Download</button>
+                                        Download</button>
                                 </td>
                                 <td>
-                                    <button type="button" class="btn btn-outline-danger btn-block" data-toggle="modal" data-target="#modalEdit">Edit</button>
+                                    <button type="button" class="btn btn-outline-danger btn-block" data-toggle="modal"
+                                        data-target="#modalEdit">Edit</button>
                                 </td>
                             </tr>
                             <tr>
@@ -213,10 +215,11 @@
                                 <td id="" class="">Open</td>
                                 <td>
                                     <button class="btn btn-outline-primary btn-block"><i class="fa fa-download"></i>
-										Download</button>
+                                        Download</button>
                                 </td>
                                 <td>
-                                    <button type="button" class="btn btn-outline-danger btn-block" data-toggle="modal" data-target="#modalEdit">Edit</button>
+                                    <button type="button" class="btn btn-outline-danger btn-block" data-toggle="modal"
+                                        data-target="#modalEdit">Edit</button>
                                 </td>
                             </tr>
 
@@ -248,7 +251,8 @@
                     <ul class="pagination justify-content-center" id="pagination"></ul>
                 </div>
                 <div class="col-xl-1 col-lg-1 col-md-4 col-sm-3 mt-1">
-                    <button class="btn btn-outline-primary btn-block px-1" data-toggle="modal" data-target="#modalCreate">
+                    <button class="btn btn-outline-primary btn-block px-1" data-toggle="modal"
+                        data-target="#modalCreate">
                         Create
                     </button>
                 </div>
@@ -328,7 +332,8 @@
                         <div class="row">
                             <div class="col-sm-4 col-4"></div>
                             <div class="col-sm-4 col-4">
-                                <button id="clickCancel" type="submit" class="btn btn-danger btn-block" data-dismiss="modal">Close</button>
+                                <button id="clickCancel" type="submit" class="btn btn-danger btn-block"
+                                    data-dismiss="modal">Close</button>
                             </div>
                             <div class="col-sm-4 col-4">
                                 <button id="clickCancel" type="submit" class="btn btn-success btn-block">Update</button>
@@ -402,7 +407,8 @@
                             <div class="col-sm-4 col-4">
                             </div>
                             <div class="col-sm-4 col-4">
-                                <button id="clickCancel" type="button" class="btn btn-danger btn-block" data-dismiss="modal">Close</button>
+                                <button id="clickCancel" type="button" class="btn btn-danger btn-block"
+                                    data-dismiss="modal">Close</button>
                             </div>
                             <div class="col-sm-4 col-4">
                                 <button id="clickCancel" type="button" class="btn btn-success btn-block">Create</button>
@@ -422,14 +428,14 @@
 <script src="bootstrap/js/bootstrap.min.js"></script>
 <script src="bootstrap/js/jquery.twbsPagination.min.js" type="text/javascript"></script>
 <script type="text/javascript">
-    $(function() {
+    $(function () {
         window.pagObj = $('#pagination').twbsPagination({
             totalPages: 35,
             visiblePages: 5,
-            onPageClick: function(event, page) {
+            onPageClick: function (event, page) {
                 console.info(page + ' (from options)');
             }
-        }).on('page', function(event, page) {
+        }).on('page', function (event, page) {
             console.info(page + ' (from event listening)');
         });
     });

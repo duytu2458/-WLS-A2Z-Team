@@ -4,11 +4,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PM Click Meetings</title>
+    <title>Member Click My Log work</title>
 
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
     <link rel="stylesheet" href="fonts/font-awesome.min.css">
     <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+
+    <!-- <script type="text/javascript" src="bootstrap/js/jquery-3.5.1.min.js"></script>-->
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <script src="bootstrap/js/jquery.twbsPagination.min.js" type="text/javascript"></script>
+
+    <!-- <link rel="stylesheet" href="dist/css/bootstrap-multiselect.css" type="text/css">
+    <script type="text/javascript" src="dist/js/bootstrap-multiselect.js"></script> -->
+
 </head>
 <style>
     html,
@@ -16,30 +25,37 @@
         /* width: 100%; */
         height: 100%;
     }
-    
+
     article {
         min-height: 100%;
         display: flex;
         flex-direction: column;
         align-items: stretch;
     }
-    
+
     main {
         flex-grow: 1;
     }
-    
+
     header,
     main,
     footer {
         flex-shrink: 0;
     }
-    
+
     .styleOptionPage {
         flex-shrink: 0;
     }
-    
+
     .styleBorderWidth2px {
         border-width: 2px !important;
+    }
+
+    .styleCheckBox {
+        /* input[type=checkbox] {
+        transform: scale(1.5);
+    } */
+        transform: scale(2.0);
     }
 </style>
 
@@ -56,7 +72,8 @@
                     <ul class="navbar-nav ml-auto">
 
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle py-0" id="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="fa fa-user"></i> TuND (PM)
+                            <a class="nav-link dropdown-toggle py-0" id="" data-toggle="dropdown" aria-haspopup="true"
+                                aria-expanded="false"> <i class="fa fa-user"></i> TuND (Member)
                             </a>
                             <div class="dropdown-menu dropdown-menu-right dropdown-info">
                                 <a class="dropdown-item styleLogout" href="">VN</a>
@@ -142,23 +159,14 @@
                                 </div>
                             </div>
                         </div>
-                        <!-- <div class="row m-2">
-                            <div class="col-xl-10 col-lg-8 col-sm-6">
-                            </div>
-                            <div class="col-xl-1 col-lg-2 col-sm-3 col-12 text-right mt-1">
-                                <button class="btn btn-outline-primary btn-block pl-1">Clear</button>
-                            </div>
-                            <div class="col-xl-1 col-lg-2 col-sm-3 col-12 text-right mt-1">
-                                <button class="btn btn-outline-primary btn-block pl-1">Search</button>
-                            </div>
-                        </div> -->
+
                     </div>
                 </form>
             </div>
             <!-- ============== Table Name =============== -->
             <div class="row">
                 <div class="col-12 mt-2">
-                    <h4 class="text-center text-black-50">Meetings Lists (Project)</h4>
+                    <h4 class="text-center text-black-50">My works Lists (Member click May log work)</h4>
                 </div>
             </div>
             <div class="border border-success styleBorderWidth2px mx-md-4 mx-sm-2 mx-1">
@@ -166,68 +174,60 @@
                     <table class="table table-striped table-hover mt-0">
                         <thead class="bg-success">
                             <tr>
-                                <th scope="col" class="" style="width: 4%;text-align: center;">#</th>
+                                <th scope="col" class="" style="width: 7%;text-align: center;">#</th>
                                 <th scope="col" class="" style="width: 8%;">ID</th>
-                                <th scope="col" class="" style="width: 12%;">Meeting Name</th>
-                                <th scope="col" class="" style="width: 10%;">Create Date</th>
-                                <th scope="col" class="" style="width: 10%;">Modified Date</th>
                                 <th scope="col" class="" style="width: 10%;">Start Date</th>
                                 <th scope="col" class="" style="width: 10%;">Finish Date</th>
-                                <th scope="col" class="" style="width: 10%;">Conductor</th>
-                                <th scope="col" class="" style="width: 9%;">Secretary</th>
-                                <th scope="col" class="" style="width: 9%;">Status</th>
-                                <th scope="col" class="" style="width: 8%;"></th>
-                                <th scope="col" class="" style="width: 11%;"></th>
+                                <th scope="col" class="" style="width: 9%;">Product</th>
+                                <th scope="col" class="" style="width: 8%;">Type</th>
+                                <th scope="col" class="" style="width: 8%;">Hours</th>
+                                <th scope="col" class="" style="width: 7%;">Phase</th>
+                                <th scope="col" class="" style="width: 8%;">Content</th>
+                                <th scope="col" class="" style="width: 7%;">Feed Back</th>
+                                <th scope="col" class="" style="width: 6%;"></th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
                                 <td id="" class="text-center">1</td>
-                                <td id="" class="">MO1</td>
-                                <td id="" class="">Meeting 1</td>
+                                <td id="" class="">LG0102</td>
                                 <td id="" class="">02/08/2020</td>
                                 <td id="" class="">02/08/2020</td>
-                                <td id="" class="">02/08/2020</td>
-                                <td id="" class="">02/08/2020</td>
-                                <td id="" class="">TuND14</td>
-                                <td id="" class="">TuND28</td>
-                                <td id="" class="">Open</td>
-                                <td>
-                                    <button class="btn btn-outline-primary btn-block"><i class="fa fa-download"></i>
-										Download</button>
+                                <td id="" class="">Product2</td>
+                                <td id="" class="">Create</td>
+                                <td id="" class="">2</td>
+                                <td id="" class="">1</td>
+                                <td id="" class="">
+                                    <button type="button" class="btn btn-outline-primary w-75 my-n1 px-1"
+                                        data-toggle="modal" data-target="#modalContent">Read</button>
                                 </td>
                                 <td>
-                                    <button type="button" class="btn btn-outline-danger btn-block" data-toggle="modal" data-target="#modalEdit">Edit</button>
+                                    <button type="button" class="btn btn-outline-primary my-n1 btn-block"
+                                        data-toggle="modal" data-target="#modalFeedBack">1,2,5</button>
                                 </td>
-                            </tr>
-                            <tr>
-                                <td id="" class="text-center">1</td>
-                                <td id="" class="">MO1</td>
-                                <td id="" class="">Meeting 1</td>
-                                <td id="" class="">02/08/2020</td>
-                                <td id="" class="">02/08/2020</td>
-                                <td id="" class="">02/08/2020</td>
-                                <td id="" class="">02/08/2020</td>
-                                <td id="" class="">TuND14</td>
-                                <td id="" class="">TuND28</td>
-                                <td id="" class="">Open</td>
-                                <td>
-                                    <button class="btn btn-outline-primary btn-block"><i class="fa fa-download"></i>
-										Download</button>
-                                </td>
-                                <td>
-                                    <button type="button" class="btn btn-outline-danger btn-block" data-toggle="modal" data-target="#modalEdit">Edit</button>
+                                <td id="" class="">
+                                    <button type="button" class="btn btn-outline-danger btn-block my-n1 px-1"
+                                        data-toggle="modal" data-target="#modalEdit">Edit</button>
                                 </td>
                             </tr>
+
+
+
 
 
                         </tbody>
 
                     </table>
+
                 </div>
+                <!-- <div class="ml-auto mb-3 mr-4 mt-3" style="width: 13%;">
+                    <button type="button" class="btn btn-outline-success my-n1 btn-block px-1" data-toggle="modal"
+                        data-target="#modalFeedBack">About Feed Back</button>
+                </div> -->
             </div>
         </main>
         <!-- ========================== Finish Main ================================ -->
+
         <!-- ========== Start Output main (Option Page) =========== -->
         <div class="styleOptionPage mx-md-5 mx-sm-2 mx-1 mt-4">
             <div class="row mx-0">
@@ -248,7 +248,8 @@
                     <ul class="pagination justify-content-center" id="pagination"></ul>
                 </div>
                 <div class="col-xl-1 col-lg-1 col-md-4 col-sm-3 mt-1">
-                    <button class="btn btn-outline-primary btn-block px-1" data-toggle="modal" data-target="#modalCreate">
+                    <button class="btn btn-outline-primary btn-block px-1" data-toggle="modal"
+                        data-target="#modalCreate">
                         Create
                     </button>
                 </div>
@@ -276,21 +277,26 @@
         </footer>
         <!-- ========================== Finish Header ================================ -->
     </article>
-    <!-- ========================== Start Modal Edit ================================ -->
-    <div id="modalEdit" class="modal fade mt-5" role="dialog">
+
+    <!-- ========================== Start Modal Create ================================ -->
+    <div id="modalCreate" class="modal fade mt-5" role="dialog">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <b class="modal-title text-center mx-auto">Edit Meetings M01</b>
+                    <b class="modal-title text-center mx-auto">Create Log Work</b>
                     <button type="button" class="close m-0 px-2 py-0" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
                 <div class="modal-body">
                     <div class="form-group row mx-md-4">
-                        <label for="" class="col-4 col-form-label">Name</label>
+                        <label for="" class="col-4 col-form-label">Product</label>
                         <div class="col-8">
-                            <input type="text" class="form-control" placeholder="Product Name">
+                            <select name="" id="" class="form-control">
+                                <option value="" class="form-control">Product 1</option>
+                                <option value="" class="form-control">Product 2</option>
+                                <option value="" class="form-control">Product 3</option>
+                            </select>
                         </div>
                     </div>
                     <div class="form-group row mx-md-4">
@@ -305,33 +311,51 @@
                             <input type="date" class="form-control">
                         </div>
                     </div>
-
                     <div class="form-group row mx-md-4">
-                        <label for="" class="col-4 col-form-label">Status</label>
+                        <label for="" class="col-4 col-form-label">Type</label>
                         <div class="col-8">
                             <select name="" id="" class="form-control">
-                                <option value="" class="form-control">Open</option>
-                                <option value="" class="form-control">Close</option>
+                                <option value="" class="form-control">Create</option>
+                                <option value="" class="form-control">Edit</option>
+                                <option value="" class="form-control">Test</option>
                             </select>
                         </div>
                     </div>
                     <div class="form-group row mx-md-4">
-                        <label for="" class="col-4 col-form-label">File Meeting</label>
+                        <label for="" class="col-4 col-form-label">Hours</label>
                         <div class="col-8">
-                            <input type="file" class="">
+                            <input type="number" class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-group row mx-md-4">
+                        <label for="" class="col-4 col-form-label">Phase</label>
+                        <div class="col-8">
+                            <select name="" id="" class="form-control">
+                                <option value="" class="form-control">1</option>
+                                <option value="" class="form-control">2</option>
+                                <option value="" class="form-control">3</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group row mx-md-4">
+                        <label for="" class="col-4 col-form-label">Content</label>
+                        <div class="col-8">
+                            <textarea name="" id="" class="w-100" rows="3" style="resize: none;">
+
+                            </textarea>
                         </div>
                     </div>
                 </div>
                 <p class="text-center">Day la dong loi</p>
+
                 <div class="modal-footer">
                     <div class="container-fluid">
                         <div class="row">
                             <div class="col-sm-4 col-4"></div>
+                            <div class="col-sm-4 col-4"></div>
                             <div class="col-sm-4 col-4">
-                                <button id="clickCancel" type="submit" class="btn btn-danger btn-block" data-dismiss="modal">Close</button>
-                            </div>
-                            <div class="col-sm-4 col-4">
-                                <button id="clickCancel" type="submit" class="btn btn-success btn-block">Update</button>
+                                <button id="clickCancel" type="submit" class="btn btn-danger btn-block"
+                                    data-dismiss="modal">Close</button>
                             </div>
                         </div>
                     </div>
@@ -341,27 +365,26 @@
     </div>
     <!-- ========================== Finish Modal ================================ -->
 
-    <!-- ========================== Start Modal Create ================================ -->
-    <div id="modalCreate" class="modal fade mt-5" role="dialog">
+
+    <!-- ========================== Start Modal Edit ================================ -->
+    <div id="modalEdit" class="modal fade mt-5" role="dialog">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <b class="modal-title text-center mx-auto">Create Meeings</b>
+                    <b class="modal-title text-center mx-auto">Edit Log Work M01</b>
                     <button type="button" class="close m-0 px-2 py-0" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
                 <div class="modal-body">
                     <div class="form-group row mx-md-4">
-                        <label for="" class="col-4 col-form-label">ID</label>
+                        <label for="" class="col-4 col-form-label">Product</label>
                         <div class="col-8">
-                            <input type="text" class="form-control" placeholder="Meeing ID">
-                        </div>
-                    </div>
-                    <div class="form-group row mx-md-4">
-                        <label for="" class="col-4 col-form-label">Name</label>
-                        <div class="col-8">
-                            <input type="text" class="form-control" placeholder="Meeing Name">
+                            <select name="" id="" class="form-control">
+                                <option value="" class="form-control">Product 1</option>
+                                <option value="" class="form-control">Product 2</option>
+                                <option value="" class="form-control">Product 3</option>
+                            </select>
                         </div>
                     </div>
                     <div class="form-group row mx-md-4">
@@ -377,35 +400,166 @@
                         </div>
                     </div>
                     <div class="form-group row mx-md-4">
-                        <label for="" class="col-4 col-form-label">Status</label>
+                        <label for="" class="col-4 col-form-label">Type</label>
                         <div class="col-8">
                             <select name="" id="" class="form-control">
-                                <option value="" class="form-control">Open</option>
-                                <option value="" class="form-control">Close</option>
+                                <option value="" class="form-control">Create</option>
+                                <option value="" class="form-control">Edit</option>
+                                <option value="" class="form-control">Test</option>
                             </select>
                         </div>
                     </div>
                     <div class="form-group row mx-md-4">
-                        <label for="" class="col-4 col-form-label">Status</label>
+                        <label for="" class="col-4 col-form-label">Hours</label>
                         <div class="col-8">
-                            <input type="file">
+                            <input type="number" class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-group row mx-md-4">
+                        <label for="" class="col-4 col-form-label">Phase</label>
+                        <div class="col-8">
+                            <select name="" id="" class="form-control">
+                                <option value="" class="form-control">1</option>
+                                <option value="" class="form-control">2</option>
+                                <option value="" class="form-control">3</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group row mx-md-4">
+                        <label for="" class="col-4 col-form-label">Content</label>
+                        <div class="col-8">
+                            <textarea name="" id="" class="w-100" rows="3" style="resize: none;">
+
+                            </textarea>
                         </div>
                     </div>
                 </div>
                 <p class="text-center">Day la dong loi</p>
 
+                <div class="modal-footer">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-sm-4 col-4"></div>
+                            <div class="col-sm-4 col-4"></div>
+                            <div class="col-sm-4 col-4">
+                                <button id="clickCancel" type="submit" class="btn btn-danger btn-block"
+                                    data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ========================== Finish Modal ================================ -->
 
+    <!-- ========================== Start Modal Content ================================ -->
+    <div id="modalContent" class="modal fade mt-5" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <b class="modal-title text-center mx-auto">Content</b>
+                    <button type="button" class="close m-0 px-2 py-0" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <textarea name="" id="" rows="5" class="w-100" style="resize: none;">
+                        Day la noi dung Log
+                    </textarea>
+                </div>
+                <div class="modal-footer">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-sm-4 col-4"></div>
+                            <div class="col-sm-4 col-4"></div>
+                            <div class="col-sm-4 col-4">
+                                <button id="clickCancel" type="submit" class="btn btn-danger btn-block"
+                                    data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ========================== Finish Modal ================================ -->
+
+    <!-- ========================== Start Modal modalFeedBack ================================ -->
+    <div id="modalFeedBack" class="modal fade mt-5" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <b class="modal-title text-center mx-auto">About Feed Back</b>
+                    <button type="button" class="close m-0 px-2 py-0" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group row mx-md-4 bg-secondary text-center">
+                        <label for="" class="col-4 col-form-label p-0 pt-3">1</label>
+                        <div class="col-8 p-0 pt-3">
+                            <p>Qua Nhieu Gio</p>
+                        </div>
+                    </div>
+                    <div class="form-group row mx-md-4 bg-light text-center mt-n3">
+                        <label for="" class="col-4 col-form-label p-0 pt-3">2</label>
+                        <div class="col-8 p-0 pt-3">
+                            <p>Qua It Gio</p>
+                        </div>
+                    </div>
+                    <div class="form-group row mx-md-4 bg-secondary text-center mt-n3">
+                        <label for="" class="col-4 col-form-label p-0 pt-3">3</label>
+                        <div class="col-8 p-0 pt-3">
+                            <p>Sai ngay</p>
+                        </div>
+                    </div>
+                    <div class="form-group row mx-md-4 bg-light text-center mt-n3">
+                        <label for="" class="col-4 col-form-label p-0 pt-3">4</label>
+                        <div class="col-8 p-0 pt-3">
+                            <p>Nhieu Ngay</p>
+                        </div>
+                    </div>
+                    <div class="form-group row mx-md-4 bg-secondary text-center mt-n3">
+                        <label for="" class="col-4 col-form-label p-0 pt-3">5</label>
+                        <div class="col-8 p-0 pt-3">
+                            <p>It Ngay</p>
+                        </div>
+                    </div>
+                    <div class="form-group row mx-md-4 bg-light text-center mt-n3">
+                        <label for="" class="col-4 col-form-label p-0 pt-3">6</label>
+                        <div class="col-8 p-0 pt-3">
+                            <p>Sai Type Work</p>
+                        </div>
+                    </div>
+                    <div class="form-group row mx-md-4 bg-secondary text-center mt-n3">
+                        <label for="" class="col-4 col-form-label p-0 pt-3">7</label>
+                        <div class="col-8 p-0 pt-3">
+                            <p>Sai San Pham</p>
+                        </div>
+                    </div>
+                    <div class="form-group row mx-md-4 bg-light text-center mt-n3">
+                        <label for="" class="col-4 col-form-label p-0 pt-3">8</label>
+                        <div class="col-8 p-0 pt-3">
+                            <p>Sai Giai Doan</p>
+                        </div>
+                    </div>
+                    <div class="form-group row mx-md-4 bg-secondary text-center mt-n3">
+                        <label for="" class="col-4 col-form-label p-0 pt-3">9</label>
+                        <div class="col-8 p-0 pt-3">
+                            <p>Content khong dung</p>
+                        </div>
+                    </div>
+                </div>
 
                 <div class="modal-footer">
                     <div class="container-fluid">
                         <div class="row">
+                            <div class="col-sm-4 col-4"></div>
+                            <div class="col-sm-4 col-4"></div>
                             <div class="col-sm-4 col-4">
-                            </div>
-                            <div class="col-sm-4 col-4">
-                                <button id="clickCancel" type="button" class="btn btn-danger btn-block" data-dismiss="modal">Close</button>
-                            </div>
-                            <div class="col-sm-4 col-4">
-                                <button id="clickCancel" type="button" class="btn btn-success btn-block">Create</button>
+                                <button id="" type="button" class="btn btn-danger btn-block"
+                                    data-dismiss="modal">Close</button>
                             </div>
                         </div>
                     </div>
@@ -422,90 +576,23 @@
 <script src="bootstrap/js/bootstrap.min.js"></script>
 <script src="bootstrap/js/jquery.twbsPagination.min.js" type="text/javascript"></script>
 <script type="text/javascript">
-    $(function() {
+    $(function () {
         window.pagObj = $('#pagination').twbsPagination({
             totalPages: 35,
             visiblePages: 5,
-            onPageClick: function(event, page) {
+            onPageClick: function (event, page) {
                 console.info(page + ' (from options)');
             }
-        }).on('page', function(event, page) {
+        }).on('page', function (event, page) {
             console.info(page + ' (from event listening)');
         });
     });
 </script>
+<script src="text/javascript">
+    $(document).ready(function () {
+        $('.abcd').multiselect();
+
+    });
+</script>
 
 </html>
-
-<!-- <div class="mx-md-5 mx-sm-2 mx-1 mt-4">
-    <div class="row mx-0">
-        <div class="col-xl-2 col-lg-2 col-md-3 col-sm-5">
-
-            <div class="px-1 py-2" style="font-weight: 500;"> Totals: 521 Results / 115 Pages</div>
-
-        </div>
-        <div class="col-xl-2 col-lg-4 col-md-3 col-sm-5">
-            <div class="btn-group">
-                <input type="text" placeholder="Page" class="form-control"> &nbsp;
-                <button class="btn btn-outline-primary btn-block rounded">
-                    Go
-                </button>
-            </div>
-        </div>
-        <div class="col-xl-5 col-lg-5 col-md-6 col-sm-10 overflow-auto text-center">
-            <ul class="pagination justify-content-center" id="pagination"></ul>
-        </div>
-        <div class="col-xl-1 col-lg-2 col-md-4 col-sm-3">
-            <button class="btn btn-outline-primary btn-block px-1">
-                Create
-            </button>
-        </div>
-        <div class="col-xl-1 col-lg-2 col-md-4 col-sm-3">
-            <button class="btn btn-outline-primary btn-block px-1">
-                Reload
-            </button>
-        </div>
-        <div class="col-xl-1 col-lg-2 col-md-4 col-sm-3">
-            <button class="btn btn-outline-primary btn-block px-1">
-                Back
-            </button>
-
-        </div>
-
-    </div>
-</div> -->
-
-
-<!-- <div class="styleOptionPage mx-md-5 mx-sm-2 mx-1 mt-4">
-    <div class="row mx-0">
-        <div class="col-xl-2 col-lg-3 col-md-4 col-sm-5 pt-2">
-
-            <div class="px-1 py-2" style="font-weight: 500;"> Totals: 521 Results / 115 Pages</div>
-
-        </div>
-        <div class="col-xl-2 col-lg-4 col-md-4 col-sm-5 pt-2">
-            <div class="btn-group">
-                <input type="text" placeholder="Page" class="form-control"> &nbsp;
-                <button class="btn btn-outline-primary btn-block rounded">
-                    Go
-                </button>
-            </div>
-        </div>
-        <div class="col-xl-6 col-lg-5 col-md-7 col-sm-10 overflow-auto text-center pt-2">
-            <ul class="pagination justify-content-center" style="display: flex;" id="pagination2"></ul>
-        </div>
-
-        <div class="col-xl-1 col-lg-2 col-md-2 col-sm-5 pt-2">
-            <button class="btn btn-outline-primary btn-block px-1">
-                Reload
-            </button>
-        </div>
-        <div class="col-xl-1 col-lg-2 col-md-2 col-sm-5 pt-2">
-            <button class="btn btn-outline-primary btn-block px-1">
-                Back
-            </button>
-
-        </div>
-
-    </div>
-</div> -->
