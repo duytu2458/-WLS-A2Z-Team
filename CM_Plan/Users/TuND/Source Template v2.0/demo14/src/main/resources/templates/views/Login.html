@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Login</title>
+
+	<link rel="stylesheet" href="fonts/font-awesome.min.css" th:href="@{/fonts/font-awesome.min.css}">
+	<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" th:href="@{/bootstrap/css/bootstrap.min.css}">
+	<link rel="stylesheet" href="bootstrap/css/style.css" th:href="@{/bootstrap/css/style.css}">
+</head>
+
+<body>
+	<section class="login-block" style="background: rgb(73, 109, 207);">
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-md-4 login-sec">
+					<div>
+						<!-- th:utext="#{label.vn}" -->
+						<p style="margin-left: 40%;">
+							<b>Language</b> <a href="/en/login" th:herf="@{/en/login}"> <img th:src="@{/img/imgEN.png}"
+									style="width: 20%; height: 10%;">
+							</a> &nbsp; <a href="/vi/login" th:herf="@{/vi/login}">
+								<img th:src="@{/img/imgVN.png}" style="width: 20%; height: 10%;">
+							</a>
+						</p>
+					</div>
+
+					<h2 class="text-center">WLS</h2>
+
+					<div class="group-from row">
+						<label for="" class="col-5 col-form-label">Login with
+							role :</label>
+						<div class="col-7">
+							<select name="" id="" class="form-control">
+								<option id="" class="form-control" value="ADMIN">ADMIN</option>
+								<option value="PM" class="form-control">PM</option>
+								<option value="MEMBER" class="form-control">MEMBER</option>
+							</select>
+						</div>
+					</div>
+					<br>
+					<form class="login-form" action="getLogin" th:object="${login}" method="get">
+						<div class="form-group">
+							<label for="exampleInputEmail1" class="text-uppercase">UserName</label>
+							<input id="user" name="user" type="text" class="form-control" placeholder="UserName"
+								th:field="*{userName}">
+
+						</div>
+						<div class="form-group">
+							<label for="exampleInputPassword1" class="text-uppercase">Password</label>
+							<input id="pass" name="pass" type="password" class="form-control" placeholder="Password"
+								th:field="*{passWord}">
+						</div>
+						<div class="form-check">
+							<label class="form-check-label"> <input type="checkbox" class="form-check-input">
+								<span>Remember</span>
+							</label>
+							<button type="submit" class="btn btn-login float-right">Submit</button>
+						</div>
+					</form>
+
+				</div>
+				<div class="col-md-8 banner-sec">
+					<img class="d-block img-fluid" th:src="@{/img/computer-desk-hand-laptop.jpg}" alt="image">
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<script src="bootstrap/js/jquery-3.5.1.min.js" th:src="@{/bootstrap/js/jquery-3.5.1.min.js}"></script>
+	<script src="bootstrap/js/bootstrap.min.js" th:src="@{/bootstrap/js/bootstrap.min.js}"></script>
+
+</body>
+
+</html>
