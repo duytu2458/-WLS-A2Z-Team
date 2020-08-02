@@ -1,0 +1,88 @@
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title th:utext="#{label.title}"></title>
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+	rel="stylesheet">
+<script src="js/jquery.min.js" th:src="@{/js/jquery.min.js}"></script>
+<script src="js/popper.min.js" th:src="@{/js/popper.min.js}"></script>
+<script src="js/bootstrap.min.js" th:src="@{/js/bootstrap.min.js}"></script>
+<script src="js/jquery.twbsPagination.min.js"
+	th:src="@{/js/jquery.twbsPagination.min.js}"></script>
+
+<link rel="stylesheet" href="/css/bootstrap.min.css"
+	th:href="@{/css/bootstrap.min.css}">
+<link rel="stylesheet" href="/css/style.css" th:href="@{/css/style.css}">
+
+<link rel="stylesheet" href="/css/font-awesome.min.css"
+	th:href="@{/css/font-awesome.min.css}">
+
+</head>
+<body>
+
+
+	<section class="login-block" style="background: rgb(73, 109, 207);">
+		<div class="container" style="margin-top: 2%;">
+			<div class="row justify-content-center">
+				<div class="col-md-4 login-sec">
+					<div>
+						<!-- th:utext="#{label.vn}" -->
+						<p style="margin-left:40%;">
+							<b th:utext="#{label.language}"> </b> 
+							<a href="/en/login" th:herf="@{/en/login}"> 
+								<img th:src="@{/img/imgEN.png}" style="width: 20%; height: 10%;">
+							</a> &nbsp;
+							<a href="/vi/login" th:herf="@{/vi/login}"style=""> 
+								<img th:src="@{/img/imgVN.png}" style="width: 20%; height: 10%;">
+							</a>
+						</p>
+					</div>
+
+					<h2 class="text-center">WLS</h2>
+
+
+
+					<form class="login-form" action="getLogin" th:object="${login}"
+						method="get">
+						<div class="form-group">
+							<label for="exampleInputEmail1" class="text-uppercase"
+								th:utext="#{label.userName}"></label> <input id="user"
+								name="user" type="text" class="form-control"
+								th:placeholder="#{label.userName}" th:field="*{userName}">
+
+						</div>
+						<div class="form-group">
+							<label for="exampleInputPassword1" class="text-uppercase"
+								th:utext="#{label.password}"></label> <input id="pass"
+								name="pass" type="password" class="form-control"
+								th:placeholder="#{label.password}" th:field="*{passWord}">
+						</div>
+						<div class="form-check">
+							<label class="form-check-label"> <input type="checkbox"
+								class="form-check-input"> <small
+								th:utext="#{label.rememberMe}"></small>
+							</label>
+							<button type="submit" class="btn btn-login float-right"
+								th:utext="#{label.submit}"></button>
+						</div>
+					</form>
+
+				</div>
+				<div class="col-md-8 banner-sec">
+					<img class="d-block img-fluid"
+						th:src="@{/img/computer-desk-hand-laptop.jpg}" alt="image">
+				</div>
+
+			</div>
+		</div>
+	</section>
+
+
+
+</body>
+</html>

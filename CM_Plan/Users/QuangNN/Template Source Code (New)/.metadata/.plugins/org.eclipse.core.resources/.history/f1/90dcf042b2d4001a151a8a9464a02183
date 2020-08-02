@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head th:include="fragments/header ::head(pageTitle = 'ADMIN')">
+
+</head>
+<body>
+	<div id="container" class="center-block" style="max-width: 1200px;">
+		<div th:replace="fragments/menu :: menu"></div>
+		<!-- main contents -->
+		<div class="col col-md-12">
+			<div id="row">
+				<div class="col col-md-12 tsc-min-h-box">
+					<div layout:fragment="body"></div>
+				</div>
+				<div th:replace="fragments/footer :: footer"></div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

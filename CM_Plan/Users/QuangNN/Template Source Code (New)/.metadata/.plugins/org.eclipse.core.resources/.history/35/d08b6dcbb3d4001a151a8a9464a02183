@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+  xmlns:th="http://www.thymeleaf.org"
+  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+  layout:decorate="~{layouts/admin/basicLayout}">
+<head>
+<title>Register Person</title>
+<link rel="stylesheet"
+  href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+<link rel="stylesheet"
+  href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" />
+<style type="text/css">
+@media only screen and (min-width : 768px) {
+  /* デスクトップ表示ではホバー操作でドロップダウンを表示 */
+  .btn-dropdown:hover .dropdown-menu {
+    display: block;
+    margin-top: 0;
+  }
+}
+
+.table>tbody>tr>th, .table>thead>tr>th {
+  vertical-align: middle;
+  text-align: center;
+}
+</style>
+</head>
+<body>
+  <div layout:fragment="body" class="col-md-12" th:object="${personForm}">
+    <form method="post" class="form-horizontal"
+      th:action="*{personId== null} ?  @{/person/register} : @{/person/{personId}/update(personId=*{personId})}">
+      <div class="page-header">
+        <h3>
+          <span >Register person</span>
+        </h3>
+      </div>
+      <div class="alert alert-danger alert-dismissable"
+        th:if="${#fields.hasErrors('*')}">
+        <a class="close" data-dismiss="alert" href="#">&times;</a>
+        <ul class="errors">
+          <li th:each="err : ${#fields.errors('*')}" th:text="${err}"></li>
+        </ul>
+      </div>
+      <div class="panel panel-primary">
+        <div class="panel-heading">
+          <strong th:text="#{items.personForm.register}">Register person</strong>
+        </div>
+
+        <div class="panel-body collapse in">
+          <div class="form-group row">
+            <div class="col col-md-2 bg-info">
+              <label th:text="#{items.personForm.firstName}">FirstName</label>
+              <span class="label label-danger">*Required</span>
+            </div>
+            <div class="col col-md-4">
+              <input th:field="*{firstName}" type="text" class="form-control">
+            </div>
+            <div class="col col-md-2 bg-info">
+              <label th:text="#{items.personForm.departmentId}">Department</label>
+            </div>
+            <div class="col col-md-4">
+              <select class="form-control" th:field="*{departmentId}">
+                <option value=""></option>
+                <option th:each="department : ${departments}"
+                  th:value="${department.departmentId}"
+                  th:text="${department.departmentName}"></option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <div class="col col-md-2 bg-info">
+              <label th:text="#{items.personForm.lastName}">LastName</label> <span
+                class="label label-danger">*Required</span>
+            </div>
+            <div class="col col-md-4">
+              <input th:field="*{lastName}" type="text" class="form-control"
+                th:value="*{firstName}">
+            </div>
+            <div class="col col-md-2 bg-info">
+              <label th:text="#{items.personForm.address}">Address</label>
+            </div>
+            <div class="col col-md-4">
+              <input th:field="*{address}" type="text" class="form-control"
+                th:value="*{address}">
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <div class="col col-md-2 bg-info">
+              <label th:text="#{items.personForm.city}">City</label>
+            </div>
+            <div class="col col-md-4">
+              <input th:field="*{city}" type="text" class="form-control"
+                th:value="*{city}">
+            </div>
+            <div class="col col-md-2 bg-info">
+              <label th:text="#{items.personForm.phone}">Phone</label>
+            </div>
+            <div class="col col-md-4">
+              <input th:field="*{phone}" type="text" class="form-control"
+                th:value="*{phone}">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="form-group row">
+        <div class="col col-md-2">
+          <button id="backLink" type="button" class="btn btn-default"
+            onclick="history.go(-1)">
+            <span th:text="#{items.button.back}">Back</span>
+          </button>
+        </div>
+        <div class="col col-md-2 text-right pull-right">
+          <button type="submit" id="registerBtn" class="btn btn-primary">
+            <span th:text="#{items.button.register}">Register</span>
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</body>
+</html>

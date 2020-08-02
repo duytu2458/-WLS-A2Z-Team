@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title th:utext="#{label.managementUsers}"></title>
+
+
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+	rel="stylesheet">
+<script src="js/jquery.min.js" th:src="@{/js/jquery.min.js}"></script>
+<script src="js/popper.min.js" th:src="@{/js/popper.min.js}"></script>
+<script src="js/bootstrap.min.js" th:src="@{/js/bootstrap.min.js}"></script>
+<script src="js/jquery.twbsPagination.min.js"
+	th:src="@{/js/jquery.twbsPagination.min.js}"></script>
+
+<link rel="stylesheet" href="/css/bootstrap.min.css"
+	th:href="@{/css/bootstrap.min.css}">
+<link rel="stylesheet" href="/css/style.css" th:href="@{/css/style.css}">
+
+<link rel="stylesheet" href="/css/font-awesome.min.css"
+	th:href="@{/css/font-awesome.min.css}">
+
+
+
+
+<script src="/js/jquery-3.3.1.min.js"
+	th:src="@{/js/jquery-3.3.1.min.js}"></script>
+
+<link rel="stylesheet" href="/cssviews/admin/ManageMembers/WLS-AD02.css"
+	th:href="@{/cssviews/admin/ManageMembers/WLS-AD02.css}">
+
+<script src="/js/jquery.twbsPagination.js" type="text/javascript"
+	th:src="@{/js/jquery.twbsPagination.js}"></script>
+
+<!-- <link rel="stylesheet" href="cssviews/admin/WLS-AD01.css" th:href="@{/cssviews/admin/WLS-AD01.css}"> -->
+<!-- <script src="https://code.highcharts.com"></script> -->
+
+</head>
+<style>
+</style>
+
+<body>
+
+	<article>
+
+		<header>
+			<!--Navbar -->
+			<nav class="mb-1 navbar navbar-expand-md navbar-dark styleHeader1">
+				<div class="collapse navbar-collapse" id="">
+					<span class="rowHeader-left" style="margin-left: 7%; color: white;">06/10/2020
+						&#9728; 28 &#8451; <span class="fa fa-map-marker"></span> Đà Nẵng
+					</span>
+
+					<ul class="navbar-nav ml-auto">
+						<li class="nav-item dropdown"><a
+							class="nav-link dropdown-toggle" id="" data-toggle="dropdown"
+							aria-haspopup="true" aria-expanded="false"> <i
+								class="fas fa-user"></i> TuND
+						</a>
+							<div class="dropdown-menu dropdown-menu-right dropdown-info"
+								aria-labelledby="navbarDropdownMenuLink-4"
+								style="margin-top: -8%;">
+								<a class="dropdown-item styleLogout"
+									href="/vi/admin/manage-users" th:utext="#{label.vn}"></a> <a
+									class="dropdown-item styleLogout" href="/en/admin/manage-users"
+									th:utext="#{label.en}"></a> <a
+									class="dropdown-item styleLogout" href="#"
+									th:utext="#{label.logOut}"></a>
+							</div></li>
+					</ul>
+				</div>
+			</nav>
+			<nav
+				class="mb-1 navbar navbar-expand-sm navbar-dark bg-light styleHeader2">
+				<div class="collapse navbar-collapse" id="">
+
+
+					<ul class="nav nav-pills">
+						<li class="nav-item"><a class="nav-link active" href=""
+							id="clickHome" th:href="@{/}" th:utext="#{label.home}"></a></li>
+
+					</ul>
+				</div>
+
+			</nav>
+		</header>
+
+
+
+
+
+
+		<main class="container-fluid text-center styleContainer"> <!-- 		<div class="navbar-text pull-right bg-primary"> -->
+		<select class="form-control"
+			onchange="location.href=value + '&' + location.search.substring(1,location.search.length); setCookie('javaMessage','',-1);">
+			<option th:text="#{system.label.selectLanguage}"></option>
+			<option value="?lang=en" th:text="#{system.label.english}"></option>
+			<option value="?lang=vi" th:text="#{system.label.japanese}"></option>
+		</select>
+
+		<p id="p1">english</p>
+
+		<p
+			onclick="location.href='?lang=vi' + '&' + location.search.substring(1,location.search.length); setCookie('javaMessage','',-1);">vietnam</p>
+
+		<p
+			onclick="var sh = location.search; if(sh.startsWith('?lang=') && sh.indexOf('&') > 0) sh = location.search.substring(sh.indexOf('&') + 1,location.search.length); location.href='lang=en' + '&' + sh; setCookie('javaMessage','',-1);">en</p>
+
+		<p
+			onclick="var sh = location.search; if(sh.startsWith('?lang=') && sh.indexOf('&') > 0) sh = location.search.substring(sh.indexOf('&') + 1,location.search.length); location.href='lang=vi' + '&' + sh; setCookie('javaMessage','',-1);">vi</p>
+
+		<p
+			onclick="var sh = location.search; if(sh.startsWith('?lang=') && sh.indexOf('&') > 0) sh = location.search.substring(sh.indexOf('&') + 1,location.search.length); alert(sh); setCookie('javaMessage','',-1);">test</p>
+		<!-- alert(x.substring(x.indexOf('&'),location.search.length) --> <!-- x.startsWith('?lang=') -->
+		<div class="styleSearch">
+
+			<!-- location.href=value + '&' + location.search.substring(1,location.search.length); -->
+
+
+			<form id="formGetData" th:action="@{/}" action=""
+				th:object=${objectSearch} method="get">
+				<div class="row" style="margin: 0px">
+					<div class="col-sm-12 styleSearch2">
+						<div class="form-group row styleSearch3">
+							<div class="col-sm-2">
+								<div class="form-group row">
+									<label for="" class="col-sm-5 col-form-label"
+										th:utext="#{label.account}"></label>
+									<div class="col-sm-7">
+										<input type="text" class="form-control" id="accountSearch"
+											th:placeholder="#{label.account}" th:field="*{account}"
+											th:value="*{account}" style="width: 100%;">
+									</div>
+								</div>
+							</div>
+							<div class="col-sm-3">
+								<div class="form-group row">
+									<label for="" class="col-sm-4 col-form-label"
+										th:utext="#{label.fullName}"></label>
+									<div class="col-sm-8">
+										<input type="text" class="form-control" id="fullNameSearch"
+											th:placeholder="#{label.fullName}" th:field="*{fullName}"
+											th:value="*{fullName}">
+									</div>
+
+								</div>
+							</div>
+							<div class="col-sm-2">
+								<div class="form-group row">
+									<label for="" class="col-sm-4 col-form-label"
+										th:utext="#{label.role}"></label>
+									<div class="col-sm-8">
+										<select name="" id="pmSearch" class="form-control"
+											th:field="${objectSearch.pm}" th:value="${objectSearch.pm}">
+											<option id="defaultPmSearch" class="form-control" value=""
+												th:value="null" th:utext="#{label.all}"></option>
+											<option value="" class="form-control" th:value="false"
+												th:utext="#{label.notPm}"></option>
+											<option value="" class="form-control" th:value="true"
+												th:utext="#{label.isPm}"></option>
+										</select>
+									</div>
+								</div>
+							</div>
+							<div class="col-sm-3">
+								<div class="form-group row">
+									<label for="" class="col-sm-4 col-form-label"
+										th:utext="#{label.phone}"></label>
+									<div class="col-sm-8">
+										<input type="text" class="form-control" id="phoneSearch"
+											th:placeholder="#{label.phone}" th:field="*{phone}"
+											th:value="*{phone}">
+									</div>
+								</div>
+
+							</div>
+							<div class="col-sm-1">
+								<button id="clickClear" type="reset"
+									class="btn btn-outline-primary" style="width: 110px;"
+									th:utext="#{label.clear}"></button>
+							</div>
+							<div class="col-sm-1">
+								<button id="clickSearch" type="submit"
+									class="btn btn-outline-primary" style="width: 110px;"
+									th:utext="#{label.search}"></button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</form>
+
+
+
+			<br>
+			<div style="border: 2px solid green;">
+				<table class="table table-striped" style="border-radius: 8px;">
+					<thead>
+						<tr class="styleTable1">
+							<th scope="col" class="tableFixWidth th-sm" style="width: 7%;">
+							</th>
+							<th scope="col" class="tableFixWidth" style="width: 11%;"
+								th:utext="#{label.account}"></th>
+							<th scope="col" class="tableFixWidth" style="width: 14%;"
+								th:utext="#{label.fullName}"></th>
+							<th scope="col" class="tableFixWidth" style="width: 11%;"
+								th:utext="#{label.pm}"></th>
+							<th scope="col" class="tableFixWidth" style="width: 11%;"
+								th:utext="#{label.gender}"></th>
+							<th scope="col" class="tableFixWidth"
+								style="width: 11%; text-align: start;" th:utext="#{label.phone}"></th>
+							<th scope="col" class="tableFixWidth"
+								style="width: 10%; padding-top: 0px; padding-bottom: 5px;">
+							</th>
+						</tr>
+					</thead>
+
+					<tbody>
+
+						<tr th:each="list,i : ${listAllMembers}">
+							<td th:id=${i.count} id="" style="text-align: center;"
+								th:text="${i.count}"></td>
+							<td th:id="account+${i.count}" id="" th:text="${list.account}"
+								class="styleTextCol1"></td>
+							<td th:id="fullName+${i.count}" id="" th:text="${list.fullName}"
+								class="styleTextCol1"></td>
+							<td th:id="role+${i.count}" id="" th:text="${list.pm}"
+								class="styleTextCol1"></td>
+							<td th:id="gender+${i.count}" id="" th:text="${list.gender}"
+								class="styleTextCol1"></td>
+							<td th:id="phoneNumber+${i.count}" id=""
+								style="text-align: center;" th:text="${list.phone}"></td>
+							<td><button type="button"
+									class="btn btn-outline-danger editMember" data-toggle="modal"
+									data-target="#exampleModalLong"
+									style="width: 80px; float: right;" th:utext="#{label.btnEdit}"></button></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+
+
+			<!-- Modal -->
+			<!--  -->
+			<form id="popup" action="" th:action="@{/}" method="get">
+				<div class="modal fade" id="exampleModalLong" role="dialog"
+					aria-labelledby="exampleModalLongTitle" aria-hidden="true"
+					style="margin-top: 5%; margin-left: -8%;">
+					<div class="modal-dialog" role="document">
+						<div class="modal-content"
+							style="border-color: rgb(0, 247, 255); width: 120%;">
+							<div class="modal-header">
+								<b class="modal-title" id="exampleModalLongTitle"
+									style="padding-left: 42%; font-size: 19px;"></b>
+								<button type="button" class="close" data-dismiss="modal"
+									aria-label="Close">
+									<span aria-hidden="true">&times;</span>
+								</button>
+							</div>
+							<div id="modalBody" class="modal-body">
+								<div
+									style="background-color: white; width: 90%; height: 77%; margin-left: 5%; margin-top: 4%;">
+									<div class="form-group row">
+										<label for="" class="col-sm-3 col-form-label"
+											style="text-align: left;" th:utext="#{label.account}"></label>
+										<div class="col-sm-6">
+											<input type="text" class="form-control" id="popupAccount"
+												th:placeholder="#{label.account}">
+										</div>
+										<div class="col-sm-3">
+											<button id="clickCheckAccount"
+												class="btn btn-outline-primary" style="width: 100%;"
+												th:utext="#{label.check}"></button>
+										</div>
+
+
+									</div>
+									<!-- <p th:if="${#fields.hasErrors('account')}" th:errors="*{account}"></p> -->
+									<div class="form-group row">
+										<label for="" class="col-sm-3 col-form-label"
+											style="text-align: left;" th:utext="#{label.fullName}"></label>
+										<div class="col-sm-9">
+											<input type="text" class="form-control" id="popupFullName"
+												th:placeholder="#{label.fullName}">
+										</div>
+									</div>
+									<div class="form-group row">
+										<label for="" class="col-sm-3 col-form-label"
+											style="text-align: left;" th:utext="#{label.gender}"></label>
+										<div class="col-sm-9">
+											<select name="" id="popupGender" class="form-control">
+												<option class="optionGender" value="" th:value="Male"
+													th:utext="#{label.male}"></option>
+												<option class="optionGender" value="" th:value="Female"
+													th:utext="#{label.female}"></option>
+											</select>
+										</div>
+									</div>
+									<div class="form-group row">
+										<label for="" class="col-sm-3 col-form-label"
+											style="text-align: left;" th:utext="#{label.pm}"></label>
+										<div class="col-sm-9">
+											<select name="" id="popupPm" class="form-control">
+												<option class="optionRole" th:value="false" value=""
+													th:utext="#{label.no}"></option>
+												<option class="optionRole" th:value="true" value=""
+													th:utext="#{label.yes}"></option>
+											</select>
+										</div>
+									</div>
+									<div class="form-group row">
+										<label for="" class="col-sm-3 col-form-label"
+											style="text-align: left;" th:utext="#{label.phone}"></label>
+										<div class="col-sm-9">
+											<input type="text" class="form-control" id="popupPhone"
+												th:placeholder="#{label.phone}">
+										</div>
+									</div>
+									<div class="form-group row">
+										<label for="" class="col-sm-3 col-form-label"
+											style="text-align: left;" th:utext="#{label.password}"></label>
+										<div id="stylePassWord" class="col-sm-6">
+											<input type="password" class="form-control"
+												id="popupPassword" placeholder="Password">
+										</div>
+										<div class="col-sm-3">
+											<button id="clickChangePassword" type="button"
+												class="btn btn-outline-danger changePassword"
+												style="width: 100%;" th:utext="#{label.change}"></button>
+										</div>
+									</div>
+
+									<b id="popupMessage" style="text-align: center; color: red;"></b>
+
+								</div>
+
+
+							</div>
+							<div class="modal-footer" style="float: left;">
+
+								<button id="clickCancel" type="submit" class="btn btn-danger"
+									data-dismiss="modal" style="width: 120px;"
+									th:utext="#{label.cancel}"></button>
+								&#160;&#160;&#160;
+								<button id="clickUpdate" type="submit" class="btn btn-success"
+									style="width: 120px;"></button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>
+		</main>
+
+
+		<br>
+
+		<div class="asd" style="margin-left: 8%; margin-right: 8%;">
+			<div class="row" style="margin: 0px">
+				<div class="col-sm-12">
+					<div class="form-group row"
+						style="margin-top: 1%; text-align: center;">
+						<div class="col-sm-4">
+							<div>
+								<p class="styleInfoPage">
+									<span th:utext="#{label.total}"></span> [[${totalItems}]] <span
+										th:utext="#{label.items}"></span> [[${totalPages}]] <span
+										th:utext="#{label.page}"></span> <span>&nbsp;</span>
+								</p>
+								<input id="inputPage" class="form-control styleInputPage"
+									type="text"> &nbsp;
+								<button id="clickGetPageByInput"
+									class="btn btn-outline-primary styleBtnGo"
+									th:utext="#{label.go}"></button>
+							</div>
+
+						</div>
+
+
+						<div class="col-sm-5">
+
+							<ul class="pagination" id="pagination"
+								style="margin-left: -5%; margin-top: 5px;"></ul>
+
+						</div>
+						<div class="col-sm-1">
+							<button id="" type="button"
+								class="btn btn-outline-primary editMember styleCreate"
+								data-toggle="modal" data-target="#exampleModalLong"
+								th:utext="#{label.create}"></button>
+						</div>
+
+						<div class="col-sm-1">
+							<a id="clickReset" href="" th:href="@{/}"
+								class="btn btn-outline-primary styleButtonReset"
+								th:utext="#{label.reset}"></a>
+						</div>
+
+						<div class="col-sm-1">
+							<a id="clickBack" href="" th:href="@{/}"
+								class="btn btn-outline-primary styleButtonBack"
+								th:utext="#{label.back}"> </a>
+						</div>
+
+
+
+					</div>
+				</div>
+			</div>
+		</div>
+		<footer>
+			<div class="footer2">
+				<i><b>A2Z Team</b></i>
+			</div>
+		</footer>
+
+	</article>
+
+
+
+
+
+	<script th:inline="javascript">
+	
+	
+	
+// 	onclick="location.href='?lang=en' + '&' + location.search.substring(1,location.search.length); setCookie('javaMessage','',-1);"
+	
+	$("#p1").click(function(){
+		var search = location.search;
+
+	 	if(sh.startsWith('?lang=') && sh.indexOf('&') > 0) {
+	 		sh = location.search.substring(sh.indexOf('&') + 1,location.search.length);
+	 		location.href='?lang=vi' + '&' + sh;
+
+	 	}else{
+	 		location.href='?lang=en' + '&' + search.substring(1,search.length); setCookie('javaMessage','',-1);
+	 	}
+	});
+	
+	
+	
+	
+	var sh = location.search; 
+	
+// 	alert(sh)
+	
+// 	if(sh.startsWith('?lang=') && sh.indexOf('&') > 0) {
+// 		sh = location.search.substring(sh.indexOf('&') + 1,location.search.length);
+// 		location.href='&lang=vi' + '&' + sh;
+
+// 	}else{
+// 		location.href = '&lang=vi' + '&' + sh.substring(1,location.search.length);
+// 	}
+	
+// 	location.href='&lang=vi' + '&' + location.search.substring(1,location.search.length);
+	
+// 	location.href='lang=vi' + '&' + sh;
+	
+// 	alert('lang=vi' + '&' + sh);
+
+//    location.href= '&locale=vi';
+//    alert(location.href)
+	
+		 
+// 	 setCookie('javaMessage','',-1);
+			
+	
+		/*<![CDATA[*/
+		var currentPage = [[${ currentPage }]];
+		var totalItems = [[${ totalItems }]];
+		var totalPages = [[${ totalPages }]];
+		var currentURL = [[${#httpServletRequest.requestURI}]];
+		
+		/*]]>*/
+	</script>
+	<script>
+		$(document).ready(function () {
+			
+			var language = checkCurentURL(currentURL);
+			
+			function checkCurentURL(currentURL){
+				if (currentURL.indexOf("vi") > 0){
+					return "/vi";
+				}
+				return "/en";
+			};
+				
+/* Xu ly phan trang */
+			$(function () {
+				var url2 = null;
+				window.pagObj = $('#pagination').twbsPagination({
+					totalPages: totalPages,
+					visiblePages: 10,
+					startPage: currentPage,
+					onPageClick: function (event, page) {
+						url = language + "/admin/manage-users/page/" + page;
+						url2 = $("#formGetData");
+						url2.attr('action', url);
+					}
+				}).on('page', function (event, page) {
+					url2.submit();
+					/* &nbsp */
+				});
+			});
+
+/* Xu ly lay du lieu khi click vao so page */
+			$("#clickGetPageByInput").click(function () {
+				var language = checkCurentURL(currentURL);
+				var num = $("#inputPage").val();
+				url3 = null;
+				if (num == "") {
+					url3 = language + "/admin/manage-users/page/" + 1;
+				} else {
+					url3 = language + "/admin/manage-users/page/" + num;
+				}
+				$("#formGetData").attr('action', url3);
+				$("#formGetData").submit();
+			});
+/* Clear cac truong Search da nhap	 */		
+			$("#clickClear").click(function (){
+				$("#accountSearch").attr('value','');
+				$("#fullNameSearch").attr('value','');
+				$("#pmSearch").attr('value','');
+				$("#phoneSearch").attr('value','');
+			});
+			
+/* Check Account da ton tai chua	 */		
+
+/* Click Reset trang */
+			$("#clickHome").click(function (){
+				$("#clickHome").attr('href', language + '/admin');
+			});
+
+/* Click Reset trang */
+			$("#clickReset").click(function (){
+				$("#clickReset").attr('href', language + '/admin/manage-users');
+			});
+
+/* Click Reset trang */
+			$("#clickReset").click(function (){
+				$("#clickReset").attr('href', language + '/admin/manage-users');
+			});
+			
+/* Click Black trang */
+ 			$("#clickBack").click(function (){
+				$("#clickBack").attr('href', language + '/admin');
+			});
+			
+
+/* Click Search voi du lieu trong from Search */
+			$("#clickSearch").click(function (){
+				$("#formGetData").attr('action', language + '/admin/manage-users/page/1');
+				$("#formGetData").submit();
+			});
+
+
+/* Khi submit du lieu cua popup (them/sua user) */
+			$("#popup").submit(function () {
+				$("#clickCheckAccount").click(function (){
+					return false;
+				});
+				paramsUserEntity = {
+					"account": $("#popupAccount").val(),
+					"fullName": $("#popupFullName").val(),
+					"passWord": $("#popupPassword").val(),
+					"gender": $("#popupGender").val(),
+					"phone": $("#popupPhone").val(),
+					"pm": $("#popupPm").val()
+				};
+				urlStr = language +  '/admin/manage-users/save';
+
+				var message = null;
+
+				$.ajax({
+					url: urlStr,
+					type: "POST",
+					data: JSON.stringify(paramsUserEntity),
+					dataType: "json",
+					contentType: "application/json; charset=utf-8"
+				}).done(function (response) {
+					message = response.message;
+					if (message != "SUCCESS !!!") {
+						$("#popupMessage").text(message);
+						return false;
+					} else {
+						/* $("#popupMessage").text(message);
+						confirm("SUCCESS !!!"); */
+						$('.modal').removeClass('in');
+						$('.modal').attr("aria-hidden", "true");
+						$('.modal').css("display", "none");
+						$('.modal-backdrop').remove();
+						$('body').removeClass('modal-open');
+						confirm(message);
+						return true;
+					}
+				});
+				return false;
+
+			});
+
+/* Bien index cua row chon xuat hien popup */
+			var A = null;
+/* Xu ly nut kich hoat cho phep thay doi mat khau  */
+			$("#clickChangePassword").click(function () {
+				$("#popupPassword").prop("disabled", false);
+
+			});
+/* Xu ly du lieu xuat hien len popup cua row duoc chon */
+			$(".editMember").click(function () {
+				
+				$("#popupMessage").html("");
+				
+				A = $(this).index(".editMember") + 1;
+				var indexRowClick = $(this).index(".editMember") + 1;
+				var colAccount = "#account" + indexRowClick;
+				var colFullName = "#fullName" + indexRowClick;
+				var colRole = "#role" + indexRowClick;
+				var colGender = "#gender" + indexRowClick;
+				var colPhone = "#phoneNumber" + indexRowClick;
+				
+				if ($(this).text() == "Create" || $(this).text() == "Tạo mới") {
+					if ($(this).text() == "Create"){
+						$("#exampleModalLongTitle").text("Create User");
+						$("#clickUpdate").text("Create");
+					} else {
+						$("#exampleModalLongTitle").text("Tạo mới người dùng");
+						$("#clickUpdate").text("Tạo mới");
+					}
+					$("#popupPassword").prop("disabled", false);
+					$("#clickChangePassword").prop("disabled", true);
+					$("#popupAccount").prop("disabled", false);
+				} else {
+					if ($(this).text() == "Edit"){
+						$("#exampleModalLongTitle").text("Edit User");
+						$("#clickUpdate").text("Update");
+					} else {
+						$("#exampleModalLongTitle").text("Chỉnh sửa người dùng");
+						$("#clickUpdate").text("Cập nhật");
+					}
+					
+					$("#popupAccount").prop("disabled", true);
+					$("#clickChangePassword").prop("disabled", false);
+				}
+				$("#popupAccount").val($(colAccount).text())
+				$("#popupTitle").text($(colAccount).text())
+				$("#popupFullName").val($(colFullName).text())
+				$(".optionRole").each(function () {
+					if ($(this).text() == $(colRole).text()) {
+						$(this).prop("selected", true);
+					}
+				});
+				$(".optionGender").each(function () {
+					if ($(this).text() == $(colGender).text()) {
+						$(this).prop("selected", true);
+					}
+				});
+				$("#popupPhone").val($(colPhone).text())
+				$("#popupPassword").val("1236512635")
+				$(".modal").show();
+
+			});
+
+/* click cancel popup */
+			$("#clickCancel").click(function () {
+				$(".modal").hide();
+				$("#popupPassword").prop("disabled", true);
+			});
+
+/* click ra ngoai popup */
+			$(window).on('click', function (e) {
+				if ($(e.target).is('.modal')) {
+					$(".modal").hide();
+					$("#popupPassword").prop("disabled", true);
+				}
+			});
+/* click vao dau x popup */
+			$(".close").click(function () {
+				$(".modal").hide();
+				$("#popupPassword").prop("disabled", true);
+			});
+
+		});
+
+		/* 		$.post(urlStr,JSON.stringify(paraUserEntity),function (response){
+		 alert(response);
+		 alert("gui thanh cong");
+		 }).fail(function (){
+		 alert("co loi xay ra");
+		 }); */
+		/*accountStr = $("#popupAccount").val();
+		fullNameStr = $("#popupFullName").val();
+		genderStr = $("#popupGender").val();
+		pmStr = $("#popupPm").val();
+		phoneStr = $("#popupPM").val();
+		passWordStr = $("#popupPassword").val(); */
+
+
+		/* $('.modal').removeClass('in');
+		$('.modal').attr("aria-hidden", "true");
+		$('.modal').css("display", "none");
+		$('.modal-backdrop').remove();
+		$('body').removeClass('modal-open'); */
+
+		/* // 	$(".modal").hide();
+		// 	if ($(this).text() == "Create") {
+		// 		/* alert("Added !!!"); */
+		// 	} else {
+		// 		/* alert("Updated !!!"); */
+		// 		$("#popup").submit("put"); */
+
+	</script>
+</body>
+
+</html>

@@ -1,0 +1,26 @@
+.screen {
+  width: 300px;
+  height: 150px;
+  border-style: solid;
+  padding: 20px;
+  text-align: center;
+}
+
+.keyboard {
+	border-bottom: 50px solid #555;
+	border-left: 25px solid transparent;
+	border-right: 25px solid transparent;
+	height: 30px;
+	width: 250px;
+    padding : -50px;
+    margin: 0px 0px 0px 22px;
+}
+
+.centered {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #ff0000;
+}
+ 

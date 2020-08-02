@@ -1,0 +1,23 @@
+1596366945153	Move 'basicLayout.html' to 'admin'
+1596367611163	Rename resource 'person'
+1596367724080	Rename resource 'personEdit.html'
+1596375611398	Delete elements
+1596375698232	Delete element
+1596375712199	Rename resource 'fonts'
+1596375811169	Delete element
+1596375882424	Delete elements
+1596375898173	Delete element
+1596378888092	Copy file
+1596382822057	Delete elements
+1596382832419	Delete element
+1596382965090	Copy compilation unit
+1596383503793	Delete element
+1596383507943	Delete element
+1596383603992	Rename type 'IUserRepository'
+1596383621114	Rename type 'IUserService'
+1596383638653	Rename type 'UserService'
+1596383696195	Rename type 'IUserService'
+1596383738848	Rename type 'UserService'
+1596383791555	Rename type 'UserService'
+1596383839579	Rename type 'UserServiceImp'
+1596384058108	Rename resource 'admin.html'
