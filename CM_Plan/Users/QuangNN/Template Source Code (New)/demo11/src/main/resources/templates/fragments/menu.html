@@ -17,13 +17,13 @@
 					<div class="dropdown-menu dropdown-menu-right dropdown-info">
 						<a class="dropdown-item styleLogout" 
 							onclick="changeLanguage('vi')" 
-							th:utext="#{label.vn}">VN</a>
+							th:utext="#{system.label.vietnamese}">VN</a>
 							
 						<a class="dropdown-item styleLogout" 
 							onclick="changeLanguage('en')"
-							th:utext="#{label.en}">EN</a>
+							th:utext="#{system.label.english}">EN</a>
 							
-						<a class="dropdown-item styleLogout" href="#">LogOut</a>
+						<a class="dropdown-item styleLogout" href="#" th:utext="#{system.label.logout}">LogOut</a>
 					</div>
 					</li>
 				</ul>
