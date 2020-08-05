@@ -130,29 +130,15 @@
 								</tr>
 							</thead>
 							<tbody>
-								<tr>
-									<td>1</td>
-									<td>TuND14</td>
-									<td>Nguyen Duy Tu</td>
-									<td>Admin</td>
-									<td>True</td>
-									<td>Male</td>
-									<td>0344109790</td>
-									<td>True</td>
-									<td>
-										<button type="button" class="btn btn-outline-danger btn-block"
-											data-toggle="modal" data-target="#modal-edit">Edit</button>
-									</td>
-								</tr>
-								<tr>
-									<td>1</td>
-									<td>TuND14</td>
-									<td>Nguyen Duy Tu</td>
-									<td>Admin</td>
-									<td>True</td>
-									<td>Male</td>
-									<td>0344109790</td>
-									<td>True</td>
+								<tr th:each="user, state : ${listUser}">
+									<td th:text="${state.count}">1</td>
+									<td th:text="${user.account}">TuND14</td>
+									<td th:text="${user.fullName}">Nguyen Duy Tu</td>
+									<td >Admin</td>
+									<td th:text="${user.pm}">True</td>
+									<td th:text="${user.gender}">Male</td>
+									<td th:text="${user.phone}">0344109790</td>
+									<td th:text="${user.enable}">True</td>
 									<td>
 										<button type="button" class="btn btn-outline-danger btn-block"
 											data-toggle="modal" data-target="#modal-edit">Edit</button>

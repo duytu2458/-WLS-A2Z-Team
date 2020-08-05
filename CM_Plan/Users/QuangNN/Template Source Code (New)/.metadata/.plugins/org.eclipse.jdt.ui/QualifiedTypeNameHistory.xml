@@ -1,2 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<qualifiedTypeNameHistroy/>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="java.lang.Boolean"/>
+    <fullyQualifiedTypeName name="vn.vtd.wls.data.Create"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="vn.vtd.wls.entitys.UserEntity"/>
+    <fullyQualifiedTypeName name="org.springframework.ui.Model"/>
+    <fullyQualifiedTypeName name="vn.vtd.wls.service.UserService"/>
+    <fullyQualifiedTypeName name="vn.vtd.wls.service.impl.UserServiceImpl"/>
+</qualifiedTypeNameHistroy>

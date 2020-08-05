@@ -16,37 +16,53 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 @MappedSuperclass
 @EntityListeners(AuditingEntityListener.class)
 public abstract class UserBaseEntity {
-	
+
 //	@Size(min = 2, max = 10)
-	@NotBlank
+	@NotBlank(message = "123123123")
 	@NotEmpty
 	@Id
-	@Column (name = "account")
+	@Column(name = "account")
 	protected String account;
-	
+
 	@Size(min = 1, max = 25)
 	@NotBlank
 	@NotEmpty
 	@Column(name = "fullname")
 	protected String fullName;
-	
+
 	@Size(min = 3, max = 320)
 	@NotBlank
 	@NotEmpty
-	@Column (name = "password")
+	@Column(name = "password")
 	protected String passWord;
-	
+
 	@NotBlank
 	@NotEmpty
 	@Column(name = "gender")
 	protected String gender;
-	
-	@Size(min = 10, max = 11)
+
+	@Size(min = 9, max = 11)
 	@PositiveOrZero
 	@NotBlank
 	@NotEmpty
 	@Column(name = "phone")
 	protected String phone;
+
+	public UserBaseEntity() {
+		super();
+	}
+
+	public UserBaseEntity(@NotBlank(message = "123123123") @NotEmpty String account,
+			@Size(min = 1, max = 25) @NotBlank @NotEmpty String fullName,
+			@Size(min = 3, max = 320) @NotBlank @NotEmpty String passWord, @NotBlank @NotEmpty String gender,
+			@Size(min = 9, max = 11) @PositiveOrZero @NotBlank @NotEmpty String phone) {
+		super();
+		this.account = account;
+		this.fullName = fullName;
+		this.passWord = passWord;
+		this.gender = gender;
+		this.phone = phone;
+	}
 
 	public String getAccount() {
 		return account;
@@ -55,8 +71,6 @@ public abstract class UserBaseEntity {
 	public void setAccount(String account) {
 		this.account = account;
 	}
-	
-	
 
 	public String getPassWord() {
 		return passWord;
@@ -89,13 +103,5 @@ public abstract class UserBaseEntity {
 	public void setPhone(String phone) {
 		this.phone = phone;
 	}
-	
-	
-	
-	
-	
-	
-	
-	
 
 }

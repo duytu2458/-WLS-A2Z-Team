@@ -1,5 +1,7 @@
 package vn.vtd.wls.service.impl;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -9,10 +11,10 @@ import org.springframework.stereotype.Service;
 import vn.vtd.wls.dto.UserSearch;
 import vn.vtd.wls.entitys.UserEntity;
 import vn.vtd.wls.repository.UserRepository;
-import vn.vtd.wls.service.IUserService;
+import vn.vtd.wls.service.UserService;
 
 @Service
-public class UserServiceImpl implements IUserService {
+public class UserServiceImpl implements UserService {
 
 	@Autowired
 	UserRepository userRepository;
@@ -21,6 +23,12 @@ public class UserServiceImpl implements IUserService {
 	public Page<UserEntity> findAll(int pageNum) {
 		Pageable pageable = PageRequest.of(pageNum - 1, 10);
 		return userRepository.findAll(pageable);
+	}
+
+	@Override
+	public List<UserEntity> findAll() {
+		// TODO Auto-generated method stub
+		return userRepository.findAll();
 	}
 
 //	@Override
@@ -54,4 +62,8 @@ public class UserServiceImpl implements IUserService {
 		}
 	}
 
+	@Override
+	public void deleteAll() {
+		userRepository.deleteAll();
+	}
 }
