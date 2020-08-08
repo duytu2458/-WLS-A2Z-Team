@@ -8,6 +8,7 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
+import vn.vtd.wls.common.Handling;
 import vn.vtd.wls.dto.UserSearch;
 import vn.vtd.wls.entitys.UserEntity;
 import vn.vtd.wls.repository.UserRepository;
@@ -43,27 +44,35 @@ public class UserServiceImpl implements UserService {
 		userRepository.save(userEntity);
 	}
 
-	@Override
-	public Page<UserEntity> findByField(int pageNum, UserSearch userSearch) {
-
-		Pageable pageable = PageRequest.of(pageNum - 1, 5);
-		try {
-			UserSearch userSearch2 = (UserSearch) userSearch.clone();
-			if (userSearch2.getPm() == null) {
-				return userRepository.findByField(userSearch2.getAccount(), userSearch2.getFullName(),
-						userSearch2.getPhone(), pageable);
-			} else {
-				return userRepository.findByField(userSearch2.getAccount().trim(), userSearch2.getFullName(),
-						userSearch2.getPm(), userSearch2.getPhone(), pageable);
-			}
-		} catch (CloneNotSupportedException e) {
-			e.printStackTrace();
-			return null;
-		}
-	}
+//	@Override
+//	public Page<UserEntity> findByField(int pageNum, UserSearch userSearch) {
+//
+//		Pageable pageable = PageRequest.of(pageNum - 1, 5);
+//		try {
+//			UserSearch userSearch2 = (UserSearch) userSearch.clone();
+//			if (userSearch2.getPm() == null) {
+//				return userRepository.findByField(userSearch2.getAccount(), userSearch2.getFullName(),
+//						userSearch2.getPhone(), pageable);
+//			} else {
+//				return userRepository.findByField(userSearch2.getAccount().trim(), userSearch2.getFullName(),
+//						userSearch2.getPm(), userSearch2.getPhone(), pageable);
+//			}
+//		} catch (CloneNotSupportedException e) {
+//			e.printStackTrace();
+//			return null;
+//		}
+//	}
 
 	@Override
 	public void deleteAll() {
 		userRepository.deleteAll();
+	}
+
+	@Override
+	public String getAccountFromFullName(String fullName) {
+		String account = Handling.getAccountFromFullName(fullName);
+
+		return account == null ? null
+				: Handling.getAccountFromAccountList(account, userRepository.getSameAccount(account));
 	}
 }

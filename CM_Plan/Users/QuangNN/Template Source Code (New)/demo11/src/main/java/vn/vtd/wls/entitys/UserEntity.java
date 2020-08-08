@@ -2,77 +2,122 @@ package vn.vtd.wls.entitys;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import javax.persistence.Table;
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.PositiveOrZero;
-import javax.validation.constraints.Size;
 
 import org.springframework.stereotype.Component;
-
-import vn.vtd.wls.entitys.base.UserBaseEntity;
 
 @Entity
 @Table(name = "user_entity")
 @Component
-public class UserEntity extends UserBaseEntity {
+public class UserEntity {
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "id")
+	private Long id;
 
-	@Column(name = "is_pm")
-	private boolean pm;
+	@Column(name = "account")
+	private String account;
+
+	@Column(name = "fullname", columnDefinition = "nvarchar(50)")
+	private String fullName;
+
+	@Column(name = "gender", columnDefinition = "nvarchar(10)")
+	private String gender;
 
 	@Column(name = "enable")
-	private boolean enable;
+	private Boolean enable;
 
-//	@OneToMany(mappedBy = "userEntity")
-//	List<JoinProjectEntity> joinProjectEntities = new ArrayList<>();
-//	
-//	@OneToMany(mappedBy = "roleEntity")
-//	List<JoinProjectEntity> joinProjectEntities2 = new ArrayList<>();
+	@Column(name = "phone")
+	private String phone;
+
+	@Column(name = "password")
+	private String passWord;
+
+	@Column(name = "rolelogin")
+	private String roleLogin;
 
 	public UserEntity() {
 		super();
 	}
 
-	public UserEntity(@NotBlank(message = "123123123") @NotEmpty String account,
-			@Size(min = 1, max = 25) @NotBlank @NotEmpty String fullName,
-			@Size(min = 3, max = 320) @NotBlank @NotEmpty String passWord, @NotBlank @NotEmpty String gender,
-			@Size(min = 9, max = 11) @PositiveOrZero @NotBlank @NotEmpty String phone, boolean pm, boolean enable) {
-		super(account, fullName, passWord, gender, phone);
-		this.pm = pm;
+	public UserEntity(Long id, String account, String fullName, String gender, Boolean enable, String phone,
+			String passWord, String roleLogin) {
+		super();
+		this.id = id;
+		this.account = account;
+		this.fullName = fullName;
+		this.gender = gender;
 		this.enable = enable;
+		this.phone = phone;
+		this.passWord = passWord;
+		this.roleLogin = roleLogin;
 	}
 
-	public boolean isPm() {
-		return pm;
+	public Long getId() {
+		return id;
 	}
 
-	public void setPm(boolean pm) {
-		this.pm = pm;
+	public void setId(Long id) {
+		this.id = id;
 	}
 
-	public boolean isEnable() {
+	public String getAccount() {
+		return account;
+	}
+
+	public void setAccount(String account) {
+		this.account = account;
+	}
+
+	public String getFullName() {
+		return fullName;
+	}
+
+	public void setFullName(String fullName) {
+		this.fullName = fullName;
+	}
+
+	public String getGender() {
+		return gender;
+	}
+
+	public void setGender(String gender) {
+		this.gender = gender;
+	}
+
+	public Boolean getEnable() {
 		return enable;
 	}
 
-	public void setEnable(boolean enable) {
+	public void setEnable(Boolean enable) {
 		this.enable = enable;
 	}
 
-//	public List<JoinProjectEntity> getJoinProjectEntities() {
-//		return joinProjectEntities;
-//	}
-//
-//	public void setJoinProjectEntities(List<JoinProjectEntity> joinProjectEntities) {
-//		this.joinProjectEntities = joinProjectEntities;
-//	}
-//
-//	public List<JoinProjectEntity> getJoinProjectEntities2() {
-//		return joinProjectEntities2;
-//	}
-//
-//	public void setJoinProjectEntities2(List<JoinProjectEntity> joinProjectEntities2) {
-//		this.joinProjectEntities2 = joinProjectEntities2;
-//	}
-//	
+	public String getPhone() {
+		return phone;
+	}
+
+	public void setPhone(String phone) {
+		this.phone = phone;
+	}
+
+	public String getPassWord() {
+		return passWord;
+	}
+
+	public void setPassWord(String passWord) {
+		this.passWord = passWord;
+	}
+
+	public String getRoleLogin() {
+		return roleLogin;
+	}
+
+	public void setRoleLogin(String roleLogin) {
+		this.roleLogin = roleLogin;
+	}
 
 }

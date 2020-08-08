@@ -2,9 +2,13 @@
 <qualifiedTypeNameHistroy>
     <fullyQualifiedTypeName name="java.lang.Boolean"/>
     <fullyQualifiedTypeName name="vn.vtd.wls.data.Create"/>
-    <fullyQualifiedTypeName name="java.util.List"/>
-    <fullyQualifiedTypeName name="vn.vtd.wls.entitys.UserEntity"/>
     <fullyQualifiedTypeName name="org.springframework.ui.Model"/>
     <fullyQualifiedTypeName name="vn.vtd.wls.service.UserService"/>
+    <fullyQualifiedTypeName name="javax.persistence.GeneratedValue"/>
+    <fullyQualifiedTypeName name="javax.persistence.GenerationType"/>
+    <fullyQualifiedTypeName name="vn.vtd.wls.entitys.UserEntity"/>
     <fullyQualifiedTypeName name="vn.vtd.wls.service.impl.UserServiceImpl"/>
+    <fullyQualifiedTypeName name="java.lang.String"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="vn.vtd.wls.common.Handling"/>
 </qualifiedTypeNameHistroy>

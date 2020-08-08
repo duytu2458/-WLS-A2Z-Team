@@ -9,6 +9,7 @@ import org.springframework.boot.context.event.ApplicationReadyEvent;
 import org.springframework.context.event.EventListener;
 import org.springframework.stereotype.Component;
 
+import vn.vtd.wls.common.Handling;
 import vn.vtd.wls.entitys.UserEntity;
 import vn.vtd.wls.service.UserService;
 
@@ -24,9 +25,10 @@ public class DemoData {
 
 	@EventListener
 	public void appReady(ApplicationReadyEvent event) {
-		userService.deleteAll();
+//		userService.deleteAll();
 		addUser();
-
+//		getSameAccount
+//		System.out.println(userService.getAccountFromFullName("QuangNN"));
 	}
 
 	public void addUser() {
@@ -39,9 +41,19 @@ public class DemoData {
 			while ((line = bufferedReader.readLine()) != null) {
 				line += ", ";
 				listInfo = line.split(",");
-				UserEntity userEntity = new UserEntity(listInfo[0], listInfo[1], listInfo[3], listInfo[2], listInfo[4],
-						new Boolean(listInfo[5]), new Boolean(listInfo[6]));
+
+				UserEntity userEntity = new UserEntity();
+				
+				userEntity.setFullName(Handling.getStandardFullName(listInfo[0]));
+				userEntity.setAccount(userService.getAccountFromFullName(userEntity.getFullName()));
+				userEntity.setGender(listInfo[1]);
+				userEntity.setEnable(new Boolean(listInfo[2]));
+				userEntity.setPhone(listInfo[3]);
+				userEntity.setPassWord(listInfo[4]);
+				userEntity.setRoleLogin(listInfo[5]);
+
 				userService.save(userEntity);
+
 			}
 		} catch (IOException e) {
 			e.printStackTrace();
