@@ -1,108 +1,159 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-<head>
-<meta charset="ISO-8859-1">
-<title>Insert title here</title>
-</head>
+<!-- <head> -->
+<!-- <meta charset="ISO-8859-1"> -->
+<!-- <title>Insert title here</title> -->
+<!-- </head> -->
+
+<head th:include="fragments/header :: head(pageTitle = 'ADMIN')">
 <body>
 	<div th:fragment="create" id="create-user" tabindex="-1"
 		class="modal fade" role="dialog" th:object="${userEntity}">
 		<div class="modal-dialog">
 			<div class="modal-content">
+				<form th:action="@{/}" id="userNewForm" class="form-horizontal"
+					method="POST">
+					<div class="modal-header">
+						<b th:text="#{wls.title.admin.createMember}"
+							class="modal-title text-center mx-auto">Create Members</b>
+						<button type="button" class="close m-0 px-2 py-0"
+							data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+					<div class="modal-body">
+						<div class="form-group row">
+							<label for="fullname" th:text="#{wls.items.common.fullname}"
+								class="col-3 col-form-label">Full Name</label>
+							<div class="col-9">
+								<input type="text" name="fullName"
+									th:placeholder="#{wls.items.common.fullname}"
+									class="form-control" id="fullname">
+							</div>
+						</div>
+						<div class="form-group row">
+							<label for="" th:text="#{wls.items.common.role}"
+								class="col-3 col-form-label">Role</label>
+							<div class="col-9">
+								<select name="roleLogin" class="form-control">
+									<option value="User" th:text="#{wls.items.common.role.user}">User</option>
+									<option value="PM" th:text="#{wls.items.common.role.pm}">PM</option>
+									<option value="Admin" th:text="#{wls.items.common.role.admin}">Admin</option>
+								</select>
+							</div>
+						</div>
+						<div class="form-group row">
+							<label for="" class="col-3 col-form-label">Gender</label>
+							<div class="col-9">
+								<select name="gender" class="form-control">
+									<option class="optionGender" value="Male">Male</option>
+									<option class="optionGender" value="Female">Female</option>
+								</select>
+							</div>
+						</div>
+						<div class="form-group row">
+							<label for="phone" class="col-3 col-form-label">Phone</label>
+							<div class="col-9">
+								<input type="text" name="phone" class="form-control" id="phone">
+							</div>
+						</div>
+						<div class="form-group row">
+							<label for="password" class="col-3 col-form-label">Password</label>
+							<div id="stylePassWord" class="col-6">
+								<input name="passWord" type="password" class="form-control"
+									id="password" placeholder="Password">
+							</div>
+							<div class="col-3">
+								<button id="clickChangePassword" type="button"
+									class="btn btn-outline-danger btn-block px-0">Change</button>
+							</div>
+						</div>
+						<b id="popupMessage" class="text-danger">Day la dong loi</b>
+					</div>
+
+					<div class="modal-footer">
+						<div class="container-fluid">
+							<div class="row">
+								<div class="col-sm-4"></div>
+								<div class="col-sm-4 col-6">
+									<button id="clickCancel" type="button"
+										class="btn btn-danger btn-block" data-dismiss="modal">Cancel</button>
+								</div>
+								<div class="col-sm-4 col-6">
+									<button id="final-create" type="button"
+										class="btn btn-success btn-block">Create</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+
+
+		<script type="text/javascript" th:inline="javascript">
+		$(document).ready(function(){
+			$("#final-create").click(function() {
+				$.ajax({
+					type: 'POST',
+					url: [[@{/admin/registUser}]],
+					data: $('#userNewForm').serialize(),
+					success: function(data){
+						debugger
+						$("body").removeClass('modal-open');
+						$(".modal-backdrop").remove();
+						$("#create-user").replaceWith(data);
+						$("#create-user").modal('show');
+					},
+					error: function(xhr, error){
+						console.debug(xhr);
+						console.debug(error);
+					}
+				});
+			});
+		});
+	</script>
+	</div>
+
+	<div th:fragment="regist-success" id="regist-success" tabindex="-1"
+		class="modal fade" role="dialog">
+		<div class="modal-dialog">
+			<div class="modal-content">
 				<div class="modal-header">
-					<b class="modal-title text-center mx-auto">Create Members</b>
-					<button type="button" class="close m-0 px-2 py-0"
+					<b th:text="#{wls.title.admin.createMember}"
+						class="modal-title text-center mx-auto">Register Successfully</b>
+					<button id="close" type="button" class="close m-0 px-2 py-0"
 						data-dismiss="modal" aria-label="Close">
 						<span aria-hidden="true">&times;</span>
 					</button>
 				</div>
 				<div class="modal-body">
-					<div class="form-group row">
-						<label for="account" th:text="#{wls.items.common.account}"
-							class="col-3 col-form-label">Account</label>
-						<div class="col-6">
-							<input type="text" th:placeholder="#{wls.items.common.account}"
-								class="form-control" id="account">
-						</div>
-						<div class="col-3">
-							<button id="clickCheckAccount"
-								th:text="#{wls.items.common.check}"
-								class="btn btn-outline-primary btn-block px-0">Check</button>
-						</div>
+					<div class="row">
+						<div class="col-12">Bạn đã đăng ký thành công:</div>
+						<div  th:text="${'Account: ' + account}" class="col-12">Account:</div>
 					</div>
-					<div class="form-group row">
-						<label for="fullname" th:text="#{wls.items.common.fullname}"
-							class="col-3 col-form-label">Full Name</label>
-						<div class="col-9">
-							<input type="text" th:placeholder="#{wls.items.common.fullname}"
-								class="form-control" id="fullname">
-						</div>
-					</div>
-					<div class="form-group row">
-						<label for="" th:text="#{wls.items.common.role}"
-							class="col-3 col-form-label">Role</label>
-						<div class="col-9">
-							<select name="" id="popupRole" class="form-control">
-								<option value="User" th:text="#{wls.items.common.role.user}">User</option>
-								<option value="Admin" th:text="#{wls.items.common.role.admin}">Admin</option>
-							</select>
-						</div>
-					</div>
-					<div class="form-group row">
-						<label for="" class="col-3 col-form-label">Gender</label>
-						<div class="col-9">
-							<select name="" id="popupGender" class="form-control">
-								<option class="optionGender" value="Male">Male</option>
-								<option class="optionGender" value="Female">Female</option>
-							</select>
-						</div>
-					</div>
-					<div class="form-group row">
-						<label for="" class="col-3 col-form-label">Is PM</label>
-						<div class="col-9">
-							<select name="" id="popupPm" class="form-control">
-								<option class="optionRole" value="false">Flase</option>
-								<option class="optionRole" value="true">True</option>
-							</select>
-						</div>
-					</div>
-					<div class="form-group row">
-						<label for="phone" class="col-3 col-form-label">Phone</label>
-						<div class="col-9">
-							<input type="text" class="form-control" id="phone">
-						</div>
-					</div>
-					<div class="form-group row">
-						<label for="password" class="col-3 col-form-label">Password</label>
-						<div id="stylePassWord" class="col-6">
-							<input type="password" class="form-control" id="password"
-								placeholder="Password">
-						</div>
-						<div class="col-3">
-							<button id="clickChangePassword" type="button"
-								class="btn btn-outline-danger btn-block px-0">Change</button>
-						</div>
-					</div>
-					<b id="popupMessage" class="text-danger">Day la dong loi</b>
-				</div>
-
-				<div class="modal-footer">
-					<div class="container-fluid">
-						<div class="row">
-							<div class="col-sm-4"></div>
-							<div class="col-sm-4 col-6">
-								<button id="clickCancel" type="submit"
-									class="btn btn-danger btn-block" data-dismiss="modal">Cancel</button>
-							</div>
-							<div class="col-sm-4 col-6">
-								<button id="final-create" type="submit"
-									class="btn btn-success btn-block">Create</button>
+					<div class="modal-footer">
+						<div class="container-fluid">
+							<div class="row">
+								<div class="col-8"></div>
+								<div class="col-4">
+									<button id="ok" type="submit" class="btn btn-success btn-block"
+										data-dismiss="modal">Ok</button>
+								</div>
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
+		<script type="text/javascript" th:inline="javascript">
+		$(document).ready(function(){
+			$("#regist-success").modal('show');
+			$("#close, #ok").click(function() {
+				location.reload(true);
+			});
+		});
+	</script>
 	</div>
 </body>
 </html>

@@ -43,20 +43,20 @@
 							</div>
 						</div>
 
-						<div class="col-lg-4 col-sm-6 col-12">
-							<div class="form-group row mt-3">
-								<label for="" th:text="#{wls.items.common.role.isPM}"
-									class="col-4 col-form-label">Is PM</label>
-								<div class="col-8">
-									<select name="" id="" class="form-control">
-										<option class="form-control"
-											th:text="#{wls.items.common.true}" value="">TRUE</option>
-										<option class="form-control"
-											th:text="#{wls.items.common.false}" value="">FALSE</option>
-									</select>
-								</div>
-							</div>
-						</div>
+<!-- 						<div class="col-lg-4 col-sm-6 col-12"> -->
+<!-- 							<div class="form-group row mt-3"> -->
+<!-- 								<label for="" th:text="#{wls.items.common.role.isPM}" -->
+<!-- 									class="col-4 col-form-label">Is PM</label> -->
+<!-- 								<div class="col-8"> -->
+<!-- 									<select name="" id="" class="form-control"> -->
+<!-- 										<option class="form-control" -->
+<!-- 											th:text="#{wls.items.common.true}" value="">TRUE</option> -->
+<!-- 										<option class="form-control" -->
+<!-- 											th:text="#{wls.items.common.false}" value="">FALSE</option> -->
+<!-- 									</select> -->
+<!-- 								</div> -->
+<!-- 							</div> -->
+<!-- 						</div> -->
 
 						<div class="col-lg-4 col-sm-6 col-12">
 							<div class="form-group row mt-3">
@@ -140,9 +140,9 @@
 									<th scope="col" th:text="#{wls.items.common.account}">Account</th>
 									<th scope="col" th:text="#{wls.items.common.fullname}">Full
 										Name</th>
-									<th scope="col" th:text="#{wls.items.common.role}">Role</th>
-									<th scope="col" th:text="#{wls.items.common.role.isPM}">IS
-										PM</th>
+									<th scope="col" th:text="#{wls.items.common.highestRole}">Role</th>
+<!-- 									<th scope="col" th:text="#{wls.items.common.role.isPM}">IS -->
+<!-- 										PM</th> -->
 									<th scope="col" th:text="#{wls.items.common.gender}">Gender</th>
 									<th scope="col" th:text="#{wls.items.common.phone}">Phone</th>
 									<th scope="col" th:text="#{wls.items.common.enable}">Enable</th>
@@ -154,8 +154,7 @@
 									<td th:text="${state.count}">1</td>
 									<td th:text="${user.account}">TuND14</td>
 									<td th:text="${user.fullName}">Nguyen Duy Tu</td>
-									<td>Admin</td>
-									<td th:text="${user.pm}">True</td>
+									<td th:text="${user.roleLogin}">Admin</td>
 									<td th:text="${user.gender}">Male</td>
 									<td th:text="${user.phone}">0344109790</td>
 									<td th:text="${user.enable}">True</td>
@@ -207,7 +206,6 @@
 	<div id="create-user" class="modal"></div>
 
 	<script type="text/javascript" th:inline="javascript">
-	
 		$(document).ready(function(){
 			$("#create").click(function() {
 				$.ajax({
@@ -225,12 +223,6 @@
 				});
 			});
 		});
-
-// 		$("p").click(function() {
-// 			$(this).hide();
-// 		});
-
-				
 	</script>
 
 </body>

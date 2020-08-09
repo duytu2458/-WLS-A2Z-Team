@@ -1,17 +1,18 @@
 package vn.vtd.wls.form;
 
 public class UserForm {
-	private String fullName;
 
-	private String passWord;
+	private String fullName;
 
 	private String gender;
 
+	private Boolean enable;
+
 	private String phone;
 
-	private boolean enable;
+	private String passWord;
 
-	private String role;
+	private String roleLogin;
 
 	public String getFullName() {
 		return fullName;
@@ -19,14 +20,6 @@ public class UserForm {
 
 	public void setFullName(String fullName) {
 		this.fullName = fullName;
-	}
-
-	public String getPassWord() {
-		return passWord;
-	}
-
-	public void setPassWord(String passWord) {
-		this.passWord = passWord;
 	}
 
 	public String getGender() {
@@ -37,6 +30,14 @@ public class UserForm {
 		this.gender = gender;
 	}
 
+	public Boolean getEnable() {
+		return enable;
+	}
+
+	public void setEnable(Boolean enable) {
+		this.enable = enable;
+	}
+
 	public String getPhone() {
 		return phone;
 	}
@@ -45,19 +46,20 @@ public class UserForm {
 		this.phone = phone;
 	}
 
-	public boolean isEnable() {
-		return enable;
+	public String getPassWord() {
+		return passWord;
 	}
 
-	public void setEnable(boolean enable) {
-		this.enable = enable;
+	public void setPassWord(String passWord) {
+		this.passWord = passWord;
 	}
 
-	public String getRole() {
-		return role;
+	public String getRoleLogin() {
+		return roleLogin;
 	}
 
-	public void setRole(String role) {
-		this.role = role;
+	public void setRoleLogin(String roleLogin) {
+		this.roleLogin = roleLogin;
 	}
+
 }
