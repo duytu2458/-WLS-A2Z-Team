@@ -8,7 +8,7 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
-import vn.vtd.wls.common.Handling;
+import vn.vtd.wls.commons.Handling;
 import vn.vtd.wls.dto.UserSearch;
 import vn.vtd.wls.entitys.UserEntity;
 import vn.vtd.wls.repository.UserRepository;

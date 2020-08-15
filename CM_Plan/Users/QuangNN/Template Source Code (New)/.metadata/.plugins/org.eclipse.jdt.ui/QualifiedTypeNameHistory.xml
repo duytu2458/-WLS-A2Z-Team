@@ -6,9 +6,21 @@
     <fullyQualifiedTypeName name="vn.vtd.wls.service.UserService"/>
     <fullyQualifiedTypeName name="javax.persistence.GeneratedValue"/>
     <fullyQualifiedTypeName name="javax.persistence.GenerationType"/>
-    <fullyQualifiedTypeName name="vn.vtd.wls.entitys.UserEntity"/>
     <fullyQualifiedTypeName name="vn.vtd.wls.service.impl.UserServiceImpl"/>
     <fullyQualifiedTypeName name="java.lang.String"/>
     <fullyQualifiedTypeName name="java.util.List"/>
     <fullyQualifiedTypeName name="vn.vtd.wls.common.Handling"/>
+    <fullyQualifiedTypeName name="org.aspectj.lang.annotation.Pointcut"/>
+    <fullyQualifiedTypeName name="vn.vtd.wls.form.UserForm"/>
+    <fullyQualifiedTypeName name="org.springframework.context.annotation.Bean"/>
+    <fullyQualifiedTypeName name="org.springframework.beans.BeanUtils"/>
+    <fullyQualifiedTypeName name="vn.vtd.wls.entitys.UserEntity"/>
+    <fullyQualifiedTypeName name="org.springframework.validation.annotation.Validated"/>
+    <fullyQualifiedTypeName name="org.springframework.validation.BindingResult"/>
+    <fullyQualifiedTypeName name="javax.validation.constraints.Pattern"/>
+    <fullyQualifiedTypeName name="vn.vtd.wls.commons.ValidatorConstants"/>
+    <fullyQualifiedTypeName name="javax.validation.constraints.NotEmpty"/>
+    <fullyQualifiedTypeName name="vn.vtd.wls.validator.constraint.Phone"/>
+    <fullyQualifiedTypeName name="vn.vtd.wls.validator.constraint.Password"/>
+    <fullyQualifiedTypeName name="javax.validation.ReportAsSingleViolation"/>
 </qualifiedTypeNameHistroy>

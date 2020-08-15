@@ -1,15 +1,23 @@
 package vn.vtd.wls.form;
 
+import javax.validation.constraints.NotEmpty;
+
+import vn.vtd.wls.validator.constraint.Password;
+import vn.vtd.wls.validator.constraint.Phone;
+
 public class UserForm {
 
+	@NotEmpty
 	private String fullName;
 
 	private String gender;
 
 	private Boolean enable;
 
+	@Phone
 	private String phone;
 
+	@Password
 	private String passWord;
 
 	private String roleLogin;

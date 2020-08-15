@@ -9,7 +9,7 @@ import org.springframework.boot.context.event.ApplicationReadyEvent;
 import org.springframework.context.event.EventListener;
 import org.springframework.stereotype.Component;
 
-import vn.vtd.wls.common.Handling;
+import vn.vtd.wls.commons.Handling;
 import vn.vtd.wls.entitys.UserEntity;
 import vn.vtd.wls.service.UserService;
 
